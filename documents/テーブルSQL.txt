@@ -1,0 +1,48 @@
+//IDPWテーブル
+create table IDPW(
+	user_id varchar(20) not null primary key,
+	password varchar(20) not null
+);
+
+//Userテーブル
+create table User(
+	user_id varchar(20) not null primary key,
+	name varchar(30) not null,
+	nickname varchar(30) not null,
+	birthplace varchar(30) not null,
+	company varchar(30) not null,
+	birth varchar(20),
+	school varchar(30),
+	hobby varchar(255),
+	intro varchar(511)
+);
+
+//Roomテーブル
+create table room (
+	r_name varchar (70)  not null primary key,
+	r_comment varchar (255)  not null,
+	release smallint  not null,
+	user_id varchar (20)  not null
+);
+
+//Chatテーブル
+Create table Chat(
+user_id varchar(20) not null,
+r_name varchar(70) not null,
+message varchar(255) ,
+reactino varchar(255) ,
+primary key(user_id,r_name)
+);
+
+//Memberテーブル
+Create table Member(
+user_id varchar(20) not null,
+r_name varchar(70) not null,
+primary key(user_id,r_name)
+);
+
+//Followテーブル
+Create table Follow(
+user_id varchar(20),
+f_user_id varchar(20)
+);
