@@ -17,7 +17,7 @@
 		<span>出身大学</span><input type="text" name="school"><br>
 		<span>趣味</span><input type="text" name="hobby"> <br>
 		<span>自己紹介文</span><input type="text" name="intro"><br>
-		<input type="submit" value="更新"><br>
+		<input type="submit" value="登録"><br>
 		</form>
 	</body>
 </html>
