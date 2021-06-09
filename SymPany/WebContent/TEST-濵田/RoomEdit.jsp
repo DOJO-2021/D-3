@@ -17,6 +17,7 @@
 <input type="radio" name="open" value="public">公開
 <input type="radio" name="open" value="private">非公開<br>
 <input type="submit" name="make" value="ルームを更新する">
+<input type="submit" name="delete" value="ルームを削除する">
 </form>
 </body>
 </html>
