@@ -9,7 +9,7 @@
 <body>
 
 <jsp:include page="Header.jsp"></jsp:include>
-<iframe src="sample/iframe_q.htm" name="sample" width="200" height="500" align="left">
+<iframe src="Leftmenu.jsp" name="sample" width="200" height="500" align="left">
 この部分はインラインフレームを使用しています。
 </iframe>
 <!-- ここに検索に使用した文字を入れる -->
@@ -36,10 +36,6 @@
 	</form><li>
 
 	</ul>
-	<form>
-	<input type ="text" name="s_message" placeholder="コメントを入力してください。">
-	<input type ="submit" name="submit" value="送信">
-	</form>
 
 </body>
 </html>
