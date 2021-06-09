@@ -25,8 +25,9 @@
 	出身大学<input type="text" name="SCHOOL" value="${e.school}"><br>
 	趣味<input type="text" name="HOBBY" value="${e.hobby}"><br>
 	自己紹介文<input type="text" name="INTRO" value="${e.intro}"><br>
-	</form>
 	<a href= >フォロワーに追加</a>
+	<input type="submit" name="submit" value="フォロワーに追加">
+	</form>
 	<hr>
 
 </body>
