@@ -27,11 +27,10 @@ create table room (
 
 //Chatテーブル
 Create table Chat(
+message_id varchar(20) auto_increment,
 user_id varchar(20) not null,
 r_name varchar(70) not null,
-message varchar(255) not null,
-reactino varchar(255) ,
-primary key(user_id,r_name)
+message varchar(255) not null
 );
 
 //Memberテーブル
@@ -45,4 +44,10 @@ primary key(user_id,r_name)
 Create table Follow(
 user_id varchar(20),
 f_user_id varchar(20)
+);
+
+//Reactionテーブル
+create table Reaction (
+user_id varchar (20),
+message_id varchar (20)
 );
