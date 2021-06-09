@@ -8,7 +8,6 @@
 </head>
 <body>
 <h1>ログイン</h1>
-<p>※ID=DOJO, PW=password でログインできます。
 <hr>
 <form method="POST" action="/SymPany/LoginServlet">
 ID<input type="text" name="ID"><br>
@@ -17,6 +16,7 @@ PW<input type="password" name="PW"><br>
 </form>
 <h2>アカウントをお持ちでないですか？</h2>
 <form method="POST" action="/SymPany/LoginServlet">
+<a href= >新規登録</a>
 </form>
 
 </body>
