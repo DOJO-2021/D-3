@@ -13,8 +13,9 @@
 この部分はインラインフレームを使用しています。
 </iframe>
 <!-- ここにRoomのr_nameを入れる -->
-	<h2>#猫好きの会</h2>
+	<h2>#猫好きの会　*</h2>
 	<!-- 設定のimg 表示 一番良い方法はsubmitボタンの表示を変更するのが良い-->
+
 	<!-- ドロワーの入力 -->
 	<div class="container">
 		<div class="hamburger" id="open_nav">
