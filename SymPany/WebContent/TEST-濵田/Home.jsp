@@ -11,6 +11,7 @@
 <jsp:include page="Header.jsp"></jsp:include>
 <!-- ヘッダー ここまで -->
 
+<!-- 画像を後で付ける -->
 <h2>機能紹介</h2>
 <div class="menu-block">
 	<div class="menu-item">
