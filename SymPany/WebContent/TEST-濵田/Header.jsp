@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<!-- ↓をbodyの下に配置してください -->
-<!--  <jsp:include page="Header.jsp"></jsp:include>  -->
-
 <header>
 	<nav>
 		<ul>
