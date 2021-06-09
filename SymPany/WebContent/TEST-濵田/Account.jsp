@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="Header.jsp"></jsp:include>
 <h1>新規登録</h1>
 <hr>
 <form method="POST" action="/SymPany/LoginServlet">

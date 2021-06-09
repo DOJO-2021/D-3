@@ -17,18 +17,17 @@
 
 <c:forEach var="e" items="${cardList}" >
 	<form method="POST" action="/SymPany/UpdateDeleteServlet">
-	名前、ニックネーム<input type="text" name="NAME" value="${e.company}"><br>
-	出身地<input type="text" name="BIRTHPLACE" value="${e.department}"><br>
-	所属企業<input type="text" name="COMPANY" value="${e.name}"><br>
-	誕生日<input type="text" name="BIRTH" value="${e.zipcode}"><br>
-	出身大学<input type="text" name="SCHOOL" value="${e.address}"><br>
-	趣味<input type="text" name="HOBBY" value="${e.phone}"><br>
-	自己紹介文<input type="text" name="INTRO" value="${e.remarks}"><br>
-	<input type="submit" name="SUBMIT" value="更新">
-	<input type="submit" name="SUBMIT" value="削除"><br>
+	名前<input type="text" name="NAME" value="${e.name}"><br>
+	ニックネーム<input type="text" name="NIKNAME" value="${e.nikname}"><br>
+	出身地<input type="text" name="BIRTHPLACE" value="${e.birthplace}"><br>
+	所属企業<input type="text" name="COMPANY" value="${e.company}"><br>
+	誕生日<input type="text" name="BIRTH" value="${e.birth}"><br>
+	出身大学<input type="text" name="SCHOOL" value="${e.school}"><br>
+	趣味<input type="text" name="HOBBY" value="${e.hobby}"><br>
+	自己紹介文<input type="text" name="INTRO" value="${e.intro}"><br>
 	</form>
+	<a href= >フォロワーに追加</a>
 	<hr>
 
-<a href= >フォロワーに追加</a>
 </body>
 </html>

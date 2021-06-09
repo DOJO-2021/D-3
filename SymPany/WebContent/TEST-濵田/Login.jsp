@@ -7,7 +7,6 @@
 <title>ログイン画面</title>
 </head>
 <body>
-<jsp:include page="Header.jsp"></jsp:include>
 <h1>ログイン</h1>
 <hr>
 <form method="POST" action="/SymPany/LoginServlet">
