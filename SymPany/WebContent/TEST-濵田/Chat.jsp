@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<jsp:include page="Header.jsp"></jsp:include>
 <iframe src="sample/iframe_q.htm" name="sample" width="200" height="500" align="left">
 この部分はインラインフレームを使用しています。
 </iframe>
