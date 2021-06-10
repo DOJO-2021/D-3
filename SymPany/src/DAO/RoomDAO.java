@@ -35,7 +35,7 @@ public class RoomDAO {
 					pStmt.setString(1, "%");
 				}
 				if (param.getR_comment() != null &&param.getR_comment() != "") {
-					pStmt.setString(2, "%" + param.getR_commnet() + "%");
+					pStmt.setString(2, "%" + param.getR_comment() + "%");
 				}
 				else {
 					pStmt.setString(2, "%");
@@ -46,7 +46,7 @@ public class RoomDAO {
 				else {
 					pStmt.setString(3, "%");
 				}
-				if (param.getUser_id() != null && param.getuUser_id() != "") {
+				if (param.getUser_id() != null && param.getUser_id() != "") {
 					pStmt.setString(4, "%" + param.getUser_id() + "%");
 				}
 				else {
