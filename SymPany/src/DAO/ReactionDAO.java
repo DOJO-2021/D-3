@@ -152,7 +152,7 @@ public class ReactionDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "update Reaction set user_id=?, message_id = ?";
+				String sql = "update Reaction set user_id=?, message_id =?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -211,7 +211,7 @@ public class ReactionDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "delete from Reaction where message_id = ?";
+				String sql = "delete from Reaction where message_id=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる

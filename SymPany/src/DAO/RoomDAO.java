@@ -22,10 +22,10 @@ public class RoomDAO {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "p");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "select * from ROOM WHERE r_name LIKE ? AND r_comment LIKE ? AND release LIKE ?  AND user_id LIKE ?";
+				String sql = "select * from ROOM WHERE r_name LIKE ? AND r_comment LIKE ? AND release=? AND user_id LIKE ?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				// SQL文を完成させる
 				if (param.getR_name() != null &&param.getR_name() != "") {
@@ -40,12 +40,10 @@ public class RoomDAO {
 				else {
 					pStmt.setString(2, "%");
 				}
-				if (param.getRelease() != null && param.getRelease() != "") {
-					pStmt.setString(3, "%" + param.getRelease() + "%");
-				}
-				else {
-					pStmt.setString(3, "%");
-				}
+
+					pStmt.setInt(3,  param.getRelease() );
+
+
 				if (param.getUser_id() != null && param.getUser_id() != "") {
 					pStmt.setString(4, "%" + param.getUser_id() + "%");
 				}
@@ -60,7 +58,7 @@ public class RoomDAO {
 					Room Room = new Room(
 					rs.getString("r_name"),
 					rs.getString("r_comment"),
-					rs.getString("release"),
+					rs.getInt("release"),
 					rs.getString("user_id")
 					);
 					RoomList.add(Room);
@@ -101,7 +99,7 @@ public class RoomDAO {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "p");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
 				String sql = "insert into Room values ( ?, ?, ?, ? )";
@@ -120,12 +118,7 @@ public class RoomDAO {
 				else {
 					pStmt.setString(2, "null");
 				}
-				if (Room.getRelease() != null) {
-					pStmt.setString(3, Room.getRelease());
-				}
-				else {
-					pStmt.setString(3, "null");
-				}
+				pStmt.setInt(3,  Room.getRelease() );
 
 				if (Room.getUser_id() != null) {
 					pStmt.setString(4, Room.getUser_id());
@@ -171,10 +164,10 @@ public class RoomDAO {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "p");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "update Room set r_name=?, r_comment = ?, release=? ,user_id=?;";
+				String sql = "update Room set r_name=?, r_comment = ?, release=? ,user_id=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -190,12 +183,8 @@ public class RoomDAO {
 				else {
 					pStmt.setString(2, "null");
 				}
-				if (Room.getRelease() != null) {
-					pStmt.setString(3, Room.getRelease());
-				}
-				else {
-					pStmt.setString(3, "null");
-				}
+				pStmt.setInt(3,  Room.getRelease() );
+
 				if (Room.getUser_id() != null) {
 					pStmt.setString(4, Room.getUser_id());
 				}
@@ -241,7 +230,7 @@ public class RoomDAO {
 				Class.forName("org.h2.Driver");
 
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "p");
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
 				String sql = "delete from Room where r_name = ?";

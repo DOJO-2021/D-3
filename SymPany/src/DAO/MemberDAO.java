@@ -14,17 +14,17 @@ public class MemberDAO {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 			public List<Member> select(Member param) {
 				Connection conn = null;
-				List<Member> RoomList = new ArrayList<Member>();
+				List<Member> MemberList = new ArrayList<Member>();
 
 				try {
-					// JDRoomドライバを読み込む
+					// JDMemberドライバを読み込む
 					Class.forName("org.h2.Driver");
 
 					// データベースに接続する
-					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "p");
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 					// SQL文を準備する
-					String sql = "select * from Member WHERE user_id LIKE ? AND r_name " ;
+					String sql = "select * from Member WHERE user_id LIKE ? AND r_name LIKE ? " ;
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 					// SQL文を完成させる
 					if (param.getUser_id() != null &&param.getUser_id() != "") {
@@ -44,20 +44,20 @@ public class MemberDAO {
 
 					// 結果表をコレクションにコピーする
 					while (rs.next()) {
-						Member Room = new Member(
+						Member Member = new Member(
 						rs.getString("user_id"),
 						rs.getString("r_name")
 						);
-						RoomList.add(Room);
+						MemberList.add(Member);
 					}
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					RoomList = null;
+					MemberList = null;
 				}
 				catch (ClassNotFoundException e) {
 					e.printStackTrace();
-					RoomList = null;
+					MemberList = null;
 				}
 				finally {
 					// データベースを切断
@@ -67,40 +67,40 @@ public class MemberDAO {
 						}
 						catch (SQLException e) {
 							e.printStackTrace();
-							RoomList = null;
+							MemberList = null;
 						}
 					}
 				}
 
 				// 結果を返す
-				return RoomList;
+				return MemberList;
 			}
 
-			// 引数Roomで指定されたレコードを登録し、成功したらtrueを返す
-			public boolean insert(Member Room) {
+			// 引数Memberで指定されたレコードを登録し、成功したらtrueを返す
+			public boolean insert(Member Member) {
 				Connection conn = null;
 				boolean result = false;
 
 				try {
-					// JDRoomドライバを読み込む
+					// JDMemberドライバを読み込む
 					Class.forName("org.h2.Driver");
 
 					// データベースに接続する
-					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "p");
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 					// SQL文を準備する
-					String sql = "insert into Room values ( ?, ?, ?, ? )";
+					String sql = "insert into Member values ( ?, ?)";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
-					if (Room.getUser_id() != null) {
-						pStmt.setString(1, Room.getUser_id());
+					if (Member.getUser_id() != null) {
+						pStmt.setString(1, Member.getUser_id());
 					}
 					else {
 						pStmt.setString(1, "null");
 					}
-					if (Room.getR_name() != null) {
-						pStmt.setString(2, Room.getR_name());
+					if (Member.getR_name() != null) {
+						pStmt.setString(2, Member.getR_name());
 					}
 					else {
 						pStmt.setString(2, "null");
@@ -132,31 +132,31 @@ public class MemberDAO {
 				return result;
 			}
 
-			// 引数Roomで指定されたレコードを更新し、成功したらtrueを返す
-			public boolean update(Member Room) {
+			// 引数Memberで指定されたレコードを更新し、成功したらtrueを返す
+			public boolean update(Member Member) {
 				Connection conn = null;
 				boolean result = false;
 
 				try {
-					// JDRoomドライバを読み込む
+					// JDMemberドライバを読み込む
 					Class.forName("org.h2.Driver");
 
 					// データベースに接続する
-					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "p");
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 					// SQL文を準備する
-					String sql = "update Room set r_name=?, r_comment = ?, release=? ,user_id=?;";
+					String sql = "update Member set user_id=? , r_name=?";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
-					if (Room.getUser_id() != null) {
-						pStmt.setString(1, Room.getUser_id());
+					if (Member.getUser_id() != null) {
+						pStmt.setString(1, Member.getUser_id());
 					}
 					else {
 						pStmt.setString(1, "null");
 					}
-					if (Room.getR_name() != null) {
-						pStmt.setString(2, Room.getR_name());
+					if (Member.getR_name() != null) {
+						pStmt.setString(2, Member.getR_name());
 					}
 					else {
 						pStmt.setString(2, "null");
@@ -196,14 +196,14 @@ public class MemberDAO {
 				boolean result = false;
 
 				try {
-					// JDRoomドライバを読み込む
+					// JDMemberドライバを読み込む
 					Class.forName("org.h2.Driver");
 
 					// データベースに接続する
-					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "p");
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 					// SQL文を準備する
-					String sql = "delete from Room where r_name = ?";
+					String sql = "delete from Member where r_name = ?";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる

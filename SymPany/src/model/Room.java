@@ -3,11 +3,11 @@ package model;
 public class Room {
 	private String r_name;
 	private String r_comment;
-	private String release;
+	private int release;
 	private String user_id;
 
 	//引数があるコンストラクタ（自動生成）
-	public Room(String r_name, String r_comment, String release, String user_id) {
+	public Room(String r_name, String r_comment, int release, String user_id) {
 		super();
 		this.r_name = r_name;
 		this.r_comment = r_comment;
@@ -20,7 +20,7 @@ public class Room {
 		super();
 		this.r_name = "";
 		this.r_comment = "";
-		this.release = "";
+		this.release = 1;
 		this.user_id = "";
 	}
 
@@ -41,12 +41,12 @@ public class Room {
 		this.r_comment = r_comment;
 	}
 
-	public String getRelease() {
+	public int getRelease() {
 		return release;
 	}
 
 	public void setRelease(String release) {
-		this.release = release;
+		this.release = Integer.parseInt(release);
 	}
 
 	public String getUser_id() {
