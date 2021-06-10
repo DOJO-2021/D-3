@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Sympany</title>
+<link rel="stylesheet" href="SymPany/css/common.css">
 </head>
 <body>
 <!-- ヘッダー -->
