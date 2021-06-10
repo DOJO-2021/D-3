@@ -36,8 +36,7 @@ message varchar(255) not null
 //Memberテーブル
 Create table Member(
 user_id varchar(20) not null,
-r_name varchar(70) not null,
-primary key(user_id,r_name)
+r_name varchar(70) not null primary key
 );
 
 //Followテーブル
