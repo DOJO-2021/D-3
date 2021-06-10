@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ルームの編集</title>
+<title>ルームの新規作成</title>
 </head>
 <body>
-<jsp:include page="Header.jsp"></jsp:include>
-<h2>ルームの編集</h2>
+<jsp:include page="header.jsp"></jsp:include>
+<h2>ルームの新規作成</h2>
 <!-- ルーム情報を送る -->
 <form method="" action="">
 ルーム名<input type="text" name="room_name" placeholder="(例)猫好きの会"><br>
@@ -16,8 +16,7 @@
 ルームの公開・非公開設定：
 <input type="radio" name="open" value="public">公開
 <input type="radio" name="open" value="private">非公開<br>
-<input type="submit" name="make" value="ルームを更新する">
-<input type="submit" name="delete" value="ルームを削除する">
+<input type="submit" name="make" value="ルームを作成する">
 </form>
 </body>
 </html>
