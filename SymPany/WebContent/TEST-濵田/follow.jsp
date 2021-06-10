@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h2>フォローリスト</h2>
-	<!-- ドロワーの入力、名前で展開　-->
+	<!-- ドロワーの入力、名前で展開 -->
 
 		<span>名前</span><input type="text" name="name"><br>
 		<span>ニックネーム</span><input type="text" name="nickname"><br>
