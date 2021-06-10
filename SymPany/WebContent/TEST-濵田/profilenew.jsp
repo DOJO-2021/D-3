@@ -8,7 +8,9 @@
 		<link rel="stylesheet" href="/SymPany/CSS/common.css">
 	</head>
 
-	<body>
+	<body class="first">
+	<div class="logo_bear"><img src="/SymPany/images/logo30.png"></div>
+	<h1>プロフィール新規登録</h1>
 		<form method="POST" action="">
 		<span>名前</span><input type="text" name="name" required><br>
 		<span>ニックネーム</span><input type="text" name="nickname" required><br>
