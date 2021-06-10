@@ -4,6 +4,8 @@
 <!-- jspをservletにする -->
 
 <header>
+<div class="logo"><img src="/SymPany/images/logo20.png"></div>
+
 	<nav>
 		<ul>
 			<li><a href="/SymPany/home.jsp">ホーム</a></li>
@@ -13,4 +15,5 @@
 			<li><a href="/SymPany/login.jsp">ログアウト</a></li>
 		</ul>
 	</nav>
+
 </header>
