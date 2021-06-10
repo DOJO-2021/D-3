@@ -70,7 +70,7 @@ public class IDPWDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "p");
 
 			// SQL文を準備する
-			String sql = "insert into Room values ( ?, ?, ?, ? )";
+			String sql = "insert into IDPW values ( ?, ? )";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				pStmt.setString(1, id);
