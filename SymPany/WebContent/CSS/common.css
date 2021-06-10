@@ -10,9 +10,9 @@
 
 /* firstページで適用される */
 body.first{
-	margin: 0 auto 0 auto;
-	max-width: 960px;
-
+	width:960px;
+	margin-right:auto;
+	margin-left:auto;
 }
 
 /*(後で）ログイン画面の入力、背景色変えたい*/
