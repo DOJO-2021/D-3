@@ -4,7 +4,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>SymPany|マイページ</title>
+		<link rel="stylesheet" href="/SymPany/CSS/common.css">
 	</head>
 	<body>
 		<!-- ヘッダー -->

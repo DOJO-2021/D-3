@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ルームの新規作成</title>
+<title>Sympany|ルームの新規作成</title>
+<link rel="stylesheet" href="/SymPany/CSS/common.css">
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>

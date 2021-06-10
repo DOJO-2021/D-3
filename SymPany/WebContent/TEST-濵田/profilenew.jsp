@@ -4,7 +4,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>SymPany|プロフィール新規登録</title>
+		<link rel="stylesheet" href="/SymPany/CSS/common.css">
 	</head>
 
 	<body>

@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SymPany</title>
+<title>SymPany|チャット</title>
+<link rel="stylesheet" href="/SymPany/CSS/common.css">
 </head>
 
 <body>

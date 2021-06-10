@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sympany</title>
-<link rel="stylesheet" href="SymPany/css/common.css">
+<title>Sympany|ホーム</title>
+<link rel="stylesheet" href="/SymPany/CSS/common.css">
 </head>
 <body>
 <!-- ヘッダー -->

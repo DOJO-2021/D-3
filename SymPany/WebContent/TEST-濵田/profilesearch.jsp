@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>プロフィールの検索</title>
+<title>SymPany|プロフィール検索</title>
+<link rel="stylesheet" href="/SymPany/CSS/common.css">
 </head>
 <body>
 <form action="cgi-bin/example.cgi" method="post">

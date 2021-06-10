@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ログイン画面</title>
+<title>SymPany|ログイン</title>
+<link rel="stylesheet" href="/SymPany/CSS/common.css">
 </head>
 <body>
 <h1>ログイン</h1>
