@@ -58,4 +58,48 @@ public class IDPWDAO {
 		// 結果を返す
 		return loginResult;
 	}
+	public boolean insert(String id, String pw) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDRoomドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "p");
+
+			// SQL文を準備する
+			String sql = "insert into Room values ( ?, ?, ?, ? )";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				pStmt.setString(1, id);
+
+				pStmt.setString(2, pw);
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
 }
