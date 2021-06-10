@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* すべてのwebページに適用される */
+/*文字色、背景色など*/
+* {
+	font-family: "Tahoma";
+	color:#001858;
+	background-color:#fef6e4;
+}
+
+h2{
+	color: #272343;
+	font-size: 30px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	text-align: center;
+}
