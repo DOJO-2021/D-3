@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DAO.UserDAO;
-import model.User;
+import DAO.RoomDAO;
+import model.Room;
 
 /**
  * Servlet implementation class RegistServlet
  */
-@WebServlet("/ProfileNewServlet")
-public class ProfileNewServlet extends HttpServlet {
+@WebServlet("/RoomNewServlet")
+public class RoomNewServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,8 +28,8 @@ public class ProfileNewServlet extends HttpServlet {
 			return;
 		}
 
-		// ホーム画面にフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profilenew.jsp");
+		// ルーム作成画面にフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/roomnew.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -39,28 +39,21 @@ public class ProfileNewServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		String user_id = request.getParameter("user_id");
-		String name = request.getParameter("name");
-		String nickname = request.getParameter("nickname");
-		String birthplace = request.getParameter("birthplace");
-		String company = request.getParameter("company");
-		String birth = request.getParameter("birth");
-		String school = request.getParameter("school");
-		String hobby = request.getParameter("hobby");
-		String intro = request.getParameter("intro");
-
-
+		String room_name = request.getParameter("room_name");
+		String room_comment = request.getParameter("room_comment");
+		int pub = Integer.parseInt(request.getParameter("open"));
 
 		// 登録処理を行う
-		UserDAO bDao = new UserDAO();
-		User user = new User(user_id,name,nickname,birthplace,company,birth,school,hobby,intro);
+		RoomDAO bDao = new RoomDAO();
+		Room user = new Room(room_name,room_comment,pub,user_id);
 		if (bDao.insert(user)) { // 登録成功
 
-			// メニューサーブレットにリダイレクトする
-			response.sendRedirect("/SymPany/HomeServlet");
+			// チャットサーブレットにリダイレクトする
+			response.sendRedirect("/SymPany/ChatServlet");
 		} else {
 			// 登録失敗
 			// チャットページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profilenew.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/chat.jsp");
 			dispatcher.forward(request, response);
 		}
 	}
