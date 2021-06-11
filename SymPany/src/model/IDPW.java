@@ -1,6 +1,7 @@
 package model;
+import java.io.Serializable;
 
-public class IDPW {
+public class IDPW implements Serializable{
  private String user_id;
  private String password;
 

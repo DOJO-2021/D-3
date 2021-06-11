@@ -1,6 +1,7 @@
 package model;
+import java.io.Serializable;
 
-public class Chat {
+public class Chat implements Serializable{
 	private  String message_id;
 	private String user_id;
 	private String r_name;

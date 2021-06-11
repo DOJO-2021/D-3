@@ -1,6 +1,7 @@
 package model;
+import java.io.Serializable;
 
-public class Reaction {
+public class Reaction implements Serializable{
 	private String user_id;
 	private String message_id;
 

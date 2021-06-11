@@ -1,6 +1,8 @@
 package model;
+import java.io.Serializable;
 
-public class Follow {
+
+public class Follow  implements Serializable{
 	private String user_id;
 	private String f_user_id;
 

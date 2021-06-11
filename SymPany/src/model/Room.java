@@ -1,6 +1,7 @@
 package model;
+import java.io.Serializable;
 
-public class Room {
+public class Room implements Serializable{
 	private String r_name;
 	private String r_comment;
 	private int release;
