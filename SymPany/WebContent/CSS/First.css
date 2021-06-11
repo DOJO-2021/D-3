@@ -6,29 +6,32 @@
 	font-family: "Tahoma";
 	color:#001858;
 	background-color:#fef6e4;
+	/*outline:1px solid #ff0000;*/
 }
 
+h1,div.logo_bear{
+	text-align:center;
+
+}
 /* （未解決）bodyクラス『first』で適用される */
 /* 全体の中央寄せ */
-/*
-body.first{
-	width:960px;
-	margin-right:auto;
-	margin-left:auto;
-}
-*/
 
-/* （未解決）divクラス『first』ピンクの背景色付けたい*/
-div.first{
+body.first{
+	margin: 0 auto 0 auto;
+	max-width: 960px;
+}
+
+
+/*ピンクの背景色付けたい*/
+div.first,form,h4,a{
 	width:500px;
 	background-color:#f3d2c1;
 	font-size:16px;
+}
+div.first{
+	margin: 0 auto 0 auto;
 
 }
-form{
-	background-color:#f3d2c1;
-}
-
 /*submitボタンデザイン*/
 input[type="submit"]{
   display       : inline-block;
@@ -42,9 +45,12 @@ input[type="submit"]{
 }
 
 
+/* ページごと */
 /*（未解決）投稿フォームデザイン*/
-/* 自由記入欄のhtmlを変更する */
+/* 配置やサイズを整える */
 
+
+/* ログイン・アカウント新規登録ページ*/
 form.la input[type="text"],form.la input[type="password"]{
 	width:350px;
 	color: #001858;
@@ -58,7 +64,22 @@ form.la input[type="text"],form.la input[type="password"]{
 	font-size:16px;
 }
 
-div.pn input[type="text"]{
+
+/* 新規プロフィール登録ページ */
+/* 自己紹介文 */
+input[name="intro"]{
+	width:350px;
+	height:150px;
+	color: #001858;
+	background-color:#f3d2c1;
+  	padding: 0.5em;
+  	border-bottom:1.5px solid #001858;
+	font-size:16px;
+}
+/* その他プロフィール */
+input[name="name"],input[name="nickname"],input[name="birthplace"],
+input[name="company"],input[name="birth"],input[name="school"],
+input[name="hobby"]{
 	width:350px;
 	color: #001858;
 	background-color:#f3d2c1;
@@ -70,6 +91,6 @@ div.pn input[type="text"]{
 	border-radius:0px;
 	font-size:16px;
 }
-h4,a{
-	background-color:#f3d2c1;
-}
+
+
+

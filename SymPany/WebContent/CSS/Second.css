@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+h2{
+	background-color:#f3d2c1;
+}
+/* 投稿フォーム */
+/*大きい枠*/
+form{
+	border:1.5px solid #001858;
+
+}
+/*記入欄*/
+input[type="text"]{
+	width:350px;
+	color: #001858;
+  	padding: 0.5em;
+  	border-bottom:1.5px solid #001858;
+	font-size:16px;
+}

@@ -6,32 +6,24 @@
 	font-family: "Tahoma";
 	color:#001858;
 	background-color:#fef6e4;
-}
-
-/* firstページで適用される */
-body.first{
-	width:960px;
-	margin-right:auto;
-	margin-left:auto;
-}
-
-/*(後で）ログイン画面の入力、背景色変えたい*/
-div.login{
-	width:500px;
-	background-color:#f3d2c1;
+	/*outline:1px solid #ff0000;*/
 
 }
-
+/*ヘッダー(ロゴ)*/
+div.logo{
+	float: left;
+}
 
 /* ヘッダー（メニューバー）*/
 nav{
+padding: 17px 10px 20px 180px;
 text-align: center;
 font-weight: bold;
-margin-left: 100px;
+float:right;
+width:1100px;
 }
 nav ul{
-margin-top: 25px;
-margin-right: 100px;
+
 padding: 0 ;
 display:flex;
 }
@@ -53,8 +45,10 @@ li + li {
   border-left: 1px solid #000;
 }
 
-
-
+/* float解除 */
+h2{
+	clear:both;
+}
 
 /*submitボタンデザイン*/
 input[type="submit"]{
