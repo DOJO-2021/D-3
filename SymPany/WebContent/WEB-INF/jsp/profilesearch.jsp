@@ -16,7 +16,7 @@
 </form>
 
 <hr>
-
+<!-- comment -->
 <c:forEach var="e" items="${cardList}" >
 	<form method="POST" action="/SymPany/UpdateDeleteServlet">
 	名前<input type="text" name="NAME" value="${e.name}"><br>
