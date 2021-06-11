@@ -10,9 +10,9 @@
 		<ul>
 			<li><a href="/SymPany/HomeServlet">ホーム</a></li>
 			<li><a href="/SymPany/MypageServlet">マイページ</a></li>
-			<li><a href="/SymPany/ProfileServlet">プロフィール検索</a></li>
+			<li><a href="/SymPany/ProfileSearchServlet">プロフィール検索</a></li>
 			<li><a href="/SymPany/ChatServlet">チャット</a></li>
-			<li><a href="/SymPany/LoginServlet">ログアウト</a></li>
+			<li><a href="/SymPany/LogoutServlet">ログアウト</a></li>
 		</ul>
 	</nav>
 

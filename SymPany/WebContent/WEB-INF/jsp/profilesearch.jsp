@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include>
 <form action="cgi-bin/example.cgi" method="post">
   <p>検索したいキーワードを入力してください。</p>
   <input type="search" name="seach" placeholder="キーワード入力してね！">
