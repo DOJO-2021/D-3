@@ -10,7 +10,7 @@
 <body class="first">
 <div class="logo_bear"><img src="/SymPany/images/logo30.png"></div>
 <h1>ログイン</h1>
-<div class="login">
+<div class="first">
 <form method="POST" action="/SymPany/LoginServlet">
 ID<input type="text" name="ID"><br>
 PW<input type="password" name="PW"><br>
