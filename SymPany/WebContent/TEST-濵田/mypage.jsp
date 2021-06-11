@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>SymPany|マイページ</title>
+		<title>SymPany | マイページ</title>
 		<link rel="stylesheet" href="/SymPany/CSS/common.css">
 	</head>
 	<body>
@@ -15,15 +15,46 @@
 
 	<h2>プロフィールの編集</h2>
 		<form method="POST" action="">
-		<span>名前</span><input type="text" name="name" required><br>
-		<span>ニックネーム</span><input type="text" name="nickname" required><br>
-		<span>出身地</span><input type="text" name="birthplace"><br>
-		<span>所属企業</span><input type="text" name="company"><br>
-		<span>誕生日</span><input type="text" name="birth"><br>
-		<span>出身大学</span><input type="text" name="school"><br>
-		<span>趣味</span><input type="text" name="hobby"> <br>
-		<span>自己紹介文</span><input type="text" name="intro"><br>
+		<table>
+		  <tr>
+		   <td>
+			名前<input type="text" name="name" required><br>
+			</td>
+			<td>
+			ニックネーム<input type="text" name="nickname" required><br>
+			</td>
+		  </tr>
+		  <tr>
+		   <td>
+			出身地<input type="text" name="birthplace"><br>
+		   </td>
+		   <td>
+			所属企業<input type="text" name="company"><br>
+		   </td>
+		  </tr>
+		  <tr>
+		   <td>
+			誕生日<input type="text" name="birth"><br>
+		   </td>
+		   <td>
+			出身大学<input type="text" name="school"><br>
+		   </td>
+		 </tr>
+		 <tr>
+		  <td>
+			趣味<input type="text" name="hobby"> <br>
+		  </td>
+		  <td>
+			自己紹介文<input type="text" name="intro"><br>
+		  </td>
+		</table>
+		<table>
+		 <tr>
+		  <td>
 		<input type="submit" value="更新"><br>
+		  </td>
+		 </tr>
+		</table>
 		</form>
 	</body>
 </html>

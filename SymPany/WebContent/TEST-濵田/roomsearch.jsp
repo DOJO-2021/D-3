@@ -4,8 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SymPany|ルーム検索</title>
+<title>SymPany | ルーム検索</title>
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
+<link rel="stylesheet" href="/SymPany/CSS/Second.css">
 </head>
 <body>
 
