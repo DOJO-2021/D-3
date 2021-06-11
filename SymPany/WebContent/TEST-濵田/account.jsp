@@ -16,10 +16,8 @@ ID<input type="text" name="ID"><br>
 PW<input type="password" name="PW"><br>
 <input type="submit" name="LOGIN" value="ログイン">
 </form>
-<h2>アカウントをお持ちですか？</h2>
-<form method="POST" action="/SymPany/LoginServlet">
-<a href= >ログイン</a>
-</form>
+<h4>アカウントをお持ちですか？<a href="/SymPany/LoginServlet">ログイン</a></h4>
+
 </div>
 </body>
 </html>

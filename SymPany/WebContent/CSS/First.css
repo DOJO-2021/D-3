@@ -10,12 +10,13 @@
 
 /* （未解決）bodyクラス『first』で適用される */
 /* 全体の中央寄せ */
+/*
 body.first{
 	width:960px;
 	margin-right:auto;
 	margin-left:auto;
 }
-
+*/
 
 /* （未解決）divクラス『first』ピンクの背景色付けたい*/
 div.first{
@@ -24,7 +25,9 @@ div.first{
 	font-size:16px;
 
 }
-
+form{
+	background-color:#f3d2c1;
+}
 
 /*submitボタンデザイン*/
 input[type="submit"]{
@@ -45,6 +48,7 @@ input[type="submit"]{
 input[type="text"],input[type="password"]{
 	width:350px;
 	color: #001858;
+	background-color:#f3d2c1;
   	padding: 0.5em;
   	border-bottom:1.5px solid #001858;
 	border-right:none;
@@ -52,4 +56,8 @@ input[type="text"],input[type="password"]{
 	border-top:none;
 	border-radius:0px;
 	font-size:16px;
+}
+
+h4,a{
+	background-color:#f3d2c1;
 }

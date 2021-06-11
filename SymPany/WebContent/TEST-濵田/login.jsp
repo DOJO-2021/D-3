@@ -7,16 +7,17 @@
 <title>SymPany|ログイン</title>
 <link rel="stylesheet" href="/SymPany/CSS/First.css">
 </head>
-<body class="first">
+<body>
+
 <div class="logo_bear"><img src="/SymPany/images/logo30.png"></div>
-<h1>ログイン</h1>
 <div class="first">
-<form method="POST" action="/SymPany/LoginServlet">
+<h1>ログイン</h1>
+<form  method="POST" action="/SymPany/LoginServlet" >
 ID<input type="text" name="ID"><br>
 PW<input type="password" name="PW"><br>
 <input type="submit" name="LOGIN" value="ログイン">
 </form>
-<a href="/SymPany/LoginServlet">アカウントをお持ちでないですか？</a>
+<h4>アカウントをお持ちでないですか？<a href="/SymPany/AccountServlet">新規登録</a></h4>
 
 </div>
 </body>
