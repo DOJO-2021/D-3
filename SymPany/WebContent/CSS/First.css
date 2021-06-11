@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/* すべてのFirstWebページに適用される */
+/*文字色、背景色など*/
+* {
+	font-family: "Tahoma";
+	color:#001858;
+	background-color:#fef6e4;
+}
+
+/* （未解決）bodyクラス『first』で適用される */
+/* 全体の中央寄せ */
+body.first{
+	width:960px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+
+/* （未解決）divクラス『first』ピンクの背景色付けたい*/
+div.first{
+	width:500px;
+	background-color:#f3d2c1;
+	font-size:16px;
+
+}
+
+
+/*submitボタンデザイン*/
+input[type="submit"]{
+  display       : inline-block;
+  color			: #fef6e4;
+  background-color: #001858;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 12pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  padding       : 12px 18px;   /* 余白       */
+  line-height   : 1em;         /* 1行の高さ  */
+}
+
+
+/*（未解決）投稿フォームデザイン*/
+/* 自由記入欄のhtmlを変更する */
+
+input[type="text"],input[type="password"]{
+	width:350px;
+	color: #001858;
+  	padding: 0.5em;
+  	border-bottom:1.5px solid #001858;
+	border-right:none;
+	border-left:none;
+	border-top:none;
+	border-radius:0px;
+	font-size:16px;
+}
