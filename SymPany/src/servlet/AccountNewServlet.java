@@ -17,14 +17,14 @@ import model.IDPW;
 public class AccountNewServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
 		if (session.getAttribute("user_id") == null) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/account.jsp");
 			dispatcher.forward(request, response);
-		}
-		else {
+		} else {
 			response.sendRedirect("HomeServlet");
 		}
 	}
@@ -32,26 +32,25 @@ public class AccountNewServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// リクエストパラメータを取得する
-				request.setCharacterEncoding("UTF-8");
-				String user_id = request.getParameter("ID");
-				String user_p = request.getParameter("PW");
+		request.setCharacterEncoding("UTF-8");
+		String user_id = request.getParameter("ID");
+		String user_p = request.getParameter("PW");
 
 		// 登録処理を行う
 		IDPWDAO bDao = new IDPWDAO();
-		if (bDao.insert(user_id,user_p )) {	// 登録成功
+		if (bDao.insert(user_id, user_p)) { // 登録成功
 			// セッションスコープにIDを格納する
-						HttpSession session = request.getSession();
-						session.setAttribute("id", new IDPW(user_id, user_p));
+			HttpSession session = request.getSession();
+			session.setAttribute("id", new IDPW(user_id, user_p));
 
-						// メニューサーブレットにリダイレクトする
-						response.sendRedirect("HomeServlet");
-					}
-		else {												// 登録失敗
-
+			// メニューサーブレットにリダイレクトする
+			response.sendRedirect("HomeServlet");
+		} else {
+			// 登録失敗
+			// 結果ページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/account.jsp");
+			dispatcher.forward(request, response);
 		}
-
-		// 結果ページにフォワードする
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/account.jsp");
-					dispatcher.forward(request, response);
 	}
+
 }
