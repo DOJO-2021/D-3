@@ -23,7 +23,7 @@
 			自己紹介文も長いと自分がどういう性格か分かりやすいからgood!<br>
 			趣味や好きなものを書いておくと相手からのマッチング率がUP‼‼<br>
 			<br>
-			▶<a href="/SymPany/mypage.jsp">『マイページ』</a>はこちらから
+			▶<a href="/WEB-INF/mypage.jsp">『マイページ』</a>はこちらから
 			</p>
 		</div>
 	</div>
@@ -36,7 +36,7 @@
 			気になる人をフォローしてみよう‼<br>
 			個人的にチャットをしてみたり、ルームに招待してみよう！<br>
 			<br>
-			▶<a href="/SymPany/profilesearch.jsp">『プロフィール検索』</a>はこちらから
+			▶<a href="/WEB=INF/profilesearch.jsp">『プロフィール検索』</a>はこちらから
 			</p>
 		</div>
 	</div>
@@ -55,7 +55,7 @@
 			チャット画面の左側に参加しているルームも一覧で出ているから、<br>
 			いつものルームに瞬時に移動も可能に‼<br>
 			<br>
-			▶<a href="/SymPany/chat.jsp">『チャット』</a>はこちらから
+			▶<a href="/WEB-INF/chat.jsp">『チャット』</a>はこちらから
 			</p>
 		</div>
 	</div>
@@ -65,7 +65,7 @@
 			<p>
 			このボタンを押すと現実に連れ戻されるよ！<br>
 			<br>
-			▶<a href="/SymPany/login.jsp">『ログアウト』</a>はこちらから
+			▶<a href="/WEB-INF/login.jsp">『ログアウト』</a>はこちらから
 			</p>
 		</div>
 	</div>

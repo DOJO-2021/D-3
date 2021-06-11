@@ -45,7 +45,7 @@ input[type="submit"]{
 /*（未解決）投稿フォームデザイン*/
 /* 自由記入欄のhtmlを変更する */
 
-input[type="text"],input[type="password"]{
+form.la input[type="text"],form.la input[type="password"]{
 	width:350px;
 	color: #001858;
 	background-color:#f3d2c1;
@@ -58,6 +58,18 @@ input[type="text"],input[type="password"]{
 	font-size:16px;
 }
 
+div.pn input[type="text"]{
+	width:350px;
+	color: #001858;
+	background-color:#f3d2c1;
+  	padding: 0.5em;
+  	border-bottom:1.5px solid #001858;
+	border-right:none;
+	border-left:none;
+	border-top:none;
+	border-radius:0px;
+	font-size:16px;
+}
 h4,a{
 	background-color:#f3d2c1;
 }
