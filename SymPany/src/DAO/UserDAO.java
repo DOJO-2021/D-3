@@ -96,7 +96,7 @@ public class UserDAO {
 				rs.getString("birthplace"),
 				rs.getString("company"),
 				rs.getString("birth"),
-				rs.getString(" school"),
+				rs.getString("school"),
 				rs.getString("hobby"),
 				rs.getString("intro")
 				);
@@ -241,9 +241,9 @@ public class UserDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 			// SQL文を準備する
-			String sql = "update User set user_id=?,name=?,nickname=?"
-					+ "birthplace=?,company=?,birth=?,school=?"
-					+ "hobby=?,intro=?;";
+			String sql = "update User set user_id=?,name=?,nickname=?,"
+					+ "birthplace=?,company=?,birth=?,school=?,"
+					+ "hobby=?,intro=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる

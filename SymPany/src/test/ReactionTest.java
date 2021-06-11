@@ -20,7 +20,7 @@ public class ReactionTest {
 
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
-		Reaction insRec = new Reaction("02","02");
+		Reaction insRec = new Reaction("D3-21",null);
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
 			List<Reaction> Reaction2 = dao.select(insRec);
@@ -36,7 +36,7 @@ public class ReactionTest {
 
 		// update()のテスト
 		System.out.println("---------- update()のテスト ----------");
-		Reaction upRec = new Reaction("01","null");
+		Reaction upRec = new Reaction("D3-2","01");
 		if (dao.update(upRec)) {
 			System.out.println("更新成功！");
 			List<Reaction> Reaction3 = dao.select(upRec);
@@ -52,7 +52,7 @@ public class ReactionTest {
 
 		// delete()のテスト
 		System.out.println("---------- delete()のテスト ----------");
-		if (dao.delete("01")) {
+		if (dao.delete("2")) {
 			System.out.println("削除成功！");
 		}
 		else {
