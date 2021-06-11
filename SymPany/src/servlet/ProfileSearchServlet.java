@@ -22,7 +22,7 @@ public class ProfileSearchServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profilesearch.jsp");
 		dispatcher.forward(request, response);
 	}
-
+	//test
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// リクエストパラメータを取得する
