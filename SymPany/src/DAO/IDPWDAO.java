@@ -17,7 +17,7 @@ public class IDPWDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "p");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 			// SELECT文を準備する
 			String sql = "select count(*) from IDPW where user_id = ? and password = ?;";
@@ -67,7 +67,7 @@ public class IDPWDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "p");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 			// SQL文を準備する
 			String sql = "insert into IDPW values ( ?, ? )";
