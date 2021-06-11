@@ -14,6 +14,7 @@
 		<div class="first">
 			<form method="POST" action="">
 			<div class="pn">
+			<input type="hidden" name="user_id" value ="<%session.getAttribute("user_id");%>">
 			名前<input type="text" name="name" required autofocus><br>
 			ニックネーム<input type="text" name="nickname" required><br>
 			出身地<input type="text" name="birthplace" required><br>
