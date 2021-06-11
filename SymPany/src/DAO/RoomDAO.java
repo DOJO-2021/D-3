@@ -167,7 +167,7 @@ public class RoomDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "update Room set r_name=?, r_comment = ?, release=? ,user_id=?";
+				String sql = "update Room set r_comment = ?, release=?, user_id=? where r_name=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる

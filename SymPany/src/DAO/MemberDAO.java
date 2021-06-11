@@ -145,7 +145,7 @@ public class MemberDAO {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 					// SQL文を準備する
-					String sql = "update Member set user_id=? , r_name=?";
+					String sql = "update Member set user_id=? wherer_name=?";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
@@ -203,7 +203,7 @@ public class MemberDAO {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 					// SQL文を準備する
-					String sql = "delete from Member where r_name = ?";
+					String sql = "delete from Member WHERE r_name =?";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
