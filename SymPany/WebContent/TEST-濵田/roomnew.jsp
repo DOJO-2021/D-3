@@ -4,10 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sympany|ルームの新規作成</title>
+<title>Sympany | ルームの新規作成</title>
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
+<link rel="stylesheet" href="/SymPany/CSS/Second.css">
 </head>
-<body>
+
+<body class="second">
 <jsp:include page="header.jsp"></jsp:include>
 <h2>ルームの新規作成</h2>
 <!-- ルーム情報を送る -->

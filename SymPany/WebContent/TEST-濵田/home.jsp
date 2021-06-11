@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sympany|ホーム</title>
+<title>Sympany | ホーム</title>
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
 </head>
 <body>
