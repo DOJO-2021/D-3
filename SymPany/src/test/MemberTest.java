@@ -20,7 +20,7 @@ public class MemberTest {
 
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
-		Member insRec = new Member("02","プログラミング初心者");
+		Member insRec = new Member("D4","プログラミング初心者");
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
 			List<Member> Member2 = dao.select(insRec);
@@ -36,7 +36,7 @@ public class MemberTest {
 
 		// update()のテスト
 		System.out.println("---------- update()のテスト ----------");
-		Member upRec = new Member("01","さわやかマナー");
+		Member upRec = new Member("D3","猫好きの会");
 		if (dao.update(upRec)) {
 			System.out.println("更新成功！");
 			List<Member> Member3 = dao.select(upRec);

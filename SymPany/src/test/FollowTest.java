@@ -13,21 +13,21 @@ public class FollowTest {
 		System.out.println("---------- select()のテスト ----------");
 		List<Follow> Follow = dao.select(new Follow(null,null));
 		for (Follow c:Follow ) {
-			System.out.println("Message_id：" + c.getUser_id());
-			System.out.println("user_id" + c.getF_user_id());
+			System.out.println("User_id：" + c.getUser_id());
+			System.out.println("F_user_id" + c.getF_user_id());
 		}
 
 
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
-		Follow insRec = new Follow("aaa","aaaa");
+		Follow insRec = new Follow("D3-21",null);
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
 			List<Follow> Follow2 = dao.select(insRec);
 			for (Follow c : Follow2) {
 
 				System.out.println("user_id：" + c.getUser_id());
-				System.out.println("message：" + c.getF_user_id());
+				System.out.println("F_user_id：" + c.getF_user_id());
 
 			}
 		}
@@ -38,14 +38,13 @@ public class FollowTest {
 
 		// update()のテスト
 		System.out.println("---------- update()のテスト ----------");
-		Follow upRec = new Follow("aaa","bbb");
+		Follow upRec = new Follow("D3-3","1");
 		if (dao.update(upRec)) {
 			System.out.println("更新成功！");
 			List<Follow> Follow3 = dao.select(upRec);
 			for (Follow c : Follow3) {
 				System.out.println("user_id：" + c.getUser_id());
-				System.out.println("user_id：" + c.getF_user_id());
-
+				System.out.println("F_user_id：" + c.getF_user_id());
 			}
 		}
 		else {
@@ -55,7 +54,7 @@ public class FollowTest {
 
 		// delete()のテスト
 		System.out.println("---------- delete()のテスト ----------");
-		if (dao.delete("aaa")) {
+		if (dao.delete("D3-21")) {
 			System.out.println("削除成功！");
 		}
 		else {

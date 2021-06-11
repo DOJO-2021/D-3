@@ -20,10 +20,10 @@ public class ChatTest {
 
 		}
 
-
+/*
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
-		Chat insRec = new Chat("02","02","ワンダフル","お願いします");
+		Chat insRec = new Chat("2","D3-21","猫好きの会","お願いします");
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
 			List<Chat> Chat2 = dao.select(insRec);
@@ -32,17 +32,16 @@ public class ChatTest {
 				System.out.println("user_id：" + c.getUser_id());
 				System.out.println("r_name：" + c.getR_name());
 				System.out.println("message：" + c.getMessage());
-
 			}
 		}
 		else {
 			System.out.println("登録失敗！");
 		}
-
+*/
 
 		// update()のテスト
 		System.out.println("---------- update()のテスト ----------");
-		Chat upRec = new Chat("01","01","猫好きの会","わお！");
+		Chat upRec = new Chat("1","D3","猫好きの会","夢の国だよ！");
 		if (dao.update(upRec)) {
 			System.out.println("更新成功！");
 			List<Chat> Chat3 = dao.select(upRec);
@@ -61,12 +60,13 @@ public class ChatTest {
 
 		// delete()のテスト
 		System.out.println("---------- delete()のテスト ----------");
-		if (dao.delete("01")) {
+		if (dao.delete("2")) {
 			System.out.println("削除成功！");
 		}
 		else {
 			System.out.println("削除失敗！");
 		}
+
 	}
 }
 
