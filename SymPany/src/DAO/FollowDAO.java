@@ -146,7 +146,7 @@ public class FollowDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 			// SQL文を準備する
-			String sql =  "update Follow set  user_id=? where f_user_id=?";
+			String sql =  "update Follow set user_id=? where f_user_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -190,7 +190,7 @@ public class FollowDAO {
 	}
 
 	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
-	public boolean delete(String name) {
+	public boolean delete(String name,String name2) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -202,11 +202,12 @@ public class FollowDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 			// SQL文を準備する
-			String sql = "delete from Follow where f_user_id = ?";
+			String sql = "delete from Follow where user_id=? and f_user_id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 			pStmt.setString(1, name);
+			pStmt.setString(2, name2);
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {

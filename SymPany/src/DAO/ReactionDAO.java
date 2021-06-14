@@ -26,7 +26,7 @@ public class ReactionDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "select * from Reaction WHERE user_id LIKE ? AND message_id LIKE ? ";
+				String sql = "select * from Reaction WHERE user_id LIKE ? AND message_id=? ";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				// SQL文を完成させる
 
@@ -36,12 +36,9 @@ public class ReactionDAO {
 				else {
 					pStmt.setString(1, "%");
 				}
-				if (param.getMessage_id() != null &&param.getMessage_id() != "") {
-					pStmt.setString(2, "%" + param.getMessage_id() + "%");
-				}
-				else {
-					pStmt.setString(2, "%");
-				}
+
+					pStmt.setInt(2, param.getMessage_id());
+
 
 
 				// SQL文を実行し、結果表を取得する
@@ -51,7 +48,7 @@ public class ReactionDAO {
 				while (rs.next()) {
 					Reaction Reaction = new Reaction(
 					rs.getString("user_id"),
-					rs.getString("message_id")
+					rs.getInt("message_id")
 					);
 					ReactionList.add(Reaction);
 				}
@@ -94,7 +91,7 @@ public class ReactionDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "insert into Reaction values (?,?)";
+				String sql = "insert into Reaction(user_id)values (?)";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -104,13 +101,6 @@ public class ReactionDAO {
 				else {
 					pStmt.setString(1, "null");
 				}
-				if (Reaction.getMessage_id() != null) {
-					pStmt.setString(2, Reaction.getMessage_id());
-				}
-				else {
-					pStmt.setString(2, "null");
-				}
-
 
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {
@@ -162,14 +152,7 @@ public class ReactionDAO {
 				else {
 					pStmt.setString(1, "null");
 				}
-				if (Reaction.getMessage_id() != null) {
-					pStmt.setString(2, Reaction.getMessage_id());
-				}
-				else {
-					pStmt.setString(2, "null");
-				}
-
-
+				pStmt.setInt(2, Reaction.getMessage_id());
 
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {
@@ -199,7 +182,7 @@ public class ReactionDAO {
 		}
 
 		// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
-		public boolean delete(String name) {
+		public boolean delete(int name) {
 			Connection conn = null;
 			boolean result = false;
 
@@ -215,7 +198,7 @@ public class ReactionDAO {
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-				pStmt.setString(1, name);
+				pStmt.setInt(1, name);
 
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {
