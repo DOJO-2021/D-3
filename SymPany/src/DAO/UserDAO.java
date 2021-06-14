@@ -247,58 +247,59 @@ public class UserDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (User.getUser_id() != null) {
-				pStmt.setString(1, User.getUser_id());
+
+			if (User.getName() != null) {
+				pStmt.setString(1, User.getName());
 			}
 			else {
 				pStmt.setString(1, "null");
 			}
-			if (User.getName() != null) {
-				pStmt.setString(2, User.getName());
+			if (User.getNickname() != null) {
+				pStmt.setString(2, User.getNickname());
 			}
 			else {
 				pStmt.setString(2, "null");
 			}
-			if (User.getNickname() != null) {
-				pStmt.setString(3, User.getNickname());
+
+			if (User.getBirthplace() != null) {
+				pStmt.setString(3, User.getBirthplace());
 			}
 			else {
 				pStmt.setString(3, "null");
 			}
 
-			if (User.getBirthplace() != null) {
-				pStmt.setString(4, User.getBirthplace());
+			if (User.getCompany() != null) {
+				pStmt.setString(4, User.getCompany());
 			}
 			else {
 				pStmt.setString(4, "null");
 			}
-
-			if (User.getCompany() != null) {
-				pStmt.setString(5, User.getCompany());
+			if (User.getBirth() != null) {
+				pStmt.setString(5, User.getBirth());
 			}
 			else {
 				pStmt.setString(5, "null");
 			}
-			if (User.getBirth() != null) {
-				pStmt.setString(6, User.getBirth());
+			if (User.getSchool() != null) {
+				pStmt.setString(6, User.getSchool());
 			}
 			else {
 				pStmt.setString(6, "null");
 			}
-			if (User.getSchool() != null) {
-				pStmt.setString(7, User.getSchool());
+			if (User.getHobby() != null) {
+				pStmt.setString(7, User.getHobby());
 			}
 			else {
 				pStmt.setString(7, "null");
 			}
-			if (User.getHobby() != null) {
-				pStmt.setString(8, User.getHobby());
+			if (User.getIntro() != null) {
+				pStmt.setString(8, User.getIntro());
 			}
 			else {
 				pStmt.setString(8, "null");
 			}
-			if (User.getIntro() != null) {
-				pStmt.setString(9, User.getIntro());
+			if (User.getUser_id() != null) {
+				pStmt.setString(9, User.getUser_id());
 			}
 			else {
 				pStmt.setString(9, "null");
