@@ -61,7 +61,7 @@ INSERT INTO IDPW VALUES('D3', 'shiro');
 
 INSERT INTO User VALUES('D3', '白クマ太郎','白クマ','北極3-21-4','株式会社温暖化防止','1998-04-22','北極北大学','魚のつかみ取り','よろしくお願いします');
 
-INSERT INTO Room VALUES(null, '猫好きな人誰でもどうぞ',1,'D3');
+INSERT INTO Room VALUES(null, '猫好きの会','猫好きな人誰でもどうぞ',1,'D3');
 
 INSERT INTO Chat VALUES(null, 'D3',1,'はじめまして！');
 
