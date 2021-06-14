@@ -10,7 +10,7 @@
 
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<iframe src="leftmenu.jsp" name="sample" width="200" height="500" align="left">
+<iframe src="LeftmenuServlet.java" name="sample" width="200" height="500" align="left">
 この部分はインラインフレームを使用しています。
 </iframe>
 <!-- ここにRoomのr_nameを入れる -->

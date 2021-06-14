@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DAO.ChatDAO;
+import DAO.RoomDAO;
 import model.Room;
 
 /**
@@ -38,22 +38,23 @@ public class RoomEditServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 
+		int r_id = Integer.parseInt(request.getParameter("r_id"));
 		String r_name = request.getParameter("r_name");
 		String r_comment = request.getParameter("r_comment");
-		String release = request.getParameter("release");
-		int pub = Integer.parseInt(request.getParameter("user_id"));
+		int release = Integer.parseInt(request.getParameter("releas"));
+		String user_id = request.getParameter("user_id");
 
 		// 更新登録処理を行う
-		ChatDAO bDao = new ChatDAO();
-		Room user = new Room(r_name_r_comment,release,user_id);
-		if (bDao.insert(user)) { // 登録成功
+		RoomDAO bDao = new RoomDAO();
+		Room user =  new Room(r_id,r_name,r_comment,release,user_id);
+		if (bDao.update(user)) { // 登録成功
 
 			// チャットサーブレットにリダイレクトする
-			response.sendRedirect("/SymPany/ChatServlet");
+			response.sendRedirect("/SymPany/RoomServlet");
 		} else {
 			// 登録失敗
-			// チャットページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/chat.jsp");
+			// ルームページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/room.jsp");
 			dispatcher.forward(request, response);
 		}
 	}
