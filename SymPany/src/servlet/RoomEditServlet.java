@@ -16,7 +16,7 @@ import model.Room;
 /**
  * Servlet implementation class RegistServlet
  */
-@WebServlet("/RoomNewServlet")
+@WebServlet("/RoomEditServlet")
 public class RoomEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
