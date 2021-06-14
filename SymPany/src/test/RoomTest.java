@@ -12,25 +12,26 @@ public class RoomTest {
 		//R_name,R_comment,Release,User_id
 
 		System.out.println("---------- select()のテスト ----------");
-		List<Room> Room = dao.select(new Room(null,0,null,1,null));
+		List<Room> Room = dao.select(new Room(0,null,null,1,null));
 		for (Room c:Room ) {
-			System.out.println("R_name：" + c.getR_name());
 			System.out.println("R_id：" + c.getR_id());
+			System.out.println("R_name：" + c.getR_name());
 			System.out.println("comment：" + c.getR_comment());
 			System.out.println("Release：" + c.getRelease());
 			System.out.println("User_id：" + c.getUser_id());
+
 		}
 
 
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
-		Room insRec = new Room("猿好きの会",2,"猿好きの人",1,"D3-22");
+		Room insRec = new Room(0,"猿好きの会","猿好きの人",1,"D3-22");
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
 			List<Room> Room2 = dao.select(insRec);
 			for (Room c : Room2) {
-				System.out.println("R_name：" + c.getR_name());
 				System.out.println("R_id：" + c.getR_id());
+				System.out.println("R_name：" + c.getR_name());
 				System.out.println("comment：" + c.getR_comment());
 				System.out.println("Release：" + c.getRelease());
 				System.out.println("User_id：" + c.getUser_id());
@@ -44,16 +45,17 @@ public class RoomTest {
 
 		// update()のテスト
 		System.out.println("---------- update()のテスト ----------");
-		Room upRec = new Room("犬好きの会",2,"犬好きな人なら誰でもどうぞ",1,"D3-21");
+		Room upRec = new Room(2,"犬好きの会","犬好きな人なら誰でもどうぞ",1,"D3");
 		if (dao.update(upRec)) {
 			System.out.println("更新成功！");
 			List<Room> Room3 = dao.select(upRec);
 			for (Room c : Room3) {
-				System.out.println("R_name：" + c.getR_name());
 				System.out.println("R_id：" + c.getR_id());
+				System.out.println("R_name：" + c.getR_name());
 				System.out.println("comment：" + c.getR_comment());
 				System.out.println("Release：" + c.getRelease());
 				System.out.println("User_id：" + c.getUser_id());
+
 
 			}
 		}

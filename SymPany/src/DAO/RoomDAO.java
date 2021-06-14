@@ -25,17 +25,18 @@ public class RoomDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "select * from ROOM WHERE r_name LIKE ? AND r_id=? AND r_comment LIKE ? AND release=? AND user_id LIKE ?";
+				String sql = "select * from ROOM WHERE  r_id=? AND r_name LIKE ? AND r_comment LIKE ? AND release=? AND user_id LIKE ?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				// SQL文を完成させる
+
+				pStmt.setInt(1,  param.getR_id() );
+
 				if (param.getR_name() != null &&param.getR_name() != "") {
-					pStmt.setString(1, "%" + param.getR_name() + "%");
+					pStmt.setString(2, "%" + param.getR_name() + "%");
 				}
 				else {
-					pStmt.setString(1, "%");
+					pStmt.setString(2, "%");
 				}
-
-					pStmt.setInt(2,  param.getR_id() );
 
 				if (param.getR_comment() != null &&param.getR_comment() != "") {
 					pStmt.setString(3, "%" + param.getR_comment() + "%");
@@ -59,8 +60,8 @@ public class RoomDAO {
 				// 結果表をコレクションにコピーする
 				while (rs.next()) {
 					Room Room = new Room(
-					rs.getString("r_name"),
 					rs.getInt("r_id"),
+					rs.getString("r_name"),
 					rs.getString("r_comment"),
 					rs.getInt("release"),
 					rs.getString("user_id")
@@ -110,14 +111,15 @@ public class RoomDAO {
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
+
+				pStmt.setInt(1,  Room.getR_id() );
+
 				if (Room.getR_name() != null) {
-					pStmt.setString(1, Room.getR_name());
+					pStmt.setString(2, Room.getR_name());
 				}
 				else {
-					pStmt.setString(1, "null");
+					pStmt.setString(2, "null");
 				}
-
-				pStmt.setInt(2,  Room.getR_id() );
 
 				if (Room.getR_comment() != null) {
 					pStmt.setString(3, Room.getR_comment());
@@ -178,14 +180,15 @@ public class RoomDAO {
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
+
+				pStmt.setInt(1,  Room.getR_id() );
+
 				if (Room.getR_name() != null) {
-					pStmt.setString(1, Room.getR_name());
+					pStmt.setString(2, Room.getR_name());
 				}
 				else {
-					pStmt.setString(1, "null");
+					pStmt.setString(2, "null");
 				}
-
-				pStmt.setInt(2,  Room.getR_id() );
 
 				if (Room.getR_comment() != null) {
 					pStmt.setString(3, Room.getR_comment());

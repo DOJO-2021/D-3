@@ -2,17 +2,17 @@ package model;
 import java.io.Serializable;
 
 public class Room implements Serializable{
-	private String r_name;
 	private int r_id;
+	private String r_name;
 	private String r_comment;
 	private int release;
 	private String user_id;
 
 	//引数があるコンストラクタ（自動生成）
-	public Room(String r_name, int r_id, String r_comment, int release, String user_id) {
+	public Room(int r_id, String r_name, String r_comment, int release, String user_id) {
 		super();
+		this. r_id=r_id;
 		this.r_name = r_name;
-		this.r_id=r_id;
 		this.r_comment = r_comment;
 		this.release = release;
 		this.user_id = user_id;
@@ -21,8 +21,8 @@ public class Room implements Serializable{
 	//引数がないコンストラクタ（コピペ＋書き換え）
 	public Room() {
 		super();
-		this.r_name = "";
 		this.r_id=0;
+		this.r_name = "";
 		this.r_comment = "";
 		this.release = 1;
 		this.user_id = "";

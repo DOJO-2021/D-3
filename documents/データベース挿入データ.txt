@@ -4,10 +4,18 @@ INSERT INTO User VALUES('D3', '白クマ太郎','白クマ','北極3-21-4','株式会社温暖化
 
 INSERT INTO Room VALUES('猫好きの会', '猫好きな人誰でもどうぞ',1,'D3');
 
-INSERT INTO Chat VALUES(null, 'D3','猫好きの会','はじめまして！');
+INSERT INTO Chat VALUES(null, 'D3',1,'はじめまして！');
+INSERT INTO Chat VALUES(null, 'D4',1,'よろしくね！');
+INSERT INTO Chat VALUES(null, 'D5',1,'最高の気分だぜ！');
 
-INSERT INTO Member VALUES('D3', '猫好きの会');
+INSERT INTO Member VALUES('D3', 1);
+INSERT INTO Member VALUES('D4', 1);
+INSERT INTO Member VALUES('D5', 1);
 
 INSERT INTO Follow VALUES('D3', 'D3-21');
+INSERT INTO Follow VALUES('D3', 'D3-1');
+INSERT INTO Follow VALUES('D4', 'D-1');
+
 
 INSERT INTO Reaction VALUES('D3',1);
+INSERT INTO Reaction VALUES('D4',2);
