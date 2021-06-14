@@ -9,6 +9,9 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<iframe src="LeftmenuServlet.java" name="sample" width="200" height="500" align="left">
+この部分はインラインフレームを使用しています。
+</iframe>
 <h2>ルームの新規作成</h2>
 <!-- ルーム情報を送る -->
 <form method="" action="">
