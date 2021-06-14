@@ -175,7 +175,7 @@ public class ChatDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "update Chat set message_id=?, user_id = ?, r_name=? ,message=?";
+				String sql = "update Chat set user_id = ?, r_name=? ,message=? where message_id=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -245,7 +245,7 @@ public class ChatDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "delete from Chat where message_id = ?";
+				String sql = "delete from Chat where message_id=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる

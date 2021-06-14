@@ -36,7 +36,7 @@ public class ReactionTest {
 
 		// update()のテスト
 		System.out.println("---------- update()のテスト ----------");
-		Reaction upRec = new Reaction("D3-2","01");
+		Reaction upRec = new Reaction("D3-2","2");
 		if (dao.update(upRec)) {
 			System.out.println("更新成功！");
 			List<Reaction> Reaction3 = dao.select(upRec);
