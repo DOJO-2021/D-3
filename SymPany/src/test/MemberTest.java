@@ -17,10 +17,10 @@ public class MemberTest {
 			System.out.println("r_name：" + c.getR_name());
 		}
 
-/*
+
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
-		Member insRec = new Member("D4","プログラミング初心者");
+		Member insRec = new Member("D3","猫好きの会");
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
 			List<Member> Member2 = dao.select(insRec);
@@ -32,7 +32,6 @@ public class MemberTest {
 		else {
 			System.out.println("登録失敗！");
 		}
-*/
 
 		// update()のテスト
 		System.out.println("---------- update()のテスト ----------");
@@ -52,7 +51,7 @@ public class MemberTest {
 
 		// delete()のテスト
 		System.out.println("---------- delete()のテスト ----------");
-		if (dao.delete("猫好きの会")) {
+		if (dao.delete("D3-2")) {
 			System.out.println("削除成功！");
 		}
 		else {
