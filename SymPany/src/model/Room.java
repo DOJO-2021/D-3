@@ -3,14 +3,16 @@ import java.io.Serializable;
 
 public class Room implements Serializable{
 	private String r_name;
+	private int r_id;
 	private String r_comment;
 	private int release;
 	private String user_id;
 
 	//引数があるコンストラクタ（自動生成）
-	public Room(String r_name, String r_comment, int release, String user_id) {
+	public Room(String r_name, int r_id, String r_comment, int release, String user_id) {
 		super();
 		this.r_name = r_name;
+		this.r_id=r_id;
 		this.r_comment = r_comment;
 		this.release = release;
 		this.user_id = user_id;
@@ -20,6 +22,7 @@ public class Room implements Serializable{
 	public Room() {
 		super();
 		this.r_name = "";
+		this.r_id=0;
 		this.r_comment = "";
 		this.release = 1;
 		this.user_id = "";
@@ -34,6 +37,14 @@ public class Room implements Serializable{
 		this.r_name = r_name;
 	}
 
+	public int getR_id() {
+		return r_id;
+	}
+
+	public void setR_id(int r_id) {
+		this.r_id = r_id;
+	}
+
 	public String getR_comment() {
 		return r_comment;
 	}
@@ -46,8 +57,8 @@ public class Room implements Serializable{
 		return release;
 	}
 
-	public void setRelease(String release) {
-		this.release = Integer.parseInt(release);
+	public void setRelease(int release) {
+		this.release = release;
 	}
 
 	public String getUser_id() {
@@ -57,7 +68,4 @@ public class Room implements Serializable{
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
 	}
-
-
 }
-

@@ -24,7 +24,7 @@ public class MemberDAO {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 					// SQL文を準備する
-					String sql = "select * from Member WHERE user_id LIKE ? AND r_name LIKE ? " ;
+					String sql = "select * from Member WHERE user_id LIKE ? AND r_id=? " ;
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 					// SQL文を完成させる
 					if (param.getUser_id() != null &&param.getUser_id() != "") {
@@ -33,12 +33,9 @@ public class MemberDAO {
 					else {
 						pStmt.setString(1, "%");
 					}
-					if (param.getR_name() != null &&param.getR_name() != "") {
-						pStmt.setString(2, "%" + param.getR_name() + "%");
-					}
-					else {
-						pStmt.setString(2, "%");
-					}
+
+						pStmt.setInt(2,  param.getR_id());
+
 					// SQL文を実行し、結果表を取得する
 					ResultSet rs = pStmt.executeQuery();
 
@@ -46,7 +43,7 @@ public class MemberDAO {
 					while (rs.next()) {
 						Member Member = new Member(
 						rs.getString("user_id"),
-						rs.getString("r_name")
+						rs.getInt("r_id")
 						);
 						MemberList.add(Member);
 					}
@@ -99,12 +96,9 @@ public class MemberDAO {
 					else {
 						pStmt.setString(1, "null");
 					}
-					if (Member.getR_name() != null) {
-						pStmt.setString(2, Member.getR_name());
-					}
-					else {
-						pStmt.setString(2, "null");
-					}
+
+						pStmt.setInt(2, Member.getR_id());
+
 					// SQL文を実行する
 					if (pStmt.executeUpdate() == 1) {
 						result = true;
@@ -145,7 +139,7 @@ public class MemberDAO {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 					// SQL文を準備する
-					String sql = "update Member set user_id=? where r_name=?";
+					String sql = "update Member set user_id=? where r_id=?";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
@@ -155,12 +149,9 @@ public class MemberDAO {
 					else {
 						pStmt.setString(1, "null");
 					}
-					if (Member.getR_name() != null) {
-						pStmt.setString(2, Member.getR_name());
-					}
-					else {
-						pStmt.setString(2, "null");
-					}
+
+						pStmt.setInt(2, Member.getR_id());
+
 
 
 					// SQL文を実行する
@@ -191,7 +182,7 @@ public class MemberDAO {
 			}
 
 			// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
-			public boolean delete(String name) {
+			public boolean delete(int name) {
 				Connection conn = null;
 				boolean result = false;
 
@@ -203,11 +194,11 @@ public class MemberDAO {
 					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 					// SQL文を準備する
-					String sql = "delete from Member where user_id=?";
+					String sql = "delete from Member where r_id=?";
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
-					pStmt.setString(1, name);
+					pStmt.setInt(1, name);
 
 					// SQL文を実行する
 					if (pStmt.executeUpdate() == 1) {

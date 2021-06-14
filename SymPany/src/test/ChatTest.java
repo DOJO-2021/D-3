@@ -11,44 +11,44 @@ public class ChatTest {
 		// select()のテスト
 
 		System.out.println("---------- select()のテスト ----------");
-		List<Chat> Chat = dao.select(new Chat(null,null,null,null));
+		List<Chat> Chat = dao.select(new Chat(null,null,0,null));
 		for (Chat c:Chat ) {
 			System.out.println("Message_id：" + c.getMessage_id());
 			System.out.println("user_id" + c.getUser_id());
-			System.out.println("r_name：" + c.getR_name());
+			System.out.println("r_name：" + c.getR_id());
 			System.out.println("message：" + c.getMessage());
 
 		}
 
-/*
+
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
-		Chat insRec = new Chat("2","D3-21","猫好きの会","お願いします");
+		Chat insRec = new Chat("2","D3-21",2,"お願いします");
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
 			List<Chat> Chat2 = dao.select(insRec);
 			for (Chat c : Chat2) {
 				System.out.println("message：" + c.getMessage_id());
 				System.out.println("user_id：" + c.getUser_id());
-				System.out.println("r_name：" + c.getR_name());
+				System.out.println("r_name：" + c.getR_id());
 				System.out.println("message：" + c.getMessage());
 			}
 		}
 		else {
 			System.out.println("登録失敗！");
 		}
-*/
+
 
 		// update()のテスト
 		System.out.println("---------- update()のテスト ----------");
-		Chat upRec = new Chat("1","D3","猫好きの会","夢の国だよ！");
+		Chat upRec = new Chat("1","D3",1,"夢の国だよ！");
 		if (dao.update(upRec)) {
 			System.out.println("更新成功！");
 			List<Chat> Chat3 = dao.select(upRec);
 			for (Chat c : Chat3) {
 				System.out.println("message_id：" + c.getMessage_id());
 				System.out.println("user_id：" + c.getUser_id());
-				System.out.println("r_name：" + c.getR_name());
+				System.out.println("r_name：" + c.getR_id());
 				System.out.println("message：" + c.getMessage());
 
 			}

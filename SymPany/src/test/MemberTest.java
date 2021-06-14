@@ -11,22 +11,22 @@ public class MemberTest {
 		// select()のテスト
 
 		System.out.println("---------- select()のテスト ----------");
-		List<Member> Member = dao.select(new Member(null,null));
+		List<Member> Member = dao.select(new Member(null,0));
 		for (Member c:Member ) {
 			System.out.println("user_id" + c.getUser_id());
-			System.out.println("r_name：" + c.getR_name());
+			System.out.println("r_name：" + c.getR_id());
 		}
 
 
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
-		Member insRec = new Member("D3","猫好きの会");
+		Member insRec = new Member("D3",2);
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
 			List<Member> Member2 = dao.select(insRec);
 			for (Member c : Member2) {
 				System.out.println("user_id：" + c.getUser_id());
-				System.out.println("r_name：" + c.getR_name());
+				System.out.println("r_name：" + c.getR_id());
 			}
 		}
 		else {
@@ -35,13 +35,13 @@ public class MemberTest {
 
 		// update()のテスト
 		System.out.println("---------- update()のテスト ----------");
-		Member upRec = new Member("D3-2","猫好きの会");
+		Member upRec = new Member("D3-2",1);
 		if (dao.update(upRec)) {
 			System.out.println("更新成功！");
 			List<Member> Member3 = dao.select(upRec);
 			for (Member c : Member3) {
 				System.out.println("user_id：" + c.getUser_id());
-				System.out.println("r_name：" + c.getR_name());
+				System.out.println("r_name：" + c.getR_id());
 			}
 		}
 		else {
@@ -51,7 +51,7 @@ public class MemberTest {
 
 		// delete()のテスト
 		System.out.println("---------- delete()のテスト ----------");
-		if (dao.delete("D3-2")) {
+		if (dao.delete(2)) {
 			System.out.println("削除成功！");
 		}
 		else {

@@ -26,7 +26,7 @@ public class ChatDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "select * from Chat WHERE message_id LIKE ? AND user_id LIKE ? AND r_name LIKE ?  AND message LIKE ?";
+				String sql = "select * from Chat WHERE message_id LIKE ? AND user_id LIKE ? AND r_id=?  AND message LIKE ?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				// SQL文を完成させる
 				if (param.getMessage_id() != null &&param.getMessage_id() != "") {
@@ -41,12 +41,10 @@ public class ChatDAO {
 				else {
 					pStmt.setString(2, "%");
 				}
-				if (param.getR_name() != null && param.getR_name() != "") {
-					pStmt.setString(3, "%" + param.getR_name() + "%");
-				}
-				else {
-					pStmt.setString(3, "%");
-				}
+
+					pStmt.setInt(3, param.getR_id());
+
+
 				if (param.getMessage() != null && param.getMessage() != "") {
 					pStmt.setString(4, "%" + param.getMessage() + "%");
 				}
@@ -61,7 +59,7 @@ public class ChatDAO {
 					Chat Chat = new Chat(
 					rs.getString("message_id"),
 					rs.getString("user_id"),
-					rs.getString("r_name"),
+					rs.getInt("r_id"),
 					rs.getString("message")
 					);
 					ChatList.add(Chat);
@@ -121,12 +119,8 @@ public class ChatDAO {
 				else {
 					pStmt.setString(2, "null");
 				}
-				if (Chat.getR_name() != null) {
-					pStmt.setString(3, Chat.getR_name());
-				}
-				else {
-					pStmt.setString(3, "null");
-				}
+
+					pStmt.setInt(3, Chat.getR_id());
 
 				if (Chat.getMessage() != null) {
 					pStmt.setString(4, Chat.getMessage());
@@ -175,7 +169,7 @@ public class ChatDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "update Chat set user_id = ?, r_name=? ,message=? where message_id=?";
+				String sql = "update Chat set user_id = ?, r_id=? ,message=? where message_id=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -191,12 +185,9 @@ public class ChatDAO {
 				else {
 					pStmt.setString(2, "null");
 				}
-				if (Chat.getR_name() != null) {
-					pStmt.setString(3, Chat.getR_name());
-				}
-				else {
-					pStmt.setString(3, "null");
-				}
+
+					pStmt.setInt(3, Chat.getR_id());
+
 				if (Chat.getMessage() != null) {
 					pStmt.setString(4, Chat.getMessage());
 				}

@@ -25,7 +25,7 @@ public class RoomDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "select * from ROOM WHERE r_name LIKE ? AND r_comment LIKE ? AND release=? AND user_id LIKE ?";
+				String sql = "select * from ROOM WHERE r_name LIKE ? AND r_id=? AND r_comment LIKE ? AND release=? AND user_id LIKE ?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				// SQL文を完成させる
 				if (param.getR_name() != null &&param.getR_name() != "") {
@@ -34,21 +34,24 @@ public class RoomDAO {
 				else {
 					pStmt.setString(1, "%");
 				}
+
+					pStmt.setInt(2,  param.getR_id() );
+
 				if (param.getR_comment() != null &&param.getR_comment() != "") {
-					pStmt.setString(2, "%" + param.getR_comment() + "%");
+					pStmt.setString(3, "%" + param.getR_comment() + "%");
 				}
 				else {
-					pStmt.setString(2, "%");
+					pStmt.setString(3, "%");
 				}
 
-					pStmt.setInt(3,  param.getRelease() );
+					pStmt.setInt(4,  param.getRelease() );
 
 
 				if (param.getUser_id() != null && param.getUser_id() != "") {
-					pStmt.setString(4, "%" + param.getUser_id() + "%");
+					pStmt.setString(5, "%" + param.getUser_id() + "%");
 				}
 				else {
-					pStmt.setString(4, "%");
+					pStmt.setString(5, "%");
 				}
 				// SQL文を実行し、結果表を取得する
 				ResultSet rs = pStmt.executeQuery();
@@ -57,6 +60,7 @@ public class RoomDAO {
 				while (rs.next()) {
 					Room Room = new Room(
 					rs.getString("r_name"),
+					rs.getInt("r_id"),
 					rs.getString("r_comment"),
 					rs.getInt("release"),
 					rs.getString("user_id")
@@ -102,7 +106,7 @@ public class RoomDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "insert into Room values ( ?, ?, ?, ? )";
+				String sql = "insert into Room values ( ?, ?, ?, ?, ? )";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -112,19 +116,22 @@ public class RoomDAO {
 				else {
 					pStmt.setString(1, "null");
 				}
+
+				pStmt.setInt(2,  Room.getR_id() );
+
 				if (Room.getR_comment() != null) {
-					pStmt.setString(2, Room.getR_comment());
+					pStmt.setString(3, Room.getR_comment());
 				}
 				else {
-					pStmt.setString(2, "null");
+					pStmt.setString(3, "null");
 				}
-				pStmt.setInt(3,  Room.getRelease() );
+				pStmt.setInt(4,  Room.getRelease() );
 
 				if (Room.getUser_id() != null) {
-					pStmt.setString(4, Room.getUser_id());
+					pStmt.setString(5, Room.getUser_id());
 				}
 				else {
-					pStmt.setString(4, "null");
+					pStmt.setString(5, "null");
 				}
 
 				// SQL文を実行する
@@ -167,7 +174,7 @@ public class RoomDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "update Room set r_comment = ?, release=?, user_id=? where r_name=?";
+				String sql = "update Room set r_name=?, r_comment = ?, release=?, user_id=? where r_id=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
@@ -177,19 +184,22 @@ public class RoomDAO {
 				else {
 					pStmt.setString(1, "null");
 				}
+
+				pStmt.setInt(2,  Room.getR_id() );
+
 				if (Room.getR_comment() != null) {
-					pStmt.setString(2, Room.getR_comment());
+					pStmt.setString(3, Room.getR_comment());
 				}
 				else {
-					pStmt.setString(2, "null");
+					pStmt.setString(3, "null");
 				}
-				pStmt.setInt(3,  Room.getRelease() );
+				pStmt.setInt(4,  Room.getRelease() );
 
 				if (Room.getUser_id() != null) {
-					pStmt.setString(4, Room.getUser_id());
+					pStmt.setString(5, Room.getUser_id());
 				}
 				else {
-					pStmt.setString(4, "null");
+					pStmt.setString(5, "null");
 				}
 
 
@@ -221,7 +231,7 @@ public class RoomDAO {
 		}
 
 		// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
-		public boolean delete(String name) {
+		public boolean delete(int name) {
 			Connection conn = null;
 			boolean result = false;
 
@@ -233,11 +243,11 @@ public class RoomDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "delete from Room where r_name = ?";
+				String sql = "delete from Room where r_id = ?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-				pStmt.setString(1, name);
+				pStmt.setInt(1, name);
 
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {

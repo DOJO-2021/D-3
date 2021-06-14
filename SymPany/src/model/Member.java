@@ -3,20 +3,20 @@ import java.io.Serializable;
 
 public class Member implements Serializable{
 	private String user_id;
-	private String r_name;
+	private int r_id;
 
 	//引数があるコンストラクタ（自動生成）
-	public Member(String user_id, String r_name) {
+	public Member(String user_id, int r_id) {
 		super();
 		this.user_id = user_id;
-		this.r_name = r_name;
+		this.r_id = r_id;
 	}
 
 	//引数がないコンストラクタ（コピペ＋書き換え）
 	public Member() {
 		super();
 		this.user_id = "";
-		this.r_name = "";
+		this.r_id = 0;
 	}
 
 	//getter,setterの自動生成
@@ -28,12 +28,12 @@ public class Member implements Serializable{
 		this.user_id = user_id;
 	}
 
-	public String getR_name() {
-		return r_name;
+	public int getR_id() {
+		return r_id;
 	}
 
-	public void setR_name(String r_name) {
-		this.r_name = r_name;
+	public void setR_id(int r_id) {
+		this.r_id = r_id;
 	}
 
 }
