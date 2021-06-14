@@ -25,12 +25,11 @@ public class RoomTest {
 
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
-		Room insRec = new Room(0,"猿好きの会","猿好きの人",1,"D3-22");
+		Room insRec = new Room("鳥好きの会","鳥好きの人",1,"D3-22");
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
 			List<Room> Room2 = dao.select(insRec);
 			for (Room c : Room2) {
-				System.out.println("R_id：" + c.getR_id());
 				System.out.println("R_name：" + c.getR_name());
 				System.out.println("comment：" + c.getR_comment());
 				System.out.println("Release：" + c.getRelease());
@@ -45,7 +44,7 @@ public class RoomTest {
 
 		// update()のテスト
 		System.out.println("---------- update()のテスト ----------");
-		Room upRec = new Room(2,"犬好きの会","犬好きな人なら誰でもどうぞ",1,"D3");
+		Room upRec = new Room("犬好きの会","犬好きな人なら誰でもどうぞ",1,"D3");
 		if (dao.update(upRec)) {
 			System.out.println("更新成功！");
 			List<Room> Room3 = dao.select(upRec);
@@ -64,9 +63,9 @@ public class RoomTest {
 		}
 
 
-		// delete()のテスト
+		//delete()のテスト
 		System.out.println("---------- delete()のテスト ----------");
-		if (dao.delete(2)) {
+		if (dao.delete(0)) {
 			System.out.println("削除成功！");
 		}
 		else {
