@@ -25,7 +25,7 @@ public class RoomSearchServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// profile画面にフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/RoomSearch.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/roomsearch.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -49,7 +49,7 @@ public class RoomSearchServlet extends HttpServlet {
 
 
 		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/RoomSearch.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/roomsearch.jsp");
 		dispatcher.forward(request, response);
 		}
 	}
