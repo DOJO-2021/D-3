@@ -8,24 +8,39 @@
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
 <link rel="stylesheet" href="/SymPany/CSS/Second.css">
 </head>
-
-<body class="second">
+<body>
 <jsp:include page="header.jsp"></jsp:include>
-<table class="bigrm">
-<tr>
- <td>
+<div class="bigrm">
+
 <h2>ルームの新規作成</h2>
 <!-- ルーム情報を送る -->
-<form method="" action="">
-ルーム名<input type="text" name="room_name" placeholder="(例)猫好きの会"><br>
-一言で説明<input type="text" name="room_comment" placeholder="(例)猫好きなら誰でもOK"><br>
+<form class="rm" method="" action="">
+<table>
+<tr>
+<td>ルーム名<br>
+<input type="text" name="room_name" placeholder="(例)猫好きの会"><br>
+</td>
+</tr>
+<tr>
+<td>一言で説明<br>
+<input type="text" name="room_comment" placeholder="(例)猫好きなら誰でもOK"><br><br>
+</td>
+</tr>
+<tr>
+<td>
 ルームの公開・非公開設定：
 <input type="radio" name="open" value="public">公開
 <input type="radio" name="open" value="private">非公開<br>
+</td>
+</tr>
+<tr>
+<td>
 <input type="submit" name="make" value="ルームを作成する">
-</form>
- </td>
+</td>
 </tr>
 </table>
+</form>
+
+</div>
 </body>
 </html>
