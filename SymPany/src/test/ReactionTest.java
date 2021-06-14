@@ -10,7 +10,7 @@ public class ReactionTest {
 
 		// select()のテスト
 		System.out.println("---------- select()のテスト ----------");
-		List<Reaction> Reaction = dao.select(new Reaction(null,null));
+		List<Reaction> Reaction = dao.select(new Reaction(null,0));
 		for (Reaction c:Reaction ) {
 			System.out.println("user_id:" + c.getUser_id());
 			System.out.println("Message_id：" + c.getMessage_id());
@@ -20,13 +20,12 @@ public class ReactionTest {
 
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
-		Reaction insRec = new Reaction("D3-21",null);
+		Reaction insRec = new Reaction("D3-21");
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
 			List<Reaction> Reaction2 = dao.select(insRec);
 			for (Reaction c : Reaction2) {
 				System.out.println("user_id：" + c.getUser_id());
-				System.out.println("message：" + c.getMessage_id());
 			}
 		}
 		else {
@@ -36,7 +35,7 @@ public class ReactionTest {
 
 		// update()のテスト
 		System.out.println("---------- update()のテスト ----------");
-		Reaction upRec = new Reaction("D3-2","2");
+		Reaction upRec = new Reaction("D3-2",2);
 		if (dao.update(upRec)) {
 			System.out.println("更新成功！");
 			List<Reaction> Reaction3 = dao.select(upRec);
@@ -52,7 +51,7 @@ public class ReactionTest {
 
 		// delete()のテスト
 		System.out.println("---------- delete()のテスト ----------");
-		if (dao.delete("2")) {
+		if (dao.delete(2)) {
 			System.out.println("削除成功！");
 		}
 		else {

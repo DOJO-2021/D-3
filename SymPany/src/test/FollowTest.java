@@ -17,10 +17,10 @@ public class FollowTest {
 			System.out.println("F_user_id" + c.getF_user_id());
 		}
 
-
+/*
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
-		Follow insRec = new Follow("D3","D3-23");
+		Follow insRec = new Follow("D4","D3-22");
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
 			List<Follow> Follow2 = dao.select(insRec);
@@ -34,11 +34,11 @@ public class FollowTest {
 		else {
 			System.out.println("登録失敗！");
 		}
-
+*/
 /*
 		// update()のテスト
 		System.out.println("---------- update()のテスト ----------");
-		Follow upRec = new Follow("D3-21","D3-20");
+		Follow upRec = new Follow("D5","D3-21");
 		if (dao.update(upRec)) {
 			System.out.println("更新成功！");
 			List<Follow> Follow3 = dao.select(upRec);
@@ -51,16 +51,15 @@ public class FollowTest {
 			System.out.println("更新失敗！");
 		}
 */
-/*
+
 		// delete()のテスト
 		System.out.println("---------- delete()のテスト ----------");
-		if (dao.delete("D3-23")) {
+		if (dao.delete("D4","D3-22")) {
 			System.out.println("削除成功！");
 		}
 		else {
 			System.out.println("削除失敗！");
 		}
-		*/
 	}
 }
 

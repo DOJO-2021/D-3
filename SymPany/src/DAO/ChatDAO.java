@@ -26,15 +26,10 @@ public class ChatDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "select * from Chat WHERE message_id LIKE ? AND user_id LIKE ? AND r_id=?  AND message LIKE ?";
+				String sql = "select * from Chat WHERE message_id=? AND user_id LIKE ? AND r_id=?  AND message LIKE ?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				// SQL文を完成させる
-				if (param.getMessage_id() != null &&param.getMessage_id() != "") {
-					pStmt.setString(1, "%" + param.getMessage_id() + "%");
-				}
-				else {
-					pStmt.setString(1, "%");
-				}
+				pStmt.setInt(1, param.getMessage_id());
 				if (param.getUser_id() != null &&param.getUser_id() != "") {
 					pStmt.setString(2, "%" + param.getUser_id() + "%");
 				}
@@ -57,7 +52,7 @@ public class ChatDAO {
 				// 結果表をコレクションにコピーする
 				while (rs.next()) {
 					Chat Chat = new Chat(
-					rs.getString("message_id"),
+					rs.getInt("message_id"),
 					rs.getString("user_id"),
 					rs.getInt("r_id"),
 					rs.getString("message")
@@ -103,30 +98,25 @@ public class ChatDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "insert into Chat values ( ?, ?, ?, ? )";
+				String sql = "insert into Chat(user_id,r_id,message) values( ?, ?, ? )";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-				if (Chat.getMessage_id() != null) {
-					pStmt.setString(1, Chat.getMessage_id());
+
+				if (Chat.getUser_id() != null) {
+					pStmt.setString(1, Chat.getUser_id());
 				}
 				else {
 					pStmt.setString(1, "null");
 				}
-				if (Chat.getUser_id() != null) {
-					pStmt.setString(2, Chat.getUser_id());
-				}
-				else {
-					pStmt.setString(2, "null");
-				}
 
-					pStmt.setInt(3, Chat.getR_id());
+					pStmt.setInt(2, Chat.getR_id());
 
 				if (Chat.getMessage() != null) {
-					pStmt.setString(4, Chat.getMessage());
+					pStmt.setString(3, Chat.getMessage());
 				}
 				else {
-					pStmt.setString(4, "null");
+					pStmt.setString(3, "null");
 				}
 
 				// SQL文を実行する
@@ -173,27 +163,22 @@ public class ChatDAO {
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-				if (Chat.getMessage_id() != null) {
-					pStmt.setString(1, Chat.getMessage_id());
+
+				if (Chat.getUser_id() != null) {
+					pStmt.setString(1, Chat.getUser_id());
 				}
 				else {
 					pStmt.setString(1, "null");
 				}
-				if (Chat.getUser_id() != null) {
-					pStmt.setString(2, Chat.getUser_id());
-				}
-				else {
-					pStmt.setString(2, "null");
-				}
 
-					pStmt.setInt(3, Chat.getR_id());
+					pStmt.setInt(2, Chat.getR_id());
 
 				if (Chat.getMessage() != null) {
-					pStmt.setString(4, Chat.getMessage());
+					pStmt.setString(3, Chat.getMessage());
 				}
 				else {
-					pStmt.setString(4, "null");
-				}
+					pStmt.setString(3, "null");
+				}pStmt.setInt(4, Chat.getMessage_id());
 
 
 				// SQL文を実行する
@@ -224,7 +209,7 @@ public class ChatDAO {
 		}
 
 		// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
-		public boolean delete(String name) {
+		public boolean delete(int name) {
 			Connection conn = null;
 			boolean result = false;
 
@@ -240,7 +225,7 @@ public class ChatDAO {
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-				pStmt.setString(1, name);
+				pStmt.setInt(1, name);
 
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {
