@@ -2,15 +2,15 @@ package model;
 import java.io.Serializable;
 
 public class Chat implements Serializable{
-	private  String message_id;
+	private  int message_id;
 	private String user_id;
 	private int r_id;
 	private String message;
 
-	public String getMessage_id() {
+	public int getMessage_id() {
 		return message_id;
 	}
-	public void setMessage_id(String message_id) {
+	public void setMessage_id(int message_id) {
 		this.message_id = message_id;
 	}
 	public String getUser_id() {
@@ -34,15 +34,22 @@ public class Chat implements Serializable{
 
 //引数のないコンストラクタ(形として作らなくちゃいけないルール)
 public Chat() {
-message_id="";
+message_id=0;
  user_id="";
 r_id=0;
 message="";
 }
 //引数のあるコンストラクタ(フォームに入力されたものを箱詰め)
-public Chat(String message_id, String user_id, int r_id, String message) {
+public Chat(int message_id, String user_id, int r_id, String message) {
 	super();
 	this.message_id = message_id;
+	this.user_id = user_id;
+	this.r_id = r_id;
+	this.message = message;
+}
+//Insertの時使う
+public Chat(String user_id, int r_id, String message) {
+	super();
 	this.user_id = user_id;
 	this.r_id = r_id;
 	this.message = message;

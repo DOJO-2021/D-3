@@ -11,7 +11,7 @@ public class ChatTest {
 		// select()のテスト
 
 		System.out.println("---------- select()のテスト ----------");
-		List<Chat> Chat = dao.select(new Chat(null,null,0,null));
+		List<Chat> Chat = dao.select(new Chat(0,null,0,null));
 		for (Chat c:Chat ) {
 			System.out.println("Message_id：" + c.getMessage_id());
 			System.out.println("user_id" + c.getUser_id());
@@ -23,12 +23,11 @@ public class ChatTest {
 
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
-		Chat insRec = new Chat("2","D3-21",2,"お願いします");
+		Chat insRec = new Chat("D3-21",2,"お願いします");
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
 			List<Chat> Chat2 = dao.select(insRec);
 			for (Chat c : Chat2) {
-				System.out.println("message：" + c.getMessage_id());
 				System.out.println("user_id：" + c.getUser_id());
 				System.out.println("r_name：" + c.getR_id());
 				System.out.println("message：" + c.getMessage());
@@ -41,7 +40,7 @@ public class ChatTest {
 
 		// update()のテスト
 		System.out.println("---------- update()のテスト ----------");
-		Chat upRec = new Chat("1","D3",1,"夢の国だよ！");
+		Chat upRec = new Chat(1,"D3",1,"夢の国だよ！");
 		if (dao.update(upRec)) {
 			System.out.println("更新成功！");
 			List<Chat> Chat3 = dao.select(upRec);
@@ -60,7 +59,7 @@ public class ChatTest {
 
 		// delete()のテスト
 		System.out.println("---------- delete()のテスト ----------");
-		if (dao.delete("2")) {
+		if (dao.delete(2)) {
 			System.out.println("削除成功！");
 		}
 		else {
