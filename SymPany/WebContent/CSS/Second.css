@@ -5,6 +5,10 @@ h2{
 }
 /* 投稿フォーム */
 /*大きい枠*/
+
+table.bigrm{
+	background-color:#f3d2c1;
+}
 form{
 	border:1.5px solid #001858;
 

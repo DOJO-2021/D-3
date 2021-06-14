@@ -23,7 +23,7 @@ body.first{
 
 
 /*ピンクの背景色付けたい*/
-div.first,form,h4,a{
+div.first,form,h4,a,table,tr,td{
 	width:500px;
 	background-color:#f3d2c1;
 	font-size:16px;

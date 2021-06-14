@@ -11,6 +11,9 @@
 
 <body class="second">
 <jsp:include page="header.jsp"></jsp:include>
+<table class="bigrm">
+<tr>
+ <td>
 <h2>ルームの新規作成</h2>
 <!-- ルーム情報を送る -->
 <form method="" action="">
@@ -21,5 +24,8 @@
 <input type="radio" name="open" value="private">非公開<br>
 <input type="submit" name="make" value="ルームを作成する">
 </form>
+ </td>
+</tr>
+</table>
 </body>
 </html>
