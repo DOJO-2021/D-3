@@ -107,33 +107,32 @@ public class RoomDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
 				// SQL文を準備する
-				String sql = "insert into Room values ( ?, ?, ?, ?, ? )";
+				String sql = "insert into Room (r_name,r_comment,release,user_id) values (?, ?, ?, ? )";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
 
-				pStmt.setInt(1,  Room.getR_id() );
 
 				if (Room.getR_name() != null) {
-					pStmt.setString(2, Room.getR_name());
+					pStmt.setString(1, Room.getR_name());
+				}
+				else {
+					pStmt.setString(1, "null");
+				}
+
+				if (Room.getR_comment() != null) {
+					pStmt.setString(2, Room.getR_comment());
 				}
 				else {
 					pStmt.setString(2, "null");
 				}
-
-				if (Room.getR_comment() != null) {
-					pStmt.setString(3, Room.getR_comment());
-				}
-				else {
-					pStmt.setString(3, "null");
-				}
-				pStmt.setInt(4,  Room.getRelease() );
+				pStmt.setInt(3,  Room.getRelease() );
 
 				if (Room.getUser_id() != null) {
-					pStmt.setString(5, Room.getUser_id());
+					pStmt.setString(4, Room.getUser_id());
 				}
 				else {
-					pStmt.setString(5, "null");
+					pStmt.setString(4, "null");
 				}
 
 				// SQL文を実行する
@@ -180,30 +179,27 @@ public class RoomDAO {
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-
-				pStmt.setInt(1,  Room.getR_id() );
-
 				if (Room.getR_name() != null) {
-					pStmt.setString(2, Room.getR_name());
+					pStmt.setString(1, Room.getR_name());
+				}
+				else {
+					pStmt.setString(1, "null");
+				}
+
+				if (Room.getR_comment() != null) {
+					pStmt.setString(2, Room.getR_comment());
 				}
 				else {
 					pStmt.setString(2, "null");
 				}
-
-				if (Room.getR_comment() != null) {
-					pStmt.setString(3, Room.getR_comment());
-				}
-				else {
-					pStmt.setString(3, "null");
-				}
-				pStmt.setInt(4,  Room.getRelease() );
+				pStmt.setInt(3,  Room.getRelease() );
 
 				if (Room.getUser_id() != null) {
-					pStmt.setString(5, Room.getUser_id());
+					pStmt.setString(4, Room.getUser_id());
 				}
 				else {
-					pStmt.setString(5, "null");
-				}
+					pStmt.setString(4, "null");
+				}pStmt.setInt(5,  Room.getR_id() );
 
 
 				// SQL文を実行する

@@ -33,9 +33,9 @@ public class MemberTest {
 			System.out.println("登録失敗！");
 		}
 
-		// update()のテスト
+		/* update()のテスト
 		System.out.println("---------- update()のテスト ----------");
-		Member upRec = new Member("D3-2",1);
+		Member upRec = new Member("D3-2",1,"D3");
 		if (dao.update(upRec)) {
 			System.out.println("更新成功！");
 			List<Member> Member3 = dao.select(upRec);
@@ -46,7 +46,7 @@ public class MemberTest {
 		}
 		else {
 			System.out.println("更新失敗！");
-		}
+		}*/
 
 
 		// delete()のテスト

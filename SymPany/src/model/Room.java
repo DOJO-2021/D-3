@@ -18,6 +18,15 @@ public class Room implements Serializable{
 		this.user_id = user_id;
 	}
 
+	//Insertの時に呼び出すコンストラクタ
+	public Room(String r_name, String r_comment, int release, String user_id) {
+		super();
+		this.r_name = r_name;
+		this.r_comment = r_comment;
+		this.release = release;
+		this.user_id = user_id;
+	}
+
 	//引数がないコンストラクタ（コピペ＋書き換え）
 	public Room() {
 		super();
