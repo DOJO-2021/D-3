@@ -27,7 +27,133 @@
   </table>
 </form>
 
+ <div id="test">
+
+ </div>
 	<div class="pink">
+	<form method="POST" action="/SymPany/UpdateDeleteServlet">
+	<table>
+	 <tr>
+	  <td>
+	    <label>名前<br>
+		 <input type="text" name="name" value="${e.name}">
+		</label>
+	  </td>
+	  <td>
+	    <label>ニックネーム<br>
+		<input type="text" name="nickname" value="${e.nikname}">
+		</label>
+	  </td>
+	 </tr>
+	 <tr>
+	  <td>
+	    <label>出身地<br>
+		<input type="text" name="birthplace" value="${e.birthplace}">
+		</label>
+	   </td>
+	   <td>
+		<label>所属企業<br>
+		<input type="text" name="company" value="${e.company}">
+		</label>
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    <label>誕生日<br>
+			<input type="text" name="birth" value="${e.birth}">
+		</label>
+	   </td>
+	   <td>
+		<label>出身大学<br>
+			<input type="text" name="school" value="${e.school}">
+		</label>
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    <label>趣味<br>
+		  <textarea rows="3″cols=”50″wrap="soft" type="text" name="hobby" value="${e.hobby}"></textarea>
+		</label>
+	  </td>
+	  <td>
+	    <label>自己紹介文<br>
+		  <textarea rows="3″cols=”50″wrap="soft" name="intro" value="${e.intro}"></textarea>
+		</label>
+	  </td>
+	</tr>
+	</table>
+	<table id="submit">
+	 <tr>
+	  <td>
+	   <input type="submit" name="submit" value="フォローする">
+	  </td>
+	 </tr>
+	</table>
+	</form>
+  </div>
+  <div class="pink">
+	<form method="POST" action="/SymPany/UpdateDeleteServlet">
+	<table>
+	 <tr>
+	  <td>
+	    <label>名前<br>
+		 <input type="text" name="name" value="${e.name}">
+		</label>
+	  </td>
+	  <td>
+	    <label>ニックネーム<br>
+		<input type="text" name="nickname" value="${e.nikname}">
+		</label>
+	  </td>
+	 </tr>
+	 <tr>
+	  <td>
+	    <label>出身地<br>
+		<input type="text" name="birthplace" value="${e.birthplace}">
+		</label>
+	   </td>
+	   <td>
+		<label>所属企業<br>
+		<input type="text" name="company" value="${e.company}">
+		</label>
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    <label>誕生日<br>
+			<input type="text" name="birth" value="${e.birth}">
+		</label>
+	   </td>
+	   <td>
+		<label>出身大学<br>
+			<input type="text" name="school" value="${e.school}">
+		</label>
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    <label>趣味<br>
+		  <textarea rows="3″cols=”50″wrap="soft" type="text" name="hobby" value="${e.hobby}"></textarea>
+		</label>
+	  </td>
+	  <td>
+	    <label>自己紹介文<br>
+		  <textarea rows="3″cols=”50″wrap="soft" name="intro" value="${e.intro}"></textarea>
+		</label>
+	  </td>
+	</tr>
+	</table>
+	<table id="submit">
+	 <tr>
+	  <td>
+	   <input type="submit" name="submit" value="フォローする">
+	  </td>
+	 </tr>
+	</table>
+	</form>
+  </div>
+
+   <div class="pink">
 	<form method="POST" action="/SymPany/UpdateDeleteServlet">
 	<table>
 	 <tr>
