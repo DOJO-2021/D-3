@@ -18,7 +18,7 @@
 <div class="menu-block">
 	<div class="menu-item">
 		<div class="menu-photo">
-			<img src="/SymPany/images/logout.png"  width="350" height="350">
+			<img src="/SymPany/images/logout.png">
 		</div>
 		<div class="menu-text">
 			<h4>マイページ</h4>
