@@ -11,6 +11,8 @@
 
 <body class="second">
 <jsp:include page="header.jsp"></jsp:include>
+	<iframe src="LeftmenuServlet" name="sample" width="200" height="500"
+		align="left">  </iframe>
 <h2>ルームの新規作成</h2>
 <!-- ルーム情報を送る -->
 <form method="" action="">
