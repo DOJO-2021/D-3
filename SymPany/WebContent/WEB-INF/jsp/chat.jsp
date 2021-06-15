@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SymPany|チャット</title>
+<title>SymPany | チャット</title>
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
 </head>
 
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<iframe src="LeftmenuServlet.java" name="sample" width="200" height="500" align="left">
+<iframe src="LeftmenuServlet.jsp" name="sample" width="200" height="500" align="left">
 この部分はインラインフレームを使用しています。
 </iframe>
 <!-- ここにRoomのr_nameを入れる -->

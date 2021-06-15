@@ -4,14 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sympany|ルームの新規作成</title>
+<title>Sympany | ルームの新規作成</title>
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
+<link rel="stylesheet" href="/SymPany/CSS/Second.css">
 </head>
-<body>
+
+<body class="second">
 <jsp:include page="header.jsp"></jsp:include>
-<iframe src="LeftmenuServlet.java" name="sample" width="200" height="500" align="left">
-この部分はインラインフレームを使用しています。
-</iframe>
 <h2>ルームの新規作成</h2>
 <!-- ルーム情報を送る -->
 <form method="" action="">
