@@ -5,13 +5,16 @@ h2{
 }
 /* 投稿フォーム */
 /*大きい枠*/
-
-table.bigrm{
+div.bigrm{
+	display:inline-block;
 	background-color:#f3d2c1;
+	height:450px;
 }
 form{
 	border:1.5px solid #001858;
-
+}
+form.rm {
+	float:center;
 }
 /*記入欄*/
 input[type="text"]{
