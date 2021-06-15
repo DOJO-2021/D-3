@@ -33,7 +33,6 @@ public class LeftmenuServlet extends HttpServlet{
 		List<Member> member = mDao.selectR(new Member(user_id,0));
 
 		// 部屋の名前の検索処理処理を行う
-		RoomDAO bDao = new RoomDAO();
 		List<Room> list = new ArrayList<Room>();
 		List<List<Room>> roomList = new ArrayList<List<Room>>();
 
