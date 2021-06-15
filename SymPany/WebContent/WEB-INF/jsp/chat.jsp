@@ -32,17 +32,17 @@
 
 		</div>
 	</div>
-	<ul>
-	<!-- 参加者をループで一覧で表示する -->
-	<!-- list を for で取得することがよい -->
-		<li>川島：インスタのアカウント作成うまくいくといいね</li>
-		<li>西郷：私自撮りしないんですよ</li>
-		<li>川島：データベースに入れたいですね</li>
-	</ul>
-	<form>
+	<c:forEach var="e" items="${cardList}" >
+	<form method="POST" action="/SymPany/UpdateDeleteServlet">
+	メッセージID<input type="text" name="MESSAGE_ID" value="${e.Message_id}"><br>
+	ユーザーID<input type="text" name="USER_ID" value="${e.user_id}"><br>
+	ルームID<input type="text" name="R_ID" value="${e.r_id}"><br>
+	メッセージ<input type="text" name="MESSAGE" value="${e.message}"><br>
+	<a href= >フォロワーに追加</a>
 	<input type ="text" name="s_message" placeholder="コメントを入力してください。">
 	<input type ="submit" name="submit" value="送信">
 	</form>
+    </c:forEach>
 
 </body>
 </html>
