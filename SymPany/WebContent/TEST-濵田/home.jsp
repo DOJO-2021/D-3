@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Sympany | ホーム</title>
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
+<link rel="stylesheet" href="/SymPany/CSS/Third.css">
 </head>
 <body>
 <!-- ヘッダー -->
@@ -16,6 +17,9 @@
 <h2>機能紹介</h2>
 <div class="menu-block">
 	<div class="menu-item">
+		<div class="menu-photo">
+			<img src="/SymPany/images/logout.png"  width="350" height="350">
+		</div>
 		<div class="menu-text">
 			<h4>マイページ</h4>
 			<p>
@@ -29,6 +33,9 @@
 	</div>
 
 	<div class="menu-item">
+	  	<div class="menu-photo">
+			<img src="/SymPany/images/logout.png">
+		</div>
 		<div class="menu-text">
 			<h4>プロフィール検索</h4>
 			<p>
@@ -42,6 +49,9 @@
 	</div>
 
 	<div class="menu-item">
+	  	<div class="menu-photo">
+			<img src="/SymPany/images/logout.png">
+		</div>
 		<div class="menu-text">
 			<h4>チャット</h4>
 			<p>
@@ -60,6 +70,9 @@
 		</div>
 	</div>
 	<div class="menu-item">
+	 	<div class="menu-photo">
+			<img src="/SymPany/images/logout.png">
+		</div>
 		<div class="menu-text">
 			<h4>ログアウト</h4>
 			<p>

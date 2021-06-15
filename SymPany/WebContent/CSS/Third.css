@@ -66,3 +66,19 @@ input[name="company"],input[name="birth"],input[name="school"]{
 	border-radius:0px;
 	font-size:14px;
 }
+
+
+/* 機能紹介ページ */
+.menu-item {
+	display: flex;
+	border-bottom: 1.5px dashed #001858;
+	padding: 20px 8px;
+}
+.menu-photo {
+	margin-right: 16px;
+	flex: 0 0 300px;
+}
+
+.menu-text{
+	flex: 0 0 500px;
+}
