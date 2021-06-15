@@ -72,7 +72,64 @@ public class MemberDAO {
 				// 結果を返す
 				return MemberList;
 			}
+			public List<Member> selectR(Member param) {
+				Connection conn = null;
+				List<Member> MemberList = new ArrayList<Member>();
 
+				try {
+					// JDMemberドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
+
+					// SQL文を準備する
+					String sql = "select * from Member WHERE user_id LIKE ? " ;
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+					// SQL文を完成させる
+					if (param.getUser_id() != null &&param.getUser_id() != "") {
+						pStmt.setString(1, "%" + param.getUser_id() + "%");
+					}
+					else {
+						pStmt.setString(1, "%");
+					}
+
+					// SQL文を実行し、結果表を取得する
+					ResultSet rs = pStmt.executeQuery();
+
+					// 結果表をコレクションにコピーする
+					while (rs.next()) {
+						Member Member = new Member(
+						rs.getString("user_id"),
+						rs.getInt("r_id")
+						);
+						MemberList.add(Member);
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					MemberList = null;
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+					MemberList = null;
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+							MemberList = null;
+						}
+					}
+				}
+
+				// 結果を返す
+				return MemberList;
+			}
 			// 引数Memberで指定されたレコードを登録し、成功したらtrueを返す
 			public boolean insert(Member Member) {
 				Connection conn = null;

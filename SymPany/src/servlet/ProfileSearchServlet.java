@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -27,22 +28,146 @@ public class ProfileSearchServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
-				String user_id = request.getParameter("ID");
-				String name = request.getParameter("NAME");
-				String nickname = request.getParameter("NICKNAME");
-				String birthplace = request.getParameter("BIRTHPLACE");
-				String company = request.getParameter("COMPANY");
-				String birth = request.getParameter("BIRTH");
-				String school = request.getParameter("SCHOOL");
-				String hobby = request.getParameter("HOBBY");
-				String intro = request.getParameter("INTRO");
 
-				// 検索処理を行う
+				String search = request.getParameter("search");
+
+
+				String user_id = "";
+				String name = "";
+				String nickname = "";
+				String birthplace ="";
+				String company ="";
+				String birth = "";
+				String school = "";
+				String hobby = "";
+				String intro = "";
+
+				List<User> sum  =new ArrayList<User>();
 				UserDAO bDao = new UserDAO();
-				List<User> cardList = bDao.select(new User(user_id, name, nickname, birthplace, company, birth,  school, hobby, intro));
 
+				// 検索処理を行う（名前）
+				List<User> list = bDao.select(new User(user_id, search, nickname, birthplace, company, birth,  school, hobby, intro));
+				for(User a:list) {
+					int j = 0;
+					//重複がないかのチェック
+					for(int i = 0;i<sum.size();i++) {
+						if(sum.get(i).getUser_id()==a.getUser_id()) {
+							j=i;
+							break;
+						}
+					}
+					if(j==sum.size()) {//重複がない場合は追加する。
+						sum.add(a);
+					}
+				}
+
+				// 検索処理を行う（ニックネーム）
+				 list = bDao.select(new User(user_id, name, search, birthplace, company, birth,  school, hobby, intro));
+				 for(User a:list) {
+						int j = 0;
+						for(int i = 0;i<sum.size();i++) {
+							if(sum.get(i).getUser_id()==a.getUser_id()) {
+								j=i;
+								break;
+							}
+						}
+						if(j==sum.size()) {
+							sum.add(a);
+						}
+					}
+
+				// 検索処理を行う（出身地）
+				 list = bDao.select(new User(user_id, name, nickname, search, company, birth,  school, hobby, intro));
+				 for(User a:list) {
+						int j = 0;
+						for(int i = 0;i<sum.size();i++) {
+							if(sum.get(i).getUser_id()==a.getUser_id()) {
+								j=i;
+								break;
+							}
+						}
+						if(j==sum.size()) {
+							sum.add(a);
+						}
+					}
+
+				// 検索処理を行う（所属企業）
+				 list = bDao.select(new User(user_id, name, nickname, birthplace, search, birth,  school, hobby, intro));
+				 for(User a:list) {
+						int j = 0;
+						for(int i = 0;i<sum.size();i++) {
+							if(sum.get(i).getUser_id()==a.getUser_id()) {
+								j=i;
+								break;
+							}
+						}
+						if(j==sum.size()) {
+							sum.add(a);
+						}
+					}
+
+				// 検索処理を行う（誕生日）
+				 list = bDao.select(new User(user_id, name, nickname, birthplace, company, search,  school, hobby, intro));
+				 for(User a:list) {
+						int j = 0;
+						for(int i = 0;i<sum.size();i++) {
+							if(sum.get(i).getUser_id()==a.getUser_id()) {
+								j=i;
+								break;
+							}
+						}
+						if(j==sum.size()) {
+							sum.add(a);
+						}
+					}
+
+				// 検索処理を行う（出身学校）
+				 list = bDao.select(new User(user_id, name, nickname, birthplace, company, birth,  search, hobby, intro));
+				 for(User a:list) {
+						int j = 0;
+						for(int i = 0;i<sum.size();i++) {
+							if(sum.get(i).getUser_id()==a.getUser_id()) {
+								j=i;
+								break;
+							}
+						}
+						if(j==sum.size()) {
+							sum.add(a);
+						}
+					}
+
+				// 検索処理を行う（趣味）
+				 list = bDao.select(new User(user_id, name, nickname, birthplace, company, birth,  school, search, intro));
+				 for(User a:list) {
+						int j = 0;
+						for(int i = 0;i<sum.size();i++) {
+							if(sum.get(i).getUser_id()==a.getUser_id()) {
+								j=i;
+								break;
+							}
+						}
+						if(j==sum.size()) {
+							sum.add(a);
+						}
+					}
+
+				// 検索処理を行う（自己紹介）
+				 list = bDao.select(new User(user_id, name, nickname, birthplace, company, birth,  school, hobby, search));
+				 for(User a:list) {
+						int j = 0;
+						for(int i = 0;i<sum.size();i++) {
+							if(sum.get(i).getUser_id()==a.getUser_id()) {
+								j=i;
+								break;
+							}
+						}
+						if(j==sum.size()) {
+							sum.add(a);
+						}
+					}
 				// 検索結果をリクエストスコープに格納する
-				request.setAttribute("cardList", cardList);
+				request.setAttribute("list", sum);
+				request.setAttribute("search", search);
 
 				// 結果ページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profilesearch.jsp");

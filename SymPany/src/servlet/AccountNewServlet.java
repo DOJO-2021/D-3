@@ -21,10 +21,11 @@ public class AccountNewServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("user_id") == null) {
+		if (session.getAttribute("id") == null) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/account.jsp");
 			dispatcher.forward(request, response);
 		} else {
+
 			response.sendRedirect("HomeServlet");
 		}
 	}
@@ -42,9 +43,10 @@ public class AccountNewServlet extends HttpServlet {
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
 			session.setAttribute("id", new IDPW(user_id, user_p));
+			session.setAttribute("user_id", user_id);
 
 			// メニューサーブレットにリダイレクトする
-			response.sendRedirect("HomeServlet");
+			response.sendRedirect("ProfileNewServlet");
 		} else {
 			// 登録失敗
 			// 結果ページにフォワードする

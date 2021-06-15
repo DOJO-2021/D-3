@@ -44,6 +44,7 @@ public class LoginServlet extends HttpServlet {
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
 			session.setAttribute("id", new IDPW(id, pw));
+			session.setAttribute("user_id", id);
 
 			// メニューサーブレットにリダイレクトする
 			response.sendRedirect("/SymPany/HomeServlet");
