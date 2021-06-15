@@ -28,28 +28,31 @@ font-weight: bold;
 width:980px;
 background-color:#fef6e4;
 }
-nav ul{
+
+ul.header{
 
 padding: 0 ;
 display:flex;
 background-color:#fef6e4;
 }
-nav ul li{
+ul.header li.header{
 list-style: none;
 display: inline-block;
 width: 100%;
 min-width: 10px;
 background-color:#fef6e4;
 }
-nav ul li a{
+
+ul.header a ,li.header a{
 text-decoration: none;
 color: #001858;
 }
-nav ul li a:hover{
+
+ul.header a:hover , li.header a:hover{
 color: #8bd3dd;
 }
 
-li + li {
+li.header + li.header {
   border-left: 1px solid #000;
 }
 
