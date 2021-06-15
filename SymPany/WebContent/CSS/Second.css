@@ -1,24 +1,13 @@
 @charset "UTF-8";
 html * {
 	box-sizing:border-box;
+	/*outline:1px solid #ff0000;*/
 }
 h2{
 	background-color:#f3d2c1;
+	margin:20px  10px;
 }
-/*後で大きさ調整に使う予定*/
-/*div.wrap {
-	text-align:right;
-}*/
-/*インラインフレーム*/
-.iframe {
-	float:left;
-	height:530px;
-	width:300px;
-	padding:0 10px;
-}
-div.lmenu {
-	background-color:#f3d2c1;
-}
+
 /*大きい枠*/
 div.bigrm{
 	display:inline-block;
@@ -34,13 +23,16 @@ form{
 form.rm {
 	float:center;
 	margin:0 40px;
-	height:350px;
+	height:400px;
+	border:none;
 }
 /*検索画面のform*/
 form.rm2 {
 	float:center;
-	margin:0 40px 0 40px;
+	margin:0 40px 0 0;
 	width:820px;
+	height:80px;
+	border:none;
 }
 /*記入欄*/
 input[type="text"]{
@@ -52,26 +44,27 @@ input[type="text"]{
 	margin:0 40px;
 }
 /*新規作成、編集画面のラベル*/
-label {
+label.label0 {
 	margin:0 40px;
 }
 /*検索画面のラベル*/
-label.label {
-	font-size:20px;
-	width:30px;
+label.label1 {
+	font-size:18px;
+	margin:0 40px;
 }
 /*検索画面のラベル(説明文)*/
 label.label2 {
+	display:inline-block;
+	margin:0 40px ;
 	font-size:16px;
 }
 /*検索画面のリスト*/
-ul {
+ul.rmul {
 	background-color:#f3d2c1;
 }
 li.rmli{
 	background-color:#f3d2c1;
 	list-style-type:none;
-	 border-left: none;
 }
 /*submitボタン*/
 div.submit {
@@ -79,10 +72,45 @@ div.submit {
 }
 /*検索結果画面のsubmitボタン*/
 div.submit2 {
-	display:inline-block;
-	margin:0 30px 0 600px;
+	float:right;
+	margin:0 40px 20px 0;
 }
 /*一言で説明の記入欄*/
 input.ex {
 	height:100px;
+}
+
+/*ここから下はleftmenu のCSSを記述しています！！*/
+
+/*インラインフレーム*/
+.iframe {
+	float:left;
+	height:530px;
+	width:300px;
+	padding:0 10px;
+}
+
+div.leftmenu-block {
+	display:inline-block;
+	background-color:#f3d2c1;
+	height:530px;
+	margin:0;
+	padding:0;
+	border:none;
+}
+h4,a.new,div.menu-text,div.menu-item {
+	background-color:#f3d2c1;
+		clear:both;
+}
+form.search {
+	border:none;
+	background-color:#f3d2c1;
+}
+input.leftmenu{
+	width:180px;
+	margin:0;
+}
+input.minsubmit {
+	padding:6px 9px;
+	text-align:right;
 }

@@ -62,7 +62,7 @@
 			<tr>
 			 <td>
 			  <label>趣味<br>
-				<input type="text" name="hobby" placeholder="（例）魚のつかみ取り">
+				<textarea rows="3″cols=”50″wrap="soft" type="text" name="hobby" placeholder="（例）魚のつかみ取り"></textarea>
 			   </label>
 			 </td>
 			</tr>
@@ -70,7 +70,7 @@
 			<tr>
 			 <td>
 			  <label>自己紹介文<br>
-			<input type="text" name="intro" placeholder="（例）一緒に北極に行きましょう">
+			<textarea rows="3″cols=”50″wrap="soft" type="text" name="intro" placeholder="（例）一緒に北極に行きましょう"></textarea>
 			  </label>
 			 </td>
 			</tr>

@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+*{
+	/*outline:1px solid #ff0000;*/
+}
+
+h1{
+	float: left;
+}
+/*ピンクの枠*/
+div.pink{
+	margin-top:18px;
+	border: 15px solid #f3d2c1;
+	width:575px;
+}
+
+/*検索バー調整*/
+td{
+	padding: 10px;
+}
+input[type="search"]{
+	width		  :350px;
+	height		  :40px;
+	font-size     :18px;
+	border        :3px solid #001858;
+}
+
+/*submitボタン*/
+table#submit{
+	position: relative;
+	top: 0px;
+	left:418px;
+	border-spacing:0,10;
+}
+
+/* 自己紹介文 */
+textarea{
+	width:250px;
+	color: #001858;
+  	padding: 0.5em;
+  	border-bottom:1.5px solid #001858;
+	font-size:14px;
+	resize:none;
+}
+
+/* その他プロフィール */
+input[name="name"],input[name="nickname"],input[name="birthplace"],
+input[name="company"],input[name="birth"],input[name="school"]{
+	width:250px;
+	color: #001858;
+  	padding: 0.5em;
+  	border-bottom:1.5px solid #001858;
+	border-right:none;
+	border-left:none;
+	border-top:none;
+	border-radius:0px;
+	font-size:14px;
+}

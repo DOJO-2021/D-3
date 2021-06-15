@@ -12,13 +12,13 @@
 <h1>新規登録</h1>
 <div class="first">
 <form class="la" method="POST"
-action="Sympany/LoginServlet">
+action="/SymPany/AccountNewServlet">
 ID<input type="text" name="ID" required autofocus><br>
 PW<input type="password" name="PW" required><br>
 <input type="submit" name="LOGIN" value="ログイン">
 </form>
 <h4>アカウントをお持ちですか？▶<a
-href="/Sympany/LoginServlet">ログイン</a></h4>
+href="/SymPany/LoginServlet">ログイン</a></h4>
 
 
 </div>>

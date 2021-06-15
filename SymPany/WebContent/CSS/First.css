@@ -118,18 +118,17 @@ form.la input[type="text"],form.la input[type="password"]{
 
 /* 新規プロフィール登録ページ */
 /* 自己紹介文 */
-input[name="intro"]{
+textarea{
 	width:350px;
-	height:150px;
 	color: #001858;
   	padding: 0.5em;
   	border-bottom:1.5px solid #001858;
 	font-size:18px;
+	resize:none;
 }
 /* その他プロフィール */
 input[name="name"],input[name="nickname"],input[name="birthplace"],
-input[name="company"],input[name="birth"],input[name="school"],
-input[name="hobby"]{
+input[name="company"],input[name="birth"],input[name="school"]{
 	width:350px;
 	color: #001858;
   	padding: 0.5em;
