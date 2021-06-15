@@ -27,7 +27,7 @@
   </table>
 </form>
 
-
+	<div class="pink">
 	<form method="POST" action="/SymPany/UpdateDeleteServlet">
 	<table>
 	 <tr>
@@ -79,7 +79,7 @@
 	  </td>
 	</tr>
 	</table>
-	<table>
+	<table id="submit">
 	 <tr>
 	  <td>
 	   <input type="submit" name="submit" value="フォローする">
@@ -87,5 +87,6 @@
 	 </tr>
 	</table>
 	</form>
+  </div>
 </body>
 </html>

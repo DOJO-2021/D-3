@@ -3,6 +3,17 @@
 *{
 	/*outline:1px solid #ff0000;*/
 }
+
+h1{
+	float: left;
+}
+/*ピンクの枠*/
+div.pink{
+	margin-top:18px;
+	border: 15px solid #f3d2c1;
+	width:575px;
+}
+
 /*検索バー調整*/
 td{
 	padding: 10px;
@@ -12,6 +23,14 @@ input[type="search"]{
 	height		  :40px;
 	font-size     :18px;
 	border        :3px solid #001858;
+}
+
+/*submitボタン*/
+table#submit{
+	position: relative;
+	top: 0px;
+	left:418px;
+	border-spacing:0,10;
 }
 
 /* 自己紹介文 */
