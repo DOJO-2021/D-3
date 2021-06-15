@@ -10,6 +10,11 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<div class="lmenu">
+<iframe class="iframe" src="leftmenu.jsp" name="sample">
+この部分はインラインフレームを使用しています。
+</iframe>
+</div>
 <div class="bigrm">
 
 <h2>ルームの新規作成</h2>
@@ -17,25 +22,27 @@
 <form class="rm" method="" action="">
 <table>
 <tr>
-<td>ルーム名<br>
+<td><label>ルーム名</label><br>
 <input type="text" name="room_name" placeholder="(例)猫好きの会"><br>
 </td>
 </tr>
 <tr>
-<td>一言で説明<br>
-<input type="text" name="room_comment" placeholder="(例)猫好きなら誰でもOK"><br><br>
+<td><label>一言で説明</label><br>
+<input class="ex" type="text" name="room_comment" placeholder="(例)猫好きなら誰でもOK"><br><br>
 </td>
 </tr>
 <tr>
 <td>
-ルームの公開・非公開設定：
+<label>ルームの公開・非公開設定：</label>
 <input type="radio" name="open" value="public">公開
 <input type="radio" name="open" value="private">非公開<br>
 </td>
 </tr>
 <tr>
 <td>
+<div class="submit">
 <input type="submit" name="make" value="ルームを作成する">
+</div>
 </td>
 </tr>
 </table>

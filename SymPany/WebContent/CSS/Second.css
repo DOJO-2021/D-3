@@ -1,26 +1,88 @@
 @charset "UTF-8";
-
+html * {
+	box-sizing:border-box;
+}
 h2{
 	background-color:#f3d2c1;
 }
-/* 投稿フォーム */
+/*後で大きさ調整に使う予定*/
+/*div.wrap {
+	text-align:right;
+}*/
+/*インラインフレーム*/
+.iframe {
+	float:left;
+	height:530px;
+	width:300px;
+	padding:0 10px;
+}
+div.lmenu {
+	background-color:#f3d2c1;
+}
 /*大きい枠*/
 div.bigrm{
 	display:inline-block;
 	background-color:#f3d2c1;
-	height:450px;
+	height:530px;
+	width:900px;
+	margin:0 0 0 80px;
 }
 form{
 	border:1.5px solid #001858;
 }
+/*新規作成画面と編集画面のform*/
 form.rm {
 	float:center;
+	margin:0 40px;
+	height:350px;
+}
+/*検索画面のform*/
+form.rm2 {
+	float:center;
+	margin:0 40px 0 40px;
+	width:820px;
 }
 /*記入欄*/
 input[type="text"]{
-	width:350px;
+	width:700px;
 	color: #001858;
   	padding: 0.5em;
   	border-bottom:1.5px solid #001858;
 	font-size:16px;
+	margin:0 40px;
+}
+/*新規作成、編集画面のラベル*/
+label {
+	margin:0 40px;
+}
+/*検索画面のラベル*/
+label.label {
+	font-size:20px;
+	width:30px;
+}
+/*検索画面のラベル(説明文)*/
+label.label2 {
+	font-size:16px;
+}
+/*検索画面のリスト*/
+ul {
+	background-color:#f3d2c1;
+}
+li.rmli{
+	background-color:#f3d2c1;
+	list-style-type:none;
+	 border-left: none;
+}
+/*submitボタン*/
+div.submit {
+	text-align:right;
+}
+/*検索結果画面のsubmitボタン*/
+div.submit2 {
+	display:inline-block;
+	margin:0 30px 0 600px;
+}
+/*一言で説明の記入欄*/
+input.ex {
+	height:100px;
 }
