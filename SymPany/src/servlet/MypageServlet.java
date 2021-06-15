@@ -70,6 +70,13 @@ public class MypageServlet extends HttpServlet {
 				else {
 					System.out.println("失敗");
 				}
+				user = new User();
+				user.setUser_id(user_id);
+				uDao = new UserDAO();
+
+				// セッションスコープにIDを格納する
+
+				request.setAttribute("profile", uDao.select(user));
 				// 結果ページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 				dispatcher.forward(request, response);

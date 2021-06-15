@@ -17,7 +17,8 @@
     <p>自分のプロフィールを登録しよう！<br>
         *は必須項目だよ</p>
 			<form method="POST" action="/SymPany/ProfileNewServlet">
-			<table class="first">
+			<input type="hidden" name ="user_id" value="<%=(String)session.getAttribute("user_id") %>>">
+ 			<table class="first">
 			<tr>
 			 <td>
 			  <label>名前*<br>

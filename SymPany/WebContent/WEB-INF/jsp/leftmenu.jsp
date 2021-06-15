@@ -7,7 +7,7 @@
 		<div class="leftmenu-text">
 			<h4>既存ルーム検索</h4>
 			<form class="search" method="POST" action="/SymPany/RoomSearchServlet"target="_parent">
-			<input type="text" name="RoomEdit" class="value"  placeholder="（例）猫"  >
+			<input type="text" name="search"   placeholder="（例）猫"  >
 			<input type="submit" name="submit" value="検索" >
 			</form>
 		</div>

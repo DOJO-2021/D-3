@@ -53,6 +53,7 @@ public class ProfileSearchServlet extends HttpServlet {
 							j=i;
 							break;
 						}
+						j=i+1;
 					}
 					if(j==sum.size()) {//重複がない場合は追加する。
 						sum.add(a);
@@ -68,6 +69,7 @@ public class ProfileSearchServlet extends HttpServlet {
 								j=i;
 								break;
 							}
+							j=i+1;
 						}
 						if(j==sum.size()) {
 							sum.add(a);
@@ -83,6 +85,7 @@ public class ProfileSearchServlet extends HttpServlet {
 								j=i;
 								break;
 							}
+							j=i+1;
 						}
 						if(j==sum.size()) {
 							sum.add(a);
@@ -98,6 +101,7 @@ public class ProfileSearchServlet extends HttpServlet {
 								j=i;
 								break;
 							}
+							j=i+1;
 						}
 						if(j==sum.size()) {
 							sum.add(a);
@@ -113,6 +117,7 @@ public class ProfileSearchServlet extends HttpServlet {
 								j=i;
 								break;
 							}
+							j=i+1;
 						}
 						if(j==sum.size()) {
 							sum.add(a);
@@ -128,6 +133,7 @@ public class ProfileSearchServlet extends HttpServlet {
 								j=i;
 								break;
 							}
+							j=i+1;
 						}
 						if(j==sum.size()) {
 							sum.add(a);
@@ -143,6 +149,7 @@ public class ProfileSearchServlet extends HttpServlet {
 								j=i;
 								break;
 							}
+							j=i+1;
 						}
 						if(j==sum.size()) {
 							sum.add(a);
@@ -158,6 +165,7 @@ public class ProfileSearchServlet extends HttpServlet {
 								j=i;
 								break;
 							}
+							j=i+1;
 						}
 						if(j==sum.size()) {
 							sum.add(a);
