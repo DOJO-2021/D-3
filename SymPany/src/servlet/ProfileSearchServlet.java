@@ -30,7 +30,7 @@ public class ProfileSearchServlet extends HttpServlet {
 				request.setCharacterEncoding("UTF-8");
 
 				String search = request.getParameter("search");
-
+				System.out.println(search);
 
 				String user_id = "";
 				String name = "";

@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<jsp:include page="header.jsp"></jsp:include>
-			<iframe src="LeftmenuServlet.java" name="sample" width="200" height="500" align="left">
+			<iframe src="LeftmenuServlet" name="sample" width="200" height="500" align="left">
 				この部分はインラインフレームを使用しています。
 			</iframe>
 		<h2>ルームの編集</h2>

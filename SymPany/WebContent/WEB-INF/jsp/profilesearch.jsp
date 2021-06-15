@@ -10,7 +10,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<form action="cgi-bin/example.cgi" method="post">
+<form action="/SymPany/ProfileSearchServlet" method="post">
   <p>検索したいキーワードを入力してください。</p>
   <input type="search" name="seach" placeholder="キーワード入力してね！">
   <input type="submit" name="submit" value="検索">

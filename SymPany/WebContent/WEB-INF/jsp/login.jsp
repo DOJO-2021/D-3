@@ -33,7 +33,7 @@
 		</table>
 	</form>
 		<h4>アカウントをお持ちでないですか？
-		▶<a href="/SymPany/LoginServlet">新規登録</a></h4>
+		▶<a href="/SymPany/AccountNewServlet">新規登録</a></h4>
 			<a href= >新規登録</a>
 
 		</div>
