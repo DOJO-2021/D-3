@@ -13,19 +13,23 @@
 <div class="first">
 <h1>ログイン</h1>
 <form class="la" method="POST" action="/SymPany/LoginServlet" >
-<table>
+<table class="first">
  <tr>
   <td>
-	ID<input type="text" name="ID" required autofocus><br>
+    <label>ID<br>
+	 <input type="text" name="ID" required autofocus><br>
+	</label>
   </td>
  </tr>
  <tr>
   <td>
-	PW<input type="password" name="PW" required ><br>
+  	<label>PW<br>
+	 <input type="password" name="PW" required ><br>
+	</label>
   </td>
  </tr>
 </table>
-<table>
+<table id="login">
  <tr>
   <td>
 	<input type="submit" name="LOGIN" value="ログイン">
@@ -34,7 +38,6 @@
 </table>
 </form>
 <h4>アカウントをお持ちでないですか？▶<a href="/SymPany/AccountServlet">新規登録</a></h4>
-
 </div>
 </body>
 </html>
