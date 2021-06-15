@@ -12,6 +12,7 @@
 <div class="logo_bear"><img src="/SymPany/images/logo30.png"></div>
 <div class="first">
 <h1>ログイン</h1>
+<div class="pink">
 <form class="la" method="POST" action="/SymPany/LoginServlet" >
 <table class="first">
  <tr>
@@ -38,6 +39,7 @@
 </table>
 </form>
 <h4>アカウントをお持ちでないですか？▶<a href="/SymPany/AccountServlet">新規登録</a></h4>
+</div>
 </div>
 </body>
 </html>

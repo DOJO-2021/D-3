@@ -7,11 +7,11 @@
 <title>SymPany | アカウント新規登録</title>
 <link rel="stylesheet" href="/SymPany/CSS/First.css">
 </head>
+<body>
 <div class="logo_bear"><img src="/SymPany/images/logo30.png"></div>
 <div class="first">
 <h1>新規登録</h1>
-<div class="first">
-
+<div class="pink">
 <form class="la" method="POST" action="/SymPany/LoginServlet">
 <table class="first">
 <tr>
@@ -32,7 +32,7 @@
 <table id="login">
 <tr>
  <td>
-<input type="submit" name="LOGIN" value="登録">
+<input type="submit" name="LOGIN" value="登　　録">
  </td>
 </tr>
 </table>
