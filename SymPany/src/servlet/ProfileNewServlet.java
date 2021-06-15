@@ -60,7 +60,7 @@ public class ProfileNewServlet extends HttpServlet {
 		} else {
 			// 登録失敗
 			// プロフィール登録ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profilenew.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
 			dispatcher.forward(request, response);
 		}
 	}

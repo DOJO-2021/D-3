@@ -35,6 +35,7 @@ public class RoomSearchServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
+		int r_id = Integer.parseInt(request.getParameter("r_id"));
 		String r_name = request.getParameter("r_name");
 		String r_comment = request.getParameter("r_comment");
 		int release = Integer.parseInt (request.getParameter("release"));
@@ -42,10 +43,10 @@ public class RoomSearchServlet extends HttpServlet {
 
 		// 検索処理を行う
 		RoomDAO bDao = new RoomDAO();
-		List<Room> cardList = bDao.select(new Room(r_name, r_comment, release, user_id));
+		List<Room> list = bDao.select(new Room(r_id,r_name, r_comment, release, user_id));
 
 		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("cardList", cardList);
+		request.setAttribute("listist", list);
 
 
 		// 結果ページにフォワードする
