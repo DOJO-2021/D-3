@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,6 +17,18 @@
 		</iframe>
 		<div class="bigrm">
 			<h2>ルームの編集</h2>
+	<c:forEach var="e" items="${list}">
+		<ul>
+			<c:if test="${e.release==1}">
+				<li><form>
+						<input type="hidden" name="r_id" value="${e.r_id}">
+						${e.r_name} ${e.r_comment}
+
+					</form></li>
+			</c:if>
+		</ul>
+	</c:forEach>
+
 				<!-- ルーム情報を送る -->
 			<form class="rm" method="" action="">
 				<table>
