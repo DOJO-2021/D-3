@@ -42,10 +42,12 @@ public class ChatServlet extends HttpServlet {
 		}
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String user_id = "222";//(String) session.getAttribute("user_id");
-		int r_id = 1;//Integer.parseInt((String)session.getAttribute("r_id"));
-
-
+		String user_id = (String) session.getAttribute("user_id");
+		int r_id = 0;
+		if(session.getAttribute("r_id")!=null){
+			r_id = Integer.parseInt((String)session.getAttribute("r_id"));
+		}
+		session.setAttribute("r_id", request.getParameter("r_id"));
 
 		User user = new User();
 		user.setUser_id(user_id);
@@ -113,15 +115,28 @@ public class ChatServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
-		String user_id = (String) session.getAttribute("user_id");
-		int r_id = Integer.parseInt((String)session.getAttribute("r_id"));
-		String submit = request.getParameter("submit");
 
+		String user_id = (String) session.getAttribute("user_id");
+
+		int r_id = 0;
+
+		if(request.getParameter("r_id")!=null) {
+			r_id = Integer.parseInt((String)request.getParameter("r_id"));
+			session.setAttribute("r_id", request.getParameter("r_id"));
+		}
+		else {
+			r_id = Integer.parseInt((String)session.getAttribute("r_id"));
+		}
+
+		String submit = " ";
+		if(request.getParameter("submit")!=null) {
+			submit = request.getParameter("submit");
+		}
 
 		ChatDAO cDao = new ChatDAO();
-
 		if(submit.equals("送信")) {
-			String message = request.getParameter("message");
+
+			String message = request.getParameter("s_message");
 
 			if(cDao.insert(new Chat(0,user_id,r_id,message))) {
 				request.setAttribute("insert", true);
@@ -141,7 +156,7 @@ public class ChatServlet extends HttpServlet {
 
 		Chat chat = new Chat();
 		chat.setR_id(r_id);
-		 cDao = new ChatDAO();
+		cDao = new ChatDAO();
 
 		Member member = new Member();
 		member.setR_id(r_id);
@@ -152,7 +167,7 @@ public class ChatServlet extends HttpServlet {
 		ReactionDAO reDao = new ReactionDAO();
 
 		List<Room> rList = rDao.select(room);
-		List<Chat> cList = cDao.select(chat);
+		List<Chat> cList = cDao.selectR(chat);
 		List<Member> mList = mDao.select(member);
 		List<Reaction> reList = reDao.select(reaction);
 
@@ -185,10 +200,8 @@ public class ChatServlet extends HttpServlet {
 		request.setAttribute("reaction",reList);
 		request.setAttribute("list", sum);
 
-
-		System.out.println("");
 		// ルームページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("ProfileSearchServlet");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/chat.jsp");
 		dispatcher.forward(request, response);
 	}
 }
