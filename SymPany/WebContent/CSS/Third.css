@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 html * {
-	outline:1px solid #ff0000;
+/*	outline:1px solid #ff0000;*/
 }
 
 /*チャット画面*/
@@ -12,22 +12,23 @@ h2.r_name{
 div.bigth {
 	background-color:#f3d2c1;
 	float:right;
-	height:530px;
+	height:520px;
 	width:950px;
-	margin:0 0 0 40px;
+	margin:25px 0 0 25px;
 }
 /*チャット画面のテキスト入力*/
-input[type="submit"].ctext {
+input.ctext{
 	height:40px;
-	width:900px;
+	width:870px;
 }
 /*テキスト入力と送信ボタン*/
 form.chat {
 	background-color:#f3d2c1;
+	border:none;
 }
 /*チャット画面のトーク画面？*/
 div.mainchat {
-	background-color:#fef6e4;
+	background-color:#f3d2c1;
 	height:400px;
 	width:770px;
 	margin:0 0 20px 0; /*チャット画面とテキスト入力の間を開ける*/
@@ -54,23 +55,43 @@ div.shdiv {
 /*トーク履歴の表示*/
 ul.talk {
 	clear:both;
+	width:750px;
+	height:400px;
 	list-style-type:none;
 	display:inline-block;
+	margin:5px 0 0 -180px;
+	padding:0;
+}
+li.mintalk {
+	margin:20px 0 0 5px;
 }
 /*参加者一覧を表示する枠組み*/
 div.content {
 	float:right;
 	height:400px;
 	width:180px;
+	margin:5px 5px;
 }
-div.wrapp1 {
+div.kingpink {
+	clear:both;
 	background-color:#f3d2c1;
-	/*display:inline-block;*/
+	height:440px;
+
+	overflow: auto;
 }
 /*ページタイトル*/
-h2{
+/*h2{
 	float:left;
 	margin:25px 40px;
+}*/
+h2.mypage {
+	background-color:#f3d2c1;
+	clear:both;
+	display:inline-block;
+}
+h2.ps {
+	clear:both;
+	float:left;
 }
 /*検索バー調整*/
 td{
@@ -82,13 +103,21 @@ input[type="search"]{
 	height		  :40px;
 	font-size     :18px;
 	border        :3px solid #001858;
-	margin        :10 10 10 10 ;
 }
 table.Third {
 	display:inline-block;
-	margin:10px 0;
+	margin:0 50px 0 450px;
 }
-
+imput.kensaku {
+	margin:0;
+	padding:0;
+}
+div.bigps {
+	background-color:#f3d2c1;
+	height:520px;
+	width:1300px;
+	margin:25px 0 0 0;
+}
 /*ピンクの枠*/
 div.pink{
 	clear:both;
@@ -96,7 +125,7 @@ div.pink{
 	border: 15px solid #f3d2c1;
 	width:575px;
 	display:inline-block;
-	margin:10px 20px;
+	margin:5px 10px;
 }
 
 
