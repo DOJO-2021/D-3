@@ -1,129 +1,135 @@
 @charset "UTF-8";
 
 /* すべてのwebページに適用される */
-/*文字色、背景色など*/
+
+/*全体の文字色、背景色など*/
 * {
 	font-family: "Tahoma";
 	color:#001858;
 	background-color:#fef6e4;
 	/*outline:1px solid #ff0000;*/
 }
+/* 幅を1300で固定 */
 body {
 	margin:0 auto 0 auto;
 	max-width:1300px;
 }
-/*ヘッダー(ロゴ)*/
+
+/*マウスが乗った時の色*/
+a:hover{
+	color: #8bd3dd;
+}
+
+
+/*ここからheader.jsp*/
+
+/* ロゴ */
 div.logo{
 	float: left;
 	margin-left:35px;
 	background-color:#fef6e4;
-
 }
 
-/* ヘッダー（メニューバー）*/
+/* ナビゲーション */
 nav{
-padding: 17px 10px 20px;
-margin:0 0 0 100px;
-text-align: center;
-font-weight: bold;
-width:980px;
-background-color:#fef6e4;
-position: relative;
-left:200px;
+	padding			: 17px 10px 20px;
+	margin			:0 0 0 100px;
+	text-align		: center;
+	font-weight		: bold;
+	width			:980px;
+	background-color:#fef6e4;
+	position		: relative;
+	left			:200px;
 }
-
 
 ul.header{
-
-padding: 0 ;
-display:flex;
-background-color:#fef6e4;
+	padding			: 0 ;
+	display			:flex;
+	background-color:#fef6e4;
 }
 ul.header li.header{
-list-style: none;
-display: inline-block;
-width: 100%;
-min-width: 10px;
-background-color:#fef6e4;
+	list-style		: none;
+	display			: inline-block;
+	width			: 100%;
+	min-width		: 10px;
+	background-color:#fef6e4;
 }
 
+/* リンクに付く下線を消す*/
 ul.header a ,li.header a{
-text-decoration: none;
-color: #001858;
+	text-decoration	: none;
 }
 
-ul.header a:hover , li.header a:hover{
-color: #8bd3dd;
-}
-
+/* 間の棒線 */
 li.header + li.header {
-  border-left: 1px solid #000;
+	border-left: 1px solid #000;
 }
 
-/* float解除 */
+
+/* headerのロゴに付けたfloatを解除 */
 h2{
 	clear:both;
 }
 
+
 /*submitボタンデザイン*/
 input[type="submit"]{
-  display       : inline-block;
-  color			: #fef6e4;
-  background-color: #001858;
-  border-radius : 5%;          /* 角丸       */
-  font-size     : 12pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  padding       : 12px 18px;   /* 余白       */
-  line-height   : 1em;         /* 1行の高さ  */
+  display      		: inline-block;
+  color				: #fef6e4;
+  background-color	: #001858;
+  border-radius		: 5%;          /* 角丸       */
+  font-size     	: 12pt;        /* 文字サイズ */
+  text-align    	: center;      /* 文字位置   */
+  padding       	: 12px 18px;   /* 余白       */
+  line-height   	: 1em;         /* 1行の高さ  */
 }
 
 
-/*ここから下はleftmenu のCSSを記述しています！！*/
+/*ここからleftmenu.jsp,follow.jsp*/
+
+/*全体の幅や高さなど*/
 div.left,div.follow_list{
-	margin-top:25px;
+	margin-top		:25px;
 	background-color:#f3d2c1;
-	float:left;
-	height:520px;
-	width:325px;
-	padding:0 10px;
+	float			:left;
+	height			:520px;
+	width			:325px;
+	padding			:0 10px;
 	background-color:#f3d2c1;
 }
 
 div.leftmenu-block {
-	display:inline-block;
+	display			:inline-block;
 	background-color:#f3d2c1;
-	height:530px;
-	margin:0;
-	padding:0;
-	border:none;
+	height			:530px;
+	margin			:0;
+	padding			:0;
+	border			:none;
 }
+
 h4,a.new{
 	background-color:#f3d2c1;
-		clear:both;
+	clear			:both;
 }
 form.search {
-	border:none;
+	border			:none;
 	background-color:#f3d2c1;
 }
 input.leftmenu{
-	width:180px;
-	margin:0;
+	width			:180px;
+	margin			:0;
 }
 input.minsubmit {
-	padding:6px 9px;
-	text-align:right;
+	padding			:6px 9px;
+	text-align		:right;
 }
 
 /*検索バー*/
 input[name="RoomEdit"]{
-	width:200px;
-	color: #001858;
-  	padding: 0.5em;
-  	border-bottom:1.5px solid #001858;
-	font-size:14px;
-	margin:0 10px;
-}
-
-a:hover{
-	color: #8bd3dd;
+	width			:200px;
+	color			: #001858;
+  	padding			: 0.5em;
+  	border-bottom	:1.5px solid #001858;
+	font-size		:14px;
+	margin			:0 10px;
 }
