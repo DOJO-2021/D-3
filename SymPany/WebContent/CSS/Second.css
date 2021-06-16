@@ -44,6 +44,7 @@ input[name="room_name"],input[name="room_comment"]{
 	font-size:16px;
 	margin:0 40px;
 }
+
 /*新規作成、編集画面のラベル*/
 label.label0 {
 	margin:0 40px;
@@ -66,14 +67,14 @@ ul.rmul {
 	background-color:#f3d2c1;
 }
 /*スクロールバーの装飾*/
-::-webkit-scrollbar {
+ul.rmul::-webkit-scrollbar {
   width: 12px;
 }
-::-webkit-scrollbar-track {
+ul.rmul::-webkit-scrollbar-track {
   background: #8bd3dd;
   border-radius: 10px;
 }
-::-webkit-scrollbar-thumb {
+ul.rmul::-webkit-scrollbar-thumb {
   background: #001858;
   border-radius: 10px;
 }

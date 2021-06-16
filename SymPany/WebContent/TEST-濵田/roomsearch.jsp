@@ -21,6 +21,7 @@
 	<!-- 検索結果をループで一覧で表示する
 		それと同時にsubmitボタンを参加としてループに加える-->
 	<!-- list を for で取得することがよい -->
+
 	<li class="rmli"><form class="rm2">
 	<!-- ここにinput type hiddenの r_nameを追加する-->
 		<label class="label1"><strong>猫好きの会</strong></label><br>
@@ -64,7 +65,8 @@
 		<label class="label2">生まれ変わったら猫がいいよね</label>
 		<div class="submit2"><input type="submit" value="参加"></div>
 	</form></li>
+	</div>
 	</ul>
-</div>
+
 </body>
 </html>

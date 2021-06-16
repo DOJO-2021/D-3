@@ -135,7 +135,7 @@ form.la input[type="text"],form.la input[type="password"]{
 
 
 /* 新規プロフィール登録ページ */
-/* 自己紹介文 */
+/* 趣味・自己紹介文 */
 textarea{
 	width:350px;
 	color: #001858;

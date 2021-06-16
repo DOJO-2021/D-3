@@ -6,46 +6,66 @@
 		<meta charset="UTF-8">
 		<title>SymPany | マイページ</title>
 		<link rel="stylesheet" href="/SymPany/CSS/common.css">
+		<link rel="stylesheet" href="/SymPany/CSS/Second.css">
 	</head>
 	<body>
 		<!-- ヘッダー -->
 			<jsp:include page="header.jsp"></jsp:include>
 		<!-- ヘッダー ここまで -->
-	<!-- iframe  src="follow.jsp" name="sample" width="200" height="500" align="left" -->
 
+		<!-- フォローリスト -->
+		<jsp:include page="follow.jsp"></jsp:include>
+	<div class="bigrm">
 	<h2>プロフィールの編集</h2>
-		<form method="POST" action="">
+		<form class="rm" method="POST" action="">
 		<table>
 		  <tr>
 		   <td>
-			名前<input type="text" name="name" required><br>
+			<label>名前<br>
+			<input type="text" name="name" required>
+			</label>
 			</td>
 			<td>
-			ニックネーム<input type="text" name="nickname" required><br>
+			<label>ニックネーム<br>
+			<input type="text" name="nickname" required>
+			</label>
 			</td>
 		  </tr>
 		  <tr>
 		   <td>
-			出身地<input type="text" name="birthplace"><br>
+		    <label>出身地<br>
+			<input type="text" name="birthplace">
+			</label>
 		   </td>
 		   <td>
-			所属企業<input type="text" name="company"><br>
+		   <label>所属企業<br>
+			<input type="text" name="company">
+			</label>
 		   </td>
 		  </tr>
 		  <tr>
 		   <td>
-			誕生日<input type="text" name="birth"><br>
+		     <label>誕生日<br>
+			<input type="text" name="birth">
+			</label>
 		   </td>
 		   <td>
-			出身大学<input type="text" name="school"><br>
+		     <label>出身大学<br>
+			<input type="text" name="school">
+			</label>
 		   </td>
 		 </tr>
 		 <tr>
 		  <td>
-			趣味<input type="text" name="hobby"> <br>
+		   <label>趣味<br>
+				<textarea rows="3″cols=”50″wrap="soft" type="text" name="hobby" ></textarea>
+			   </label>
+
 		  </td>
 		  <td>
-			自己紹介文<input type="text" name="intro"><br>
+		    <label>自己紹介文<br>
+			<textarea rows="3″cols=”50″wrap="soft" type="text" name="intro"></textarea>
+			  </label>
 		  </td>
 		</table>
 		<table>
@@ -56,5 +76,6 @@
 		 </tr>
 		</table>
 		</form>
+	  </div>
 	</body>
 </html>

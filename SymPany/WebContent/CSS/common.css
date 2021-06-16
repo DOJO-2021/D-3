@@ -76,7 +76,7 @@ input[type="submit"]{
 
 
 /*ここから下はleftmenu のCSSを記述しています！！*/
-div.left{
+div.left,div.follow_list{
 	margin-top:25px;
 	background-color:#f3d2c1;
 	float:left;
