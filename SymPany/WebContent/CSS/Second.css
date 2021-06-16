@@ -1,7 +1,7 @@
 @charset "UTF-8";
 html * {
 	box-sizing:border-box;
-	outline:1px solid #ff0000;
+	/*outline:1px solid #ff0000;*/
 }
 h2{
 	background-color:#f3d2c1;
@@ -12,9 +12,9 @@ h2{
 div.bigrm{
 	display:inline-block;
 	background-color:#f3d2c1;
-	height:650px;
+	height:520px;
 	width:950px;
-	margin:0 0 0 50px;
+	margin:25px 0 0 25px;
 }
 form{
 	border:1.5px solid #001858;
@@ -35,7 +35,7 @@ form.rm2 {
 	border:none;
 }
 /*記入欄*/
-input[type="text"]{
+input[name="room_name"],input[name="room_comment"]{
 	width:700px;
 	color: #001858;
   	padding: 0.5em;

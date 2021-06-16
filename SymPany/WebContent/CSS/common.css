@@ -76,10 +76,11 @@ input[type="submit"]{
 
 /*ここから下はleftmenu のCSSを記述しています！！*/
 div.left{
+	margin-top:25px;
 	background-color:#f3d2c1;
 	float:left;
-	height:650px;
-	width:300px;
+	height:520px;
+	width:325px;
 	padding:0 10px;
 	background-color:#f3d2c1;
 }
@@ -107,4 +108,15 @@ input.leftmenu{
 input.minsubmit {
 	padding:6px 9px;
 	text-align:right;
+}
+
+/*検索バー*/
+input[name="RoomEdit"]{
+	width:200px;
+	color: #001858;
+  	padding: 0.5em;
+  	border-bottom:1.5px solid #001858;
+	font-size:14px;
+	margin:0 10px;
+}
 }
