@@ -77,6 +77,21 @@ table.first td{
 /*ピンクの枠*/
 div.pink{
 	border: 30px solid #f3d2c1;
+	height: 300px;     /* 高さを制限(※) */
+   	overflow: auto;  /* スクロールバーを表示(※) */
+}
+
+/*スクロールバーの装飾*/
+div.pink::-webkit-scrollbar {
+  width: 12px;
+}
+div.pink::-webkit-scrollbar-track {
+  background: #fef6e4;
+  border-radius: 10px;
+}
+div.pink::-webkit-scrollbar-thumb {
+  background: #001858;
+  border-radius: 10px;
 }
 
 div.pink,form,a,h4,td,table,label,input,textarea,p{
