@@ -11,12 +11,12 @@
 
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<iframe src="leftmenu.jsp" name="sample" width="300" height="530" align="left">
-この部分はインラインフレームを使用しています。
-</iframe>
+<jsp:include page="leftmenu.jsp"></jsp:include>
 <div class="bigth">
 <!-- ここにRoomのr_nameを入れる -->
-	<h2>#猫好きの会　*</h2>
+	<h2>#猫好きの会</h2>
+	<div class="supanadiv"><img src="/SymPany/images/supana.png" class="supana">
+	<h3 class="hum">Ξ</h3></div>
 	<!-- 設定のimg 表示 一番良い方法はsubmitボタンの表示を変更するのが良い-->
 
 	<!-- ドロワーの入力 -->
