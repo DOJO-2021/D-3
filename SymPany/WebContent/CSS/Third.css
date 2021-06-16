@@ -1,7 +1,28 @@
 @charset "UTF-8";
 
 *{
-	/*outline:1px solid #ff0000;*/
+	outline:1px solid #ff0000;
+}
+/*チャット画面*/
+div.bigth {
+	background-color:#f3d2c1;
+	display:inline-block;
+	height:530px;
+	width:950px;
+	margin:0 0 0 40px;
+}
+input.ctext {
+	height:40px;
+	width:500px;
+}
+/*チャット画面のトーク画面？*/
+div.mainchat {
+	background-color:#fef6e4;
+}
+ul.talk {
+	clear:both;
+	list-style-type:none;
+	display:block;
 }
 div.wrapp1 {
 	background-color:#f3d2c1;
