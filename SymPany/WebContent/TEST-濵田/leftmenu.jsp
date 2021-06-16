@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" href="/SymPany/CSS/common.css">
 <div class="left">
 			<h4>■既存ルーム検索</h4>
 			<form class="search" method="POST" action="/Sympany/roomedit.jsp">
