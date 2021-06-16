@@ -79,6 +79,9 @@ div.pink{
 	border: 30px solid #f3d2c1;
 }
 
+div.pink,form,a,h4,td,table,label,input,textarea,p{
+	background-color: #f3d2c1;
+}
 
 /*submitボタンデザイン*/
 input[type="submit"]{

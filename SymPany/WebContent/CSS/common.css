@@ -15,6 +15,7 @@ body {
 /*ヘッダー(ロゴ)*/
 div.logo{
 	float: left;
+	margin-left:35px;
 	background-color:#fef6e4;
 
 }
