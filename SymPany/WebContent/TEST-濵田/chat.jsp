@@ -15,8 +15,8 @@
 <div class="bigth">
 <!-- ここにRoomのr_nameを入れる -->
 	<h2>#猫好きの会</h2>
-	<div class="supanadiv"><img src="/SymPany/images/supana.png" class="supana">
-	<h3 class="hum">Ξ</h3></div>
+	<div class="shdiv"><img src="/SymPany/images/supana.png" class="supana">
+	<img src="/SymPany/images/ham.png" class="ham"></div>
 	<!-- 設定のimg 表示 一番良い方法はsubmitボタンの表示を変更するのが良い-->
 
 	<!-- ドロワーの入力 -->
