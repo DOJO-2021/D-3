@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +41,7 @@
 	メッセージ<input type="text" name="MESSAGE" value="${e.message}"><br>
 	<a href= >フォロワーに追加</a>
 	<input type ="text" name="s_message" placeholder="コメントを入力してください。">
-	<input type ="submit" name="submit" value="送信">
+	<input type ="submit" name="submit"value="送信">
 	</form>
     </c:forEach>
 
