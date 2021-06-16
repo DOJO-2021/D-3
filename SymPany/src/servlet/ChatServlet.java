@@ -92,9 +92,7 @@ public class ChatServlet extends HttpServlet {
 				if(j==sum.size()) {
 					sum.add(u);
 				}
-
 			}
-
 		}
 
 		request.setAttribute("room",rList);

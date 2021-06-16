@@ -22,13 +22,16 @@ div.logo{
 
 /* ヘッダー（メニューバー）*/
 nav{
-padding: 17px 10px 20px 180px;
+padding: 17px 10px 20px;
+margin:0 0 0 100px;
 text-align: center;
 font-weight: bold;
-float:right;
 width:980px;
 background-color:#fef6e4;
+position: relative;
+left:200px;
 }
+
 
 ul.header{
 

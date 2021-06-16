@@ -10,8 +10,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import DAO.FollowDAO;
 import DAO.UserDAO;
+import model.Follow;
 import model.User;
 
 @WebServlet("/ProfileSearchServlet")
@@ -28,6 +31,7 @@ public class ProfileSearchServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
+				HttpSession session = request.getSession();
 
 				String search = request.getParameter("search");
 				String user_id = "";
@@ -171,9 +175,12 @@ public class ProfileSearchServlet extends HttpServlet {
 							sum.add(a);
 						}
 					}
+				 FollowDAO fDao = new FollowDAO();
+				 List<Follow> follow= fDao.select(new Follow((String)session.getAttribute("user_id"),""));
 				// 検索結果をリクエストスコープに格納する
 				request.setAttribute("list", sum);
 				request.setAttribute("search", search);
+				request.setAttribute("follow", follow);
 
 				// 結果ページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profilesearch.jsp");

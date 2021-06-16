@@ -13,21 +13,21 @@
 <!-- ヘッダー -->
 <jsp:include page="header.jsp"></jsp:include>
 <!-- ヘッダー ここまで -->
-<div class="wrapp1">
-<h2>プロフィール検索</h2>
+<div class="bigps">
+<h2 class="ps">プロフィール検索</h2>
 <form action="cgi-bin/example.cgi" method="post">
   <table class="Third">
   <tr>
    <td>
-  <input type="search" name="seach" placeholder="出身地や趣味などを入力してみよう">
+  <input class="kensaku" type="search" name="seach" placeholder="出身地や趣味などを入力してみよう">
    </td>
    <td>
-  <input type="submit" name="submit" value="検索">
+  <input class="kensaku" type="submit" name="submit" value="検索">
    </td>
   </tr>
   </table>
 </form>
-
+<div class="kingpink">
 	<div class="pink">
 	<form class="test" method="POST" action="/SymPany/UpdateDeleteServlet">
 	<table>
@@ -212,6 +212,7 @@
 	</table>
 	</form>
   </div>
+ </div>
  </div>
 </body>
 </html>
