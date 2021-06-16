@@ -16,7 +16,7 @@
 <h2>ルームの新規作成</h2>
 <!-- ルーム情報を送る -->
 <form class="rm" method="" action="">
-	<table>
+	<table class="room_ps">
 		<tr>
 		<td>
 			<label class="label0">ルーム名</label><br>

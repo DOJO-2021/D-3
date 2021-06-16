@@ -5,7 +5,8 @@ html * {
 }
 h2{
 	background-color:#f3d2c1;
-	margin:20px  10px;
+	margin:20px  40px;
+	font-size: 160%;
 }
 
 /*大きい枠*/
@@ -98,4 +99,11 @@ div.submit2 {
 /*一言で説明の記入欄*/
 input.ex {
 	height:100px;
+}
+
+/*ルーム編集*/
+table.room_ps{
+	position: relative;
+	top: 50px;
+	left:50px;
 }

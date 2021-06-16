@@ -119,4 +119,7 @@ input[name="RoomEdit"]{
 	font-size:14px;
 	margin:0 10px;
 }
+
+a:hover{
+	color: #8bd3dd;
 }
