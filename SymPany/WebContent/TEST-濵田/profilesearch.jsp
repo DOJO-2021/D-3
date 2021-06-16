@@ -13,7 +13,8 @@
 <!-- ヘッダー -->
 <jsp:include page="header.jsp"></jsp:include>
 <!-- ヘッダー ここまで -->
-<h1>プロフィール検索</h1>
+<div class="wrapp1">
+<h2>プロフィール検索</h2>
 <form action="cgi-bin/example.cgi" method="post">
   <table class="Third">
   <tr>
@@ -27,11 +28,8 @@
   </table>
 </form>
 
- <div id="test">
-
- </div>
 	<div class="pink">
-	<form method="POST" action="/SymPany/UpdateDeleteServlet">
+	<form class="test" method="POST" action="/SymPany/UpdateDeleteServlet">
 	<table>
 	 <tr>
 	  <td>
@@ -214,5 +212,6 @@
 	</table>
 	</form>
   </div>
+ </div>
 </body>
 </html>

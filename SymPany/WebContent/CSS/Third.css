@@ -1,21 +1,21 @@
 @charset "UTF-8";
 
 *{
-	outline:1px solid #ff0000;
+	/*outline:1px solid #ff0000;*/
 }
-
-div#test{
-	width:20px;
-	height:400px;
-	border        :3px solid #001858;
+div.wrapp1 {
+	background-color:#f3d2c1;
+	/*display:inline-block;*/
 }
 /*ページタイトル*/
-/*h1{
-	float: left;
-}*/
+h2{
+	float:left;
+	margin:25px 40px;
+}
 /*検索バー調整*/
 td{
 	padding: 10px;
+
 }
 input[type="search"]{
 	width		  :350px;
@@ -24,14 +24,19 @@ input[type="search"]{
 	border        :3px solid #001858;
 	margin        :10 10 10 10 ;
 }
-
+table.Third {
+	display:inline-block;
+	margin:10px 0;
+}
 
 /*ピンクの枠*/
 div.pink{
+	clear:both;
 	margin-top:18px;
 	border: 15px solid #f3d2c1;
 	width:575px;
-	display:flex;
+	display:inline-block;
+	margin:10px 20px;
 }
 
 
@@ -65,20 +70,4 @@ input[name="company"],input[name="birth"],input[name="school"]{
 	border-top:none;
 	border-radius:0px;
 	font-size:14px;
-}
-
-
-/* 機能紹介ページ */
-.menu-item {
-	display: flex;
-	border-bottom: 1.5px dashed #001858;
-	padding: 20px 8px;
-}
-.menu-photo {
-	margin-right: 16px;
-	flex: 0 0 300px;
-}
-
-.menu-text{
-	flex: 0 0 500px;
 }

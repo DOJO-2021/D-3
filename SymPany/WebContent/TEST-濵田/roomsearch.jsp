@@ -12,7 +12,7 @@
 
 <jsp:include page="header.jsp"></jsp:include>
 
-<iframe class="iframe" src="leftmenu.jsp" name="sample">
+<iframe class="iframe" src="leftmenu.jsp" name="sample"  frameborder="0">
 この部分はインラインフレームを使用しています。
 </iframe>
 <div class="bigrm">

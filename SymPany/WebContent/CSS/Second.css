@@ -98,7 +98,7 @@ div.leftmenu-block {
 	padding:0;
 	border:none;
 }
-h4,a.new,div.menu-text,div.menu-item {
+h4,a.new{
 	background-color:#f3d2c1;
 		clear:both;
 }
