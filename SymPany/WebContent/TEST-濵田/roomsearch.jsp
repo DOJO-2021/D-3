@@ -42,6 +42,30 @@
 		<label class="label2">生まれ変わったら猫がいいよね</label>
 		<div class="submit2"><input type="submit" value="参加"></div>
 	</form></li>
+
+	<li class="rmli"><form class="rm2">
+		<label class="label1"><strong>猫になりたい</strong></label><br>
+		<label class="label2">生まれ変わったら猫がいいよね</label>
+		<div class="submit2"><input type="submit" value="参加"></div>
+	</form></li>
+
+	<li class="rmli"><form class="rm2">
+		<label class="label1"><strong>猫になりたい</strong></label><br>
+		<label class="label2">生まれ変わったら猫がいいよね</label>
+		<div class="submit2"><input type="submit" value="参加"></div>
+	</form></li>
+
+	<li class="rmli"><form class="rm2">
+		<label class="label1"><strong>猫になりたい</strong></label><br>
+		<label class="label2">生まれ変わったら猫がいいよね</label>
+		<div class="submit2"><input type="submit" value="参加"></div>
+	</form></li>
+
+	<li class="rmli"><form class="rm2">
+		<label class="label1"><strong>猫になりたい</strong></label><br>
+		<label class="label2">生まれ変わったら猫がいいよね</label>
+		<div class="submit2"><input type="submit" value="参加"></div>
+	</form></li>
 	</ul>
 </div>
 </body>

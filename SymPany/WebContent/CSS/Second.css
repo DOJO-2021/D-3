@@ -1,7 +1,7 @@
 @charset "UTF-8";
 html * {
 	box-sizing:border-box;
-	/*outline:1px solid #ff0000;*/
+	outline:1px solid #ff0000;
 }
 h2{
 	background-color:#f3d2c1;
@@ -60,8 +60,24 @@ label.label2 {
 }
 /*検索画面のリスト*/
 ul.rmul {
+	height: 400px;     /* 高さを制限(※) */
+   	overflow: auto;  /* スクロールバーを表示(※) */
 	background-color:#f3d2c1;
 }
+/*スクロールバーの装飾*/
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #8bd3dd;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #001858;
+  border-radius: 10px;
+}
+
+
 li.rmli{
 	background-color:#f3d2c1;
 	list-style-type:none;
