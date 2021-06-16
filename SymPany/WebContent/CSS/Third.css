@@ -1,9 +1,14 @@
 @charset "UTF-8";
 
-*{
+html * {
 	outline:1px solid #ff0000;
 }
+
 /*チャット画面*/
+h2.r_name{
+	float:left;
+	margin:10px 20px;
+}
 div.bigth {
 	background-color:#f3d2c1;
 	float:right;
@@ -12,15 +17,26 @@ div.bigth {
 	margin:0 0 0 40px;
 }
 /*チャット画面のテキスト入力*/
-input.ctext {
+input[type="submit"].ctext {
 	height:40px;
-	width:860px;
+	width:900px;
+}
+/*テキスト入力と送信ボタン*/
+form.chat {
+	background-color:#f3d2c1;
 }
 /*チャット画面のトーク画面？*/
 div.mainchat {
 	background-color:#fef6e4;
+	height:400px;
+	width:770px;
+	margin:0 0 20px 0; /*チャット画面とテキスト入力の間を開ける*/
 }
-/*スパナの設定マークを囲むdiv*/
+/*スパナとハンバーガーボタンを囲むdiv*/
+div.shdiv {
+	margin:0 0 0 840px; /**/
+	background-color:#f3d2c1;
+}
 /*スパナの設定マーク*/
 .supana {
 	display:inline-block;
@@ -35,11 +51,17 @@ div.mainchat {
 	height:50px;
 	background-color:#f3d2c1;
 }
+/*トーク履歴の表示*/
 ul.talk {
 	clear:both;
-	height:360px;
 	list-style-type:none;
-	display:block;
+	display:inline-block;
+}
+/*参加者一覧を表示する枠組み*/
+div.content {
+	float:right;
+	height:400px;
+	width:180px;
 }
 div.wrapp1 {
 	background-color:#f3d2c1;
