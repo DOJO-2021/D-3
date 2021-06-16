@@ -12,9 +12,7 @@
 
 <jsp:include page="header.jsp"></jsp:include>
 
-<iframe class="iframe" src="leftmenu.jsp" name="sample"  frameborder="0">
-この部分はインラインフレームを使用しています。
-</iframe>
+<jsp:include page="leftmenu.jsp"></jsp:include>
 <div class="bigrm">
 <!-- ここに検索に使用した文字を入れる -->
 	<h2>検索結果　猫</h2>

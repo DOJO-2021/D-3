@@ -10,9 +10,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<iframe class="iframe" src="leftmenu.jsp" name="sample">
-この部分はインラインフレームを使用しています。
-</iframe>
+<jsp:include page="leftmenu.jsp"></jsp:include>
 <div class="bigrm">
 
 <h2>ルームの新規作成</h2>

@@ -24,7 +24,7 @@ nav{
 padding: 17px 10px 20px 180px;
 text-align: center;
 font-weight: bold;
-/*float:right; */
+float:right;
 width:980px;
 background-color:#fef6e4;
 }
@@ -71,4 +71,40 @@ input[type="submit"]{
   text-align    : center;      /* 文字位置   */
   padding       : 12px 18px;   /* 余白       */
   line-height   : 1em;         /* 1行の高さ  */
+}
+
+
+/*ここから下はleftmenu のCSSを記述しています！！*/
+div.left{
+	background-color:#f3d2c1;
+	float:left;
+	height:650px;
+	width:300px;
+	padding:0 10px;
+	background-color:#f3d2c1;
+}
+
+div.leftmenu-block {
+	display:inline-block;
+	background-color:#f3d2c1;
+	height:530px;
+	margin:0;
+	padding:0;
+	border:none;
+}
+h4,a.new{
+	background-color:#f3d2c1;
+		clear:both;
+}
+form.search {
+	border:none;
+	background-color:#f3d2c1;
+}
+input.leftmenu{
+	width:180px;
+	margin:0;
+}
+input.minsubmit {
+	padding:6px 9px;
+	text-align:right;
 }

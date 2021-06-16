@@ -12,9 +12,9 @@ h2{
 div.bigrm{
 	display:inline-block;
 	background-color:#f3d2c1;
-	height:530px;
-	width:900px;
-	margin:0 0 0 80px;
+	height:650px;
+	width:950px;
+	margin:0 0 0 50px;
 }
 form{
 	border:1.5px solid #001858;
@@ -84,7 +84,11 @@ li.rmli{
 }
 /*submitボタン*/
 div.submit {
+	width:450px;
 	text-align:right;
+	position: relative;
+	top: 20px;
+	left:290px;
 }
 /*検索結果画面のsubmitボタン*/
 div.submit2 {
@@ -94,39 +98,4 @@ div.submit2 {
 /*一言で説明の記入欄*/
 input.ex {
 	height:100px;
-}
-
-/*ここから下はleftmenu のCSSを記述しています！！*/
-
-/*インラインフレーム*/
-.iframe {
-	float:left;
-	height:530px;
-	width:300px;
-	padding:0 10px;
-}
-
-div.leftmenu-block {
-	display:inline-block;
-	background-color:#f3d2c1;
-	height:530px;
-	margin:0;
-	padding:0;
-	border:none;
-}
-h4,a.new{
-	background-color:#f3d2c1;
-		clear:both;
-}
-form.search {
-	border:none;
-	background-color:#f3d2c1;
-}
-input.leftmenu{
-	width:180px;
-	margin:0;
-}
-input.minsubmit {
-	padding:6px 9px;
-	text-align:right;
 }
