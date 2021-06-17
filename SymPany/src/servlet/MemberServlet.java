@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DAO.FollowDAO;
-import model.Follow;
-@WebServlet("/FollowerServlet")
-public class FollowerServlet extends HttpServlet {
+import DAO.MemberDAO;
+import model.Member;
+@WebServlet("/MemberServlet")
+public class MemberServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -33,22 +33,26 @@ public class FollowerServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		HttpSession session = request.getSession();
-		String req = request.getParameter("submit");
-		String user_id = (String) session.getAttribute("user_id");
-		String fuser_id = request.getParameter("user_id");
 
-		FollowDAO fDao = new FollowDAO();
-		if (req.equals("フォローに追加")) {
-			Follow follow = new Follow(user_id, fuser_id);
-			if (fDao.insert(follow)) {
+
+		String req = request.getParameter("submit");
+		String user_id = request.getParameter("user_id");
+		int r_id = Integer.parseInt(request.getParameter("r_id"));
+
+		// ルームに参加メンバーを追加する
+		MemberDAO mDao = new MemberDAO();
+		if (req.equals("ルームに追加")) {
+			Member follow = new Member(user_id, r_id);
+			if (mDao.insert(follow)) {
 				request.setAttribute("insert",true);
 			}
 			else {
 				request.setAttribute("insert",false);
 			}
-		}else if (req.equals("フォローを解除")) {
-			if (fDao.delete(user_id, fuser_id)) {
+		}
+		//ルームからメンバーを削除する
+		else if (req.equals("ルームから削除")) {
+			if (mDao.delete (r_id)) {
 				request.setAttribute("delete",true);
 			}
 			else {
@@ -56,9 +60,8 @@ public class FollowerServlet extends HttpServlet {
 			}
 		}
 
-
 		// ルームページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("ProfileSearchServlet");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("ChatServlet");
 		dispatcher.forward(request, response);
 	}
 

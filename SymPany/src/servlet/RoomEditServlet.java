@@ -47,7 +47,7 @@ public class RoomEditServlet extends HttpServlet {
 		int r_id = Integer.parseInt(request.getParameter("r_id"));
 		String r_name = request.getParameter("r_name");
 		String r_comment = request.getParameter("r_comment");
-		int release = Integer.parseInt(request.getParameter("releas"));
+		int release = Integer.parseInt(request.getParameter("release"));
 		String user_id = request.getParameter("user_id");
 
 		// 更新登録処理を行う
