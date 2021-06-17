@@ -22,7 +22,23 @@
 				<li><form>
 						<input type="hidden" name="r_id" value="${e.r_id}">
 						${e.r_name} ${e.r_comment}
+						<script>
+						 if(})
+						</script>
+						<%int counter = 0; %>
+						<c:forEach var="f" items="${member}">
+							<c:if test="${e.r_id == f.r_id}">
+								<% counter ++;%>
+							</c:if>
 
+						</c:forEach>
+							<%if(counter==0){ %>
+								<input type ="button" name ="button" value="参加">
+							<%}
+							else{
+							%>
+							<input type ="button" name ="button" value="脱退">
+							<%} %>
 					</form></li>
 			</c:if>
 		</ul>
