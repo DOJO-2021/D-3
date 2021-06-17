@@ -26,7 +26,13 @@ public class RoomEditServlet extends HttpServlet {
 		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/SymPany/LoginServlet");
 			return;
+
 		}
+
+		// ルームのログイン状態を保持する
+					request.setCharacterEncoding("UTF-8");
+					int r_id = (int)session.getAttribute("r_id");
+
 
 		// ルーム編集画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/roomedit.jsp");
@@ -41,7 +47,7 @@ public class RoomEditServlet extends HttpServlet {
 		int r_id = Integer.parseInt(request.getParameter("r_id"));
 		String r_name = request.getParameter("r_name");
 		String r_comment = request.getParameter("r_comment");
-		int release = Integer.parseInt(request.getParameter("releas"));
+		int release = Integer.parseInt(request.getParameter("release"));
 		String user_id = request.getParameter("user_id");
 
 		// 更新登録処理を行う
