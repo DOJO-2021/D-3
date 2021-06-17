@@ -9,6 +9,9 @@
 	background-color:#fef6e4;
 	/*outline:1px solid #ff0000;*/
 }
+html * {
+	box-sizing:border-box;
+}
 /* 幅を1300で固定 */
 body {
 	margin:0 auto 0 auto;
