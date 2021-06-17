@@ -157,15 +157,19 @@ div.pink{
 	border: 15px solid #f3d2c1;
 	width:575px;
 	display:inline-block;
-	margin:5px 10px;
+	margin:10px 10px;
 }
-
-
+table.formtable {
+	margin:0 0 0 10px;
+}
+table.formtable td {
+	padding:5px 0 0 10px;
+}
 /*submitボタン*/
 table#submit{
 	position: relative;
 	top: 0px;
-	left:418px;
+	left:395px;
 	border-spacing:0,10;
 }
 

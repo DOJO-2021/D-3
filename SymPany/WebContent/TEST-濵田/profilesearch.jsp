@@ -30,8 +30,8 @@
 <div class="kingpink">
 
 	<div class="pink">
-	<form class="test" method="POST" action="/SymPany/UpdateDeleteServlet">
-	<table>
+	<form method="POST" action="/SymPany/UpdateDeleteServlet">
+	<table class="formtable">
 	 <tr>
 	  <td>
 	    <label>名前<br>
@@ -92,7 +92,7 @@
   </div>
   <div class="pink">
 	<form method="POST" action="/SymPany/UpdateDeleteServlet">
-	<table>
+	<table class="formtable">
 	 <tr>
 	  <td>
 	    <label>名前<br>
@@ -154,7 +154,7 @@
 
    <div class="pink">
 	<form method="POST" action="/SymPany/UpdateDeleteServlet">
-	<table>
+	<table class="formtable">
 	 <tr>
 	  <td>
 	    <label>名前<br>
