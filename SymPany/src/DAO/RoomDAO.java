@@ -135,7 +135,7 @@ public class RoomDAO {
 				}
 				// SQL文を実行し、結果表を取得する
 				ResultSet rs = pStmt.executeQuery();
-
+				System.out.println(pStmt);
 				// 結果表をコレクションにコピーする
 				while (rs.next()) {
 					Room Room = new Room(
@@ -214,6 +214,7 @@ public class RoomDAO {
 					pStmt.setString(4, "null");
 				}
 
+
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {
 					result = true;
@@ -240,7 +241,84 @@ public class RoomDAO {
 			// 結果を返す
 			return result;
 		}
+		public List<Room> selectID(Room param) {
+			Connection conn = null;
+			List<Room> RoomList = new ArrayList<Room>();
 
+			try {
+				// JDRoomドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
+
+				// SQL文を準備する
+				String sql = "select * from ROOM WHERE  r_id=? AND r_name LIKE ? AND r_comment LIKE ?  AND user_id LIKE ?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+				// SQL文を完成させる
+
+				pStmt.setInt(1,  param.getR_id() );
+
+				if (param.getR_name() != null &&param.getR_name() != "") {
+					pStmt.setString(2, "%" + param.getR_name() + "%");
+				}
+				else {
+					pStmt.setString(2, "%");
+				}
+
+				if (param.getR_comment() != null &&param.getR_comment() != "") {
+					pStmt.setString(3, "%" + param.getR_comment() + "%");
+				}
+				else {
+					pStmt.setString(3, "%");
+				}
+
+				if (param.getUser_id() != null && param.getUser_id() != "") {
+					pStmt.setString(4, "%" + param.getUser_id() + "%");
+				}
+				else {
+					pStmt.setString(4, "%");
+				}
+				// SQL文を実行し、結果表を取得する
+
+				ResultSet rs = pStmt.executeQuery();
+
+				// 結果表をコレクションにコピーする
+				while (rs.next()) {
+					Room Room = new Room(
+					rs.getInt("r_id"),
+					rs.getString("r_name"),
+					rs.getString("r_comment"),
+					rs.getInt("release"),
+					rs.getString("user_id")
+					);
+					RoomList.add(Room);
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+				RoomList = null;
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				RoomList = null;
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						RoomList = null;
+					}
+				}
+			}
+
+			// 結果を返す
+			return RoomList;
+		}
 		// 引数Roomで指定されたレコードを更新し、成功したらtrueを返す
 		public boolean update(Room Room) {
 			Connection conn = null;

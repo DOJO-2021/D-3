@@ -69,7 +69,7 @@ public class ChatServlet extends HttpServlet {
 		reaction.setUser_id(user_id);
 		ReactionDAO reDao = new ReactionDAO();
 
-		List<Room> rList = rDao.select(room);
+		List<Room> rList = rDao.selectID(room);
 		List<Chat> cList = cDao.select(chat);
 		List<Member> mList = mDao.select(member);
 		List<Reaction> reList = reDao.select(reaction);
@@ -103,8 +103,6 @@ public class ChatServlet extends HttpServlet {
 		request.setAttribute("reaction",reList);
 		request.setAttribute("list", sum);
 
-
-		System.out.println("");
 		// ホーム画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/chat.jsp");
 		dispatcher.forward(request, response);
@@ -134,16 +132,36 @@ public class ChatServlet extends HttpServlet {
 		}
 
 		ChatDAO cDao = new ChatDAO();
+		ReactionDAO reDao = new ReactionDAO();
 		if(submit.equals("送信")) {
 
 			String message = request.getParameter("s_message");
 
 			if(cDao.insert(new Chat(0,user_id,r_id,message))) {
-				request.setAttribute("insert", true);
+				request.setAttribute("message", true);
 			}
 			else {
-				request.setAttribute("insert",false);
+				request.setAttribute("message",false);
 			}
+		}
+		else if(submit.equals("リアクション")){
+
+			if(reDao.insert(new Reaction(user_id,Integer.parseInt(request.getParameter("message_id"))))) {
+				request.setAttribute("reins", true);
+			}
+			else {
+				request.setAttribute("reins",false);
+			}
+
+		}
+		else if(submit.equals("解除")){
+			if(reDao.delete(new Reaction(user_id,Integer.parseInt(request.getParameter("message_id"))))) {
+				request.setAttribute("delete", true);
+			}
+			else {
+				request.setAttribute("delete",false);
+			}
+
 		}
 
 		User user = new User();
@@ -164,12 +182,12 @@ public class ChatServlet extends HttpServlet {
 
 		Reaction reaction = new Reaction();
 		reaction.setUser_id(user_id);
-		ReactionDAO reDao = new ReactionDAO();
+		 reDao = new ReactionDAO();
 
-		List<Room> rList = rDao.select(room);
+		List<Room> rList = rDao.selectID(room);
 		List<Chat> cList = cDao.selectR(chat);
 		List<Member> mList = mDao.select(member);
-		List<Reaction> reList = reDao.select(reaction);
+		List<Reaction> reList = reDao.selectR(reaction);
 
 		List<User> uList = new ArrayList<User>();
 		List<User> sum = new ArrayList<User>();

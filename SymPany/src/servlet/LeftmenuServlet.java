@@ -33,20 +33,19 @@ public class LeftmenuServlet extends HttpServlet{
 		List<Member> member = mDao.selectR(new Member(user_id,0));
 
 		// 部屋の名前の検索処理を行う
-		List<Room> list = new ArrayList<Room>();
 		List<List<Room>> roomList = new ArrayList<List<Room>>();
 
-		//フォローしている人のプロフィールの検索
+		//参加しているルームの検索
 		for(int i=0;member.size()>i;i++) {
 			Room room =new Room();
 			room.setR_id(member.get(i).getR_id());
 			RoomDAO Dao = new RoomDAO();
-			roomList.add(Dao.select(room));
+			roomList.add(Dao.selectID(room));
 		}
 
 		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("list", list);
 		request.setAttribute("roomList", roomList);
+
 		// ホーム画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/leftmenu.jsp");
 		dispatcher.forward(request, response);

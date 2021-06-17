@@ -33,17 +33,17 @@ public class MemberServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-
+		HttpSession session = request.getSession();
 
 		String req = request.getParameter("submit");
-		String user_id = request.getParameter("user_id");
+		String user_id = (String)session.getAttribute("user_id");
 		int r_id = Integer.parseInt(request.getParameter("r_id"));
-
+		System.out.println(user_id);
 		// ルームに参加メンバーを追加する
 		MemberDAO mDao = new MemberDAO();
-		if (req.equals("ルームに追加")) {
-			Member follow = new Member(user_id, r_id);
-			if (mDao.insert(follow)) {
+		if (req.equals("参加")) {
+			Member member = new Member(user_id, r_id);
+			if (mDao.insert(member)) {
 				request.setAttribute("insert",true);
 			}
 			else {
@@ -51,14 +51,16 @@ public class MemberServlet extends HttpServlet {
 			}
 		}
 		//ルームからメンバーを削除する
-		else if (req.equals("ルームから削除")) {
+		else if (req.equals("脱退")) {
 			if (mDao.delete (r_id)) {
 				request.setAttribute("delete",true);
+				session.setAttribute("r_id", 0);
 			}
 			else {
 				request.setAttribute("delete",false);
 			}
 		}
+
 
 		// ルームページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ChatServlet");
