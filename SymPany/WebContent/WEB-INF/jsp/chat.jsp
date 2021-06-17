@@ -45,7 +45,7 @@
 	<!-- list を for で取得することがよい -->
 	<c:forEach var="e" items="${chat}" >
 			<form method="POST" action="/SymPany/UpdateDeleteServlet">
-				<li>${e.user_id}${e.message}</li>
+				<li class="mintalk">${e.user_id}${e.message}</li>
 			</form>
    	 </c:forEach>
 	</ul>
