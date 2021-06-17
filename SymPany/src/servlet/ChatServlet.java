@@ -96,12 +96,29 @@ public class ChatServlet extends HttpServlet {
 				}
 			}
 		}
+		//所属している部屋の検索処理を行う
+
+		List<Member> rmember = mDao.selectR(new Member(user_id,0));
+
+		// 部屋の名前の検索処理を行う
+		List<List<Room>> roomList = new ArrayList<List<Room>>();
+
+		//参加しているルームの検索
+		for(int i=0;rmember.size()>i;i++) {
+			room =new Room();
+			room.setR_id(rmember.get(i).getR_id());
+			RoomDAO Dao = new RoomDAO();
+			roomList.add(Dao.selectID(room));
+		}
+
+		// 検索結果をリクエストスコープに格納する
 
 		request.setAttribute("room",rList);
 		request.setAttribute("chat", cList);
 		request.setAttribute("member", mList);
 		request.setAttribute("reaction",reList);
 		request.setAttribute("list", sum);
+		request.setAttribute("roomList", roomList);
 
 		// ホーム画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/chat.jsp");
