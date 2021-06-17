@@ -45,6 +45,50 @@ input[name="room_name"],input[name="room_comment"]{
 	margin:0 40px;
 }
 
+/* mypageのプロフィール編集*/
+/*記入欄の装飾*/
+input.mypage1{
+	width:300px;
+	color: #001858;
+  	padding: 0.5em;
+  	border-bottom:1.5px solid #001858;
+	font-size:16px;
+	border-right:none;
+	border-left:none;
+	border-top:none;
+	margin-right:30px;
+}
+
+textarea.mypage1{
+	width:300px;
+	color: #001858;
+  	padding: 0.5em;
+  	border-bottom:1.5px solid #001858;
+	font-size:18px;
+	resize:none;
+}
+/*記入欄全体の位置調整*/
+table.mypage1{
+	position:relative;
+	top:10px;
+	left:120px;
+}
+
+/*テーブルの間隔*/
+table.mypage1 td{
+	padding: 5px;
+}
+/*文字の大きさ*/
+label.mypage1{
+	font-size:14px;
+}
+/*更新ボタンの位置調整*/
+input.mypage2{
+	position:relative;
+	top:10px;
+	left:660px;
+}
+
 /*新規作成、編集画面のラベル*/
 label.label0 {
 	margin:0 40px;

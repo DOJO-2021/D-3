@@ -133,3 +133,44 @@ input[name="RoomEdit"]{
 	font-size		:14px;
 	margin			:0 10px;
 }
+
+/*followのプロフィール表示部分*/
+input.f_listname{
+	width:200px;
+	border:none;
+	font-size:16px;
+}
+input.f_list,textarea.f_list{
+	width:200px;
+	font-size:12px;
+	border:none;
+	resize:none;
+}
+
+label.f_list{
+	font-size:12px;
+}
+
+div.f_list{
+	width:300px;
+	height:430px;
+	overflow:auto;
+}
+
+/*スクロールバーの装飾*/
+div.f_list::-webkit-scrollbar {
+  width: 12px;
+}
+div.f_list::-webkit-scrollbar-track {
+  background: #fef6e4;
+  border-radius: 10px;
+}
+div.f_list::-webkit-scrollbar-thumb {
+  background: #001858;
+  border-radius: 10px;
+}
+
+h2.f_list{
+	position:relative;
+	left:-30px;
+}
