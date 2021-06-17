@@ -23,7 +23,9 @@
 	 			</tr>
 	 			<tr>
 	  				<td>
-						PW<input type="password" name="PW" required ><br>
+						<label>	PW<br>
+							<input type="password" name="PW" required ><br>
+	  					</label>
 	  				</td>
 	 			</tr>
 			</table>
