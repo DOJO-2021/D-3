@@ -15,9 +15,27 @@
 
 <!-- 画像を後で付ける -->
 <div class="HOME">
-<h2 class="home">機能紹介</h2>
+<div class="setumei">
+<h2>SymPanyってな～に？</h2>
+<p>
+<span>研修生用コミュニケーションツールSymPany</span>へようこそ！<br>
+「Sympany」は２つのことばを合わせて作り出した造語です。<br>
+<span>思いやり</span>、<span>共感</span>という意味を持つ<span>「Sympacy」</span>と、<br>
+いろいろな<span>異なった要素</span>がまじり合って、ある効果を生み出しているという意味をもつ<span>「Sympyony」</span><br>
+<br>
+会社もバックグラウンドも違うひととも<span>交流</span>ができる。<br>
+仕事のことだけでなく、<span>趣味や好きなもの</span>、お互いが共感できるプライベートな話ができる。<br>
+<br>
+SymPanyはそんな<span>コミュにケーションのきっかけ</span>になることを願って生まれました。<br>
+<br>
+</p>
+</div>
 
+<div class="man">
+<img src="/SymPany/images/man.png" class="man">
+</div>
 <div class="link">
+<h3>下のリンクから各機能の説明に飛べるよ</h3>
 <a href="#mypage">マイページ</a><br>
 <a href="#profile">プロフィール検索</a><br>
 <a  href="#chat">チャット</a><br>
@@ -25,6 +43,7 @@
 </div>
 </div>
 <div class="menu-block">
+<h2>機能説明</h2>
 	<div class="menu-item">
 		<div class="menu-photo">
 			<img src="/SymPany/images/friends.png" class="home">

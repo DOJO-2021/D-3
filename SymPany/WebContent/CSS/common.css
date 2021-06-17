@@ -7,7 +7,7 @@
 	font-family: "Tahoma";
 	color:#001858;
 	background-color:#fef6e4;
-	/*outline:1px solid #ff0000;*/
+
 }
 html * {
 	box-sizing:border-box;
@@ -22,6 +22,11 @@ body {
 a:hover{
 	color: #8bd3dd;
 }
+/* リンクに付く下線を消す*/
+a{
+	text-decoration	: none;
+}
+
 
 
 /*ここからheader.jsp*/
@@ -58,15 +63,11 @@ ul.header li.header{
 	background-color:#fef6e4;
 }
 
-/* リンクに付く下線を消す*/
-ul.header a ,li.header a{
-	text-decoration	: none;
-}
-
 /* 間の棒線 */
 li.header + li.header {
 	border-left: 1px solid #000;
 }
+
 
 
 /* headerのロゴに付けたfloatを解除 */
@@ -172,7 +173,7 @@ div.f_list::-webkit-scrollbar-thumb {
   background: #001858;
   border-radius: 10px;
 }
-
+/*「フォローリスト」っていう文字*/
 h2.f_list{
 	position:relative;
 	left:-30px;
@@ -180,6 +181,77 @@ h2.f_list{
 
 
 /*home.jsp*/
+
+div.HOME{
+	width:1000px;
+	height:650px;
+	margin:0 auto 0 auto;
+	border-bottom: 5px double #272343;
+
+}
+
+/*Sympanyの説明のところ*/
+h2.home{
+	text-align:center;
+}
+
+div.setumei p,h2{
+	text-align:center;
+
+}
+
+div.setumei span{
+	background-color:#f3d2c1;
+}
+img.man{
+	display:inline-block;
+	width:25%;
+	height:auto;
+	position: relative;
+	top: 0;
+	left:250px;
+}
+
+/* 「」こういう枠*/
+div.setumei p{
+    position: relative;
+    padding:0.25em 1em;
+}
+div.setumei p:before,div.setumei p:after{
+    content:'';
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    display: inline-block;
+}
+div.setumei p:before{
+    border-left: solid 1px #272343;
+    border-top: solid 1px #272343;
+    top:0;
+    left: 0;
+}
+div.setumei p:after{
+    border-right: solid 1px #272343;
+    border-bottom: solid 1px #272343;
+    bottom:0;
+    right: 0;
+}
+
+/*各機能説明に飛ぶのリンク*/
+div.link{
+	position: relative;
+	top: -210px;
+	left:500px;
+	width:400px;
+}
+
+div.link a{
+	position: relative;
+	left:30px;
+}
+
+
+/*各機能の説明*/
 .menu-item {
 	display: flex;
 	width:1000px;
@@ -197,29 +269,15 @@ h2.f_list{
 	flex: 0 0 500px;
 }
 
+/*各機能説明の横の画像*/
 img.home{
 	width:60%;
 	height:auto;
 	position: relative;
 	left:80px;
-
 }
 
-h2.home{
-	margin-left:40px;
-	width:180px;
-}
 
-/*ホームのリンク*/
-div.link{
-	position: relative;
-	top: -5px;
-	left:80px;
-	width:180px;
-}
-div.link a{
-	font-size:18px;
-}
 
 /*トップへ戻るボタン*/
 #page-top {
@@ -247,3 +305,5 @@ div.link a{
     transform: rotate(35deg);
     transform-origin: left top;
 }
+
+
