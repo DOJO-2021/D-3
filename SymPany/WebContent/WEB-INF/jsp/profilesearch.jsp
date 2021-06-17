@@ -1,220 +1,82 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-	<head>
-	<meta charset="UTF-8">
-	<title>SymPany|プロフィール検索</title>
-	<link rel="stylesheet" href="/SymPany/CSS/common.css">
-	<link rel="stylesheet" href="/SymPany/CSS/Third.css">
-	</head>
-	<body>
-		<!-- ヘッダー -->
-		<jsp:include page="header.jsp"></jsp:include>
-		<!-- ヘッダー ここまで -->
-		<div class="wrapp1">
+<head>
+<meta charset="UTF-8">
+<title>SymPany|プロフィール検索</title>
+<link rel="stylesheet" href="/SymPany/CSS/common.css">
+<link rel="stylesheet" href="/SymPany/CSS/Third.css">
+</head>
+<body>
+	<!-- ヘッダー -->
+	<jsp:include page="header.jsp"></jsp:include>
+	<!-- ヘッダー ここまで -->
+	<div class="wrapp1">
 		<h2 class="ps">プロフィール検索</h2>
-		<form action="cgi-bin/example.cgi" method="post">
+		<form action="ProfileSearchServlet" method="post">
 			<table class="Third">
 				<tr>
-					<td>
-						<input class="kensaku" type="search" name="seach" placeholder="出身地や趣味などを入力してみよう">
-					</td>
-					<td>
-						<input class="kensaku" type="submit" name="submit" value="検索">
-					</td>
+					<td><input class="kensaku" type="search" name="seach"
+						placeholder="出身地や趣味などを入力してみよう"></td>
+					<td><input class="kensaku" type="submit" name="submit"
+						value="検索"></td>
 				</tr>
 			</table>
 		</form>
 		<div class="kingpink">
-		<div class="pink">
-		<form class="test" method="POST" action="/SymPany/UpdateDeleteServlet">
-			<table>
-				<tr>
-					<td>
-						<label>名前<br>
-							<input type="text" name="name" value="${e.name}">
-						</label>
-					</td>
-					<td>
-						<label>ニックネーム<br>
-							<input type="text" name="nickname" value="${e.nikname}">
-						</label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>出身地<br>
-							<input type="text" name="birthplace" value="${e.birthplace}">
-						</label>
-					</td>
-					<td>
-						<label>所属企業<br>
-							<input type="text" name="company" value="${e.company}">
-						</label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>誕生日<br>
-							<input type="text" name="birth" value="${e.birth}">
-						</label>
-					</td>
-					<td>
-						<label>出身大学<br>
-							<input type="text" name="school" value="${e.school}">
-						</label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>趣味<br>
-							<textarea rows="3″cols=”50″wrap="soft" type="text" name="hobby" value="${e.hobby}"></textarea>
-						</label>
-					</td>
-					<td>
-						<label>自己紹介文<br>
-							<textarea rows="3″cols=”50″wrap="soft" name="intro" value="${e.intro}"></textarea>
-						</label>
-					</td>
-				</tr>
-			</table>
-			<table id="submit">
-				<tr>
-					<td>
-						<input type="submit" name="submit" value="フォローする">
-					</td>
-				</tr>
-			</table>
-		</form>
+
+			<div class="pink">
+				<form method="POST" action="/SymPany/FollowServlet">
+					<c:forEach var="e" items="${list}">
+						<input type="hidden" name="user_id" value="${e.user_id}">
+						<table>
+							<tr>
+								<td><label>名前<br> <input type="text"
+										name="name" value="${e.name}">
+								</label></td>
+								<td><label>ニックネーム<br> <input type="text"
+										name="nickname" value="${e.nickname}">
+								</label></td>
+							</tr>
+							<tr>
+								<td><label>出身地<br> <input type="text"
+										name="birthplace" value="${e.birthplace}">
+								</label></td>
+								<td><label>所属企業<br> <input type="text"
+										name="company" value="${e.company}">
+								</label></td>
+							</tr>
+							<tr>
+								<td><label>誕生日<br> <input type="text"
+										name="birth" value="${e.birth}">
+								</label></td>
+								<td><label>出身大学<br> <input type="text"
+										name="school" value="${e.school}">
+								</label></td>
+							</tr>
+							<tr>
+								<td><label>趣味<br> <textarea
+											rows="3″cols=”50″wrap=" soft" type="text" name="hobby"
+											value="${e.hobby}"></textarea>
+								</label></td>
+								<td><label>自己紹介文<br> <textarea
+											rows="3″cols=”50″wrap=" soft" name="intro" value="${e.intro}"></textarea>
+								</label></td>
+							</tr>
+						</table>
+						<table id="submit">
+							<tr>
+								<td><input type="submit" name="submit" value="フォローする">
+								</td>
+							</tr>
+						</table>
+					</c:forEach>
+				</form>
+			</div>
+
+		</div>
 	</div>
-	<div class="pink">
-		<form method="POST" action="/SymPany/UpdateDeleteServlet">
-			<c:forEach var="e" items="${list}" >
-				<input type="hidden" name = "user_id" value="${e.user_id}">
-					<table>
-						<tr>
-							<td>
-								<label>名前<br>
-									<input type="text" name="name" value="${e.name}">
-								</label>
-							</td>
-							<td>
-								<label>ニックネーム<br>
-									<input type="text" name="nickname" value="${e.nikname}">
-								</label>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<label>出身地<br>
-									<input type="text" name="birthplace" value="${e.birthplace}">
-								</label>
-							</td>
-							<td>
-								<label>所属企業<br>
-									<input type="text" name="company" value="${e.company}">
-								</label>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<label>誕生日<br>
-									<input type="text" name="birth" value="${e.birth}">
-								</label>
-							</td>
-							<td>
-								<label>出身大学<br>
-									<input type="text" name="school" value="${e.school}">
-								</label>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<label>趣味<br>
-									<textarea rows="3″cols=”50″wrap="soft" type="text" name="hobby" value="${e.hobby}"></textarea>
-								</label>
-							</td>
-							<td>
-								<label>自己紹介文<br>
-									<textarea rows="3″cols=”50″wrap="soft" name="intro" value="${e.intro}"></textarea>
-								</label>
-							</td>
-						</tr>
-					</table>
-					<table id="submit">
-						<tr>
-							<td>
-								<input type="submit" name="submit" value="フォローする">
-							</td>
-						</tr>
-					</table>
-				</c:forEach>
-			</form>
-		</div>
-		<div class="pink">
-			<form method="POST" action="/SymPany/UpdateDeleteServlet">
-				<table>
-					<tr>
-						<td>
-							<label>名前<br>
-								<input type="text" name="name" value="${e.name}">
-							</label>
-						</td>
-						<td>
-							<label>ニックネーム<br>
-								<input type="text" name="nickname" value="${e.nickname}">
-							</label>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>出身地<br>
-								<input type="text" name="birthplace" value="${e.birthplace}">
-							</label>
-						</td>
-						<td>
-							<label>所属企業<br>
-								<input type="text" name="company" value="${e.company}">
-							</label>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>誕生日<br>
-								<input type="text" name="birth" value="${e.birth}">
-							</label>
-						</td>
-						<td>
-							<label>出身大学<br>
-								<input type="text" name="school" value="${e.school}">
-							</label>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label>趣味<br>
-								<textarea rows="3″cols=”50″wrap="soft" type="text" name="hobby" value="${e.hobby}"></textarea>
-							</label>
-						</td>
-						<td>
-							<label>自己紹介文<br>
-								<textarea rows="3″cols=”50″wrap="soft" name="intro" value="${e.intro}"></textarea>
-							</label>
-						</td>
-					</tr>
-				</table>
-				<table id="submit">
-					<tr>
-						<td>
-							<input type="submit" name="submit" value="フォローする">
-						</td>
-					</tr>
-				</table>
-			</form>
-		</div>
-		</div>
-		</div>
-	</body>
+</body>
 </html>

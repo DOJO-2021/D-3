@@ -11,8 +11,7 @@
 	</head>
 	<body>
 		<!-- ヘッダー -->
-			<jsp:include page="header.jsp">
-			</jsp:include>
+			<jsp:include page="header.jsp"></jsp:include>
 		<!-- ヘッダー ここまで -->
 	<iframe  src="/SymPany/FollowServlet" name="follow" width="200" height="500" align="left" >
 	</iframe>
@@ -62,7 +61,7 @@
 						<label>
 							趣味
 							<textarea rows="3″cols=”50″wrap="soft" type="text" name="hobby" >
-								value="${e.hobby}"
+								${e.hobby}
 							</textarea><br>
 						</label>
 					</td>
@@ -70,7 +69,7 @@
 						<label>
 							自己紹介文
 								<textarea rows="3″cols=”50″wrap="soft" type="text" name="intro">
-									value="${e.intro}"
+									${e.intro}
 								</textarea><br>
 						</label>
 					</td>
