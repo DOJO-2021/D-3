@@ -106,6 +106,7 @@ label.label2 {
 }
 /*検索画面のリスト*/
 ul.rmul {
+	width:860px;
 	height: 400px;     /* 高さを制限(※) */
    	overflow: auto;  /* スクロールバーを表示(※) */
 	background-color:#f3d2c1;
@@ -115,7 +116,7 @@ ul.rmul::-webkit-scrollbar {
   width: 12px;
 }
 ul.rmul::-webkit-scrollbar-track {
-  background: #8bd3dd;
+  background: #f3d2c1;
   border-radius: 10px;
 }
 ul.rmul::-webkit-scrollbar-thumb {
