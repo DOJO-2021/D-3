@@ -84,7 +84,76 @@ public class ChatDAO {
 			// 結果を返す
 			return ChatList;
 		}
+		public List<Chat> selectR(Chat param) {
+			Connection conn = null;
+			List<Chat> ChatList = new ArrayList<Chat>();
 
+			try {
+				// JDChatドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
+
+				// SQL文を準備する
+				String sql = "select * from Chat WHERE  user_id LIKE ? AND r_id=?  AND message LIKE ?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+				// SQL文を完成させる
+
+				if (param.getUser_id() != null &&param.getUser_id() != "") {
+					pStmt.setString(1, "%" + param.getUser_id() + "%");
+				}
+				else {
+					pStmt.setString(1, "%");
+				}
+
+					pStmt.setInt(2, param.getR_id());
+
+
+				if (param.getMessage() != null && param.getMessage() != "") {
+					pStmt.setString(3, "%" + param.getMessage() + "%");
+				}
+				else {
+					pStmt.setString(3, "%");
+				}
+				// SQL文を実行し、結果表を取得する
+				ResultSet rs = pStmt.executeQuery();
+
+				// 結果表をコレクションにコピーする
+				while (rs.next()) {
+					Chat Chat = new Chat(
+					rs.getInt("message_id"),
+					rs.getString("user_id"),
+					rs.getInt("r_id"),
+					rs.getString("message")
+					);
+					ChatList.add(Chat);
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+				ChatList = null;
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				ChatList = null;
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						ChatList = null;
+					}
+				}
+			}
+
+			// 結果を返す
+			return ChatList;
+		}
 		// 引数Chatで指定されたレコードを登録し、成功したらtrueを返す
 		public boolean insert(Chat Chat) {
 			Connection conn = null;

@@ -17,7 +17,7 @@
 <div class="bigth">
 <!-- ここにRoomのr_nameを入れる -->
 	<h2 class="r_name">${room[0].r_name}</h2>
-	<div class="shdiv"><img src="/SymPany/images/supana.png" class="supana">
+	<div class="shdiv"> <a href="/SymPany/RoomEditServlet"><img src="/SymPany/images/supana.png" class="supana"></a>
 	<img src="/SymPany/images/ham.png" class="ham"></div>
 	<!-- 設定のimg 表示 一番良い方法はsubmitボタンの表示を変更するのが良い-->
 
@@ -31,8 +31,8 @@
 			<div class="content">
 			参加者一覧
 			<!-- 参加者をループで一覧で表示する -->
-			<c:forEach var="e" items="${member}">
-				test
+			<c:forEach var="e" items="${list}">
+				${e.nickname}
 			</c:forEach>
 			</div>
 		</section>
@@ -43,22 +43,16 @@
 	<ul class="talk">
 	<!-- 参加者をループで一覧で表示する -->
 	<!-- list を for で取得することがよい -->
-	<c:forEach var="e" items="${list}" >
+	<c:forEach var="e" items="${chat}" >
 			<form method="POST" action="/SymPany/UpdateDeleteServlet">
-				<li><input type="hidden" name="MESSAGE_ID" value="">
-				<input type="text" name="USER_ID" value="${e.user_id}">
-				<input type="text" name="R_ID" value="">
-				<input type="text" name="MESSAGE" value=""></li>
+				<li class="mintalk">${e.user_id}${e.message}</li>
 			</form>
    	 </c:forEach>
-		<li>川島：インスタのアカウント作成うまくいくといいね
-		<li>西郷：私自撮りしないんですよ</li>
-		<li>川島：データベースに入れたいですね</li>
 	</ul>
 	</div>
-	<form class="chat">
-	<input class="ctext" type ="text" name="s_message" placeholder="コメントを入力してください。">
-	<input type ="submit" name="submit" value="送信">
+	<form method="POST" class="chat" action="ChatServlet">
+		<input class="ctext" type ="text" name="s_message" placeholder="コメントを入力してください。">
+		<input type="submit" name="submit" value="送信">
 	</form>
 </div>
 </body>

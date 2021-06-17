@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
+<!-- jspをservletにする -->
 
 <header>
 <div class="logo"><img src="/SymPany/images/logo20.png"></div>
@@ -15,5 +15,4 @@
 			<li class="header"><a href="/SymPany/LogoutServlet">ログアウト</a></li>
 		</ul>
 	</nav>
-
 </header>
