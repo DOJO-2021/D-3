@@ -89,7 +89,7 @@ public class RoomSearchServlet extends HttpServlet {
 		member.setUser_id((String)session.getAttribute("user_id"));
 		MemberDAO mDao = new MemberDAO();
 
-		List<Member> memList = mDao.select(member);
+		List<Member> memList = mDao.selectR(member);
 
 
 		// 検索結果をリクエストスコープに格納する

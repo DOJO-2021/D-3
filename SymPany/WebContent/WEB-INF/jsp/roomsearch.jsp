@@ -19,10 +19,26 @@
 	<c:forEach var="e" items="${list}">
 		<ul>
 			<c:if test="${e.release==1}">
-				<li><form>
+				<li><form action="MemberServlet" >
 						<input type="hidden" name="r_id" value="${e.r_id}">
 						${e.r_name} ${e.r_comment}
+						<script>
+						 if(})
+						</script>
+						<%int counter = 0; %>
+						<c:forEach var="f" items="${member}">
+							<c:if test="${e.r_id == f.r_id}">
+								<% counter ++;%>
+							</c:if>
 
+						</c:forEach>
+							<%if(counter==0){ %>
+								<input type ="submit" name ="submit" value="参加">
+							<%}
+							else{
+							%>
+							<input type ="submit" name ="submit" value="脱退">
+							<%} %>
 					</form></li>
 			</c:if>
 		</ul>

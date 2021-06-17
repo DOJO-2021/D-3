@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Sympany | ホーム</title>
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
-<link rel="stylesheet" href="/SymPany/CSS/Third.css">
+
 </head>
 <body>
 <!-- ヘッダー -->
@@ -14,14 +14,24 @@
 <!-- ヘッダー ここまで -->
 
 <!-- 画像を後で付ける -->
-<h2>機能紹介</h2>
+<div class="HOME">
+<h2 class="home">機能紹介</h2>
+
+<div class="link">
+<a href="#mypage">マイページ</a><br>
+<a href="#profile">プロフィール検索</a><br>
+<a  href="#chat">チャット</a><br>
+<a href="#logout">ログアウト</a><br>
+</div>
+</div>
 <div class="menu-block">
 	<div class="menu-item">
 		<div class="menu-photo">
-			<img src="/SymPany/images/logout.png">
+			<img src="/SymPany/images/friends.png" class="home">
 		</div>
 		<div class="menu-text">
-			<h4>マイページ</h4>
+
+		<a id="mypage"><h4>マイページ</h4></a>
 			<p>
 			マイプロフィールは必須項目は全部埋めてね！<br>
 			自己紹介文も長いと自分がどういう性格か分かりやすいからgood!<br>
@@ -34,10 +44,10 @@
 
 	<div class="menu-item">
 	  	<div class="menu-photo">
-			<img src="/SymPany/images/logout.png">
+			<img src="/SymPany/images/hatena.png" class="home">
 		</div>
 		<div class="menu-text">
-			<h4>プロフィール検索</h4>
+			<a id="profile"><h4>プロフィール検索</h4></a>
 			<p>
 			キーワードで検索すると、同じ趣味の人や好きなものが同じ人が表示されるよ！<br>
 			気になる人をフォローしてみよう‼<br>
@@ -50,10 +60,10 @@
 
 	<div class="menu-item">
 	  	<div class="menu-photo">
-			<img src="/SymPany/images/logout.png">
+			<img src="/SymPany/images/sns.png" class="home">
 		</div>
 		<div class="menu-text">
-			<h4>チャット</h4>
+			<a id="chat"><h4>チャット</h4></a>
 			<p>
 			グループを作成して、趣味や好きな物同士で集まろう！<br>
 			<br>
@@ -71,10 +81,10 @@
 	</div>
 	<div class="menu-item">
 	 	<div class="menu-photo">
-			<img src="/SymPany/images/logout.png">
+			<img src="/SymPany/images/bed.png" class="home">
 		</div>
 		<div class="menu-text">
-			<h4>ログアウト</h4>
+			<a id="logout"><h4>ログアウト</h4></a>
 			<p>
 			このボタンを押すと現実に連れ戻されるよ！<br>
 			<br>
@@ -83,7 +93,6 @@
 		</div>
 	</div>
 </div>
-
-
+<a href="#" id="page-top">TOP</a>
 </body>
 </html>

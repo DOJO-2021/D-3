@@ -1,37 +1,82 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>SymPany|プロフィール検索</title>
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
+<link rel="stylesheet" href="/SymPany/CSS/Third.css">
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
-<form action="/SymPany/ProfileSearchServlet" method="post">
-  <p>検索したいキーワードを入力してください。</p>
-  <input type="text" name="search"  id ="name" placeholder="キーワード入力してね！"  value="${search}">
-  <input type="submit" name="submit" value="検索">
-</form>
+	<!-- ヘッダー -->
+	<jsp:include page="header.jsp"></jsp:include>
+	<!-- ヘッダー ここまで -->
+	<div class="wrapp1">
+		<h2 class="ps">プロフィール検索</h2>
+		<form action="ProfileSearchServlet" method="post">
+			<table class="Third">
+				<tr>
+					<td><input class="kensaku" type="search" name="seach"
+						placeholder="出身地や趣味などを入力してみよう"></td>
+					<td><input class="kensaku" type="submit" name="submit"
+						value="検索"></td>
+				</tr>
+			</table>
+		</form>
+		<div class="kingpink">
 
-<hr>
+			<div class="pink">
+				<form method="POST" action="/SymPany/FollowServlet">
+					<c:forEach var="e" items="${list}">
+						<input type="hidden" name="user_id" value="${e.user_id}">
+						<table>
+							<tr>
+								<td><label>名前<br> <input type="text"
+										name="name" value="${e.name}">
+								</label></td>
+								<td><label>ニックネーム<br> <input type="text"
+										name="nickname" value="${e.nickname}">
+								</label></td>
+							</tr>
+							<tr>
+								<td><label>出身地<br> <input type="text"
+										name="birthplace" value="${e.birthplace}">
+								</label></td>
+								<td><label>所属企業<br> <input type="text"
+										name="company" value="${e.company}">
+								</label></td>
+							</tr>
+							<tr>
+								<td><label>誕生日<br> <input type="text"
+										name="birth" value="${e.birth}">
+								</label></td>
+								<td><label>出身大学<br> <input type="text"
+										name="school" value="${e.school}">
+								</label></td>
+							</tr>
+							<tr>
+								<td><label>趣味<br> <textarea
+											rows="3″cols=”50″wrap=" soft" type="text" name="hobby"
+											value="${e.hobby}"></textarea>
+								</label></td>
+								<td><label>自己紹介文<br> <textarea
+											rows="3″cols=”50″wrap=" soft" name="intro" value="${e.intro}"></textarea>
+								</label></td>
+							</tr>
+						</table>
+						<table id="submit">
+							<tr>
+								<td><input type="submit" name="submit" value="フォローする">
+								</td>
+							</tr>
+						</table>
+					</c:forEach>
+				</form>
+			</div>
 
-<c:forEach var="e" items="${list}" >
-	<form method="POST" action="/SymPany/UpdateDeleteServlet">
-	<input type="hidden" name = "user_id" value="${e.user_id}">
-	名前<input type="text" name="name" value="${e.name}"><br>
-	ニックネーム<input type="text" name="nickname" value="${e.nickname}"><br>
-	出身地<input type="text" name="birthplace" value="${e.birthplace}"><br>
-	所属企業<input type="text" name="company" value="${e.company}"><br>
-	誕生日<input type="text" name="birth" value="${e.birth}"><br>
-	出身大学<input type="text" name="school" value="${e.school}"><br>
-	趣味<input type="text" name="hobby" value="${e.hobby}"><br>
-	自己紹介文<input type="text" name="intro" value="${e.intro}"><br>
-	<input type="submit" name="submit" value="フォロワーに追加">
-	</form>
-	<hr>
-</c:forEach>
+		</div>
+	</div>
 </body>
 </html>

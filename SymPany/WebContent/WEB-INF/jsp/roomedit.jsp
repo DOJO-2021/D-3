@@ -31,7 +31,7 @@
 
 				<!-- ルーム情報を送る -->
 			<form class="rm" method="" action="">
-				<table>
+				<table class="room_ps">
 					<tr>
 						<td><label class="label0">ルーム名</label><br>
 							<input type="text" name="room_name" placeholder="(例)猫好きの会"><br>
