@@ -12,7 +12,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 <jsp:include page="leftmenu.jsp"></jsp:include>
 <div class="bigth">
-
+<div class="icon1"><img src="/SymPany/images/talk.png" class="icon"></div>
 </div>
 </body>
 </html>

@@ -92,7 +92,22 @@ div.mainchat::-webkit-scrollbar-thumb,div.kingpink::-webkit-scrollbar-thumb {
   background: #001858;
   border-radius: 10px;
 }
-
+/*チャット画面とプロフィール画面の初期画面、画像の調整*/
+div.icon1 {
+	background-color:#f3d2c1;
+	float:center;
+	margin:60px 0 0 150px;
+}
+div.icon2 {
+	background-color:#f3d2c1;
+	float:center;
+	margin:60px 0 0 325px;
+}
+/*アイコン画像の大きさ調整*/
+.icon {
+	height:400px;
+	width:650px;
+}
 /*ここからは違うページの装飾*/
 
 div.kingpink {
