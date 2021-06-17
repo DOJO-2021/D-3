@@ -2,7 +2,7 @@
 
 html * {
 	box-sizing:border-box;
-/*	outline:1px solid #ff0000;*/
+	/*outline:1px solid #ff0000;*/
 }
 
 /*チャット画面*/
@@ -21,6 +21,7 @@ div.bigth {
 input.ctext{
 	height:40px;
 	width:860px;
+	margin:5px;
 }
 /*テキスト入力と送信ボタン*/
 form.chat {
@@ -33,6 +34,7 @@ div.mainchat {
 	height:400px;
 	width:770px;
 	margin:0 0 20px 0; /*チャット画面とテキスト入力の間を開ける*/
+	 overflow: auto;  /* スクロールバーを表示(※) */
 }
 /*スパナとハンバーガーボタンを囲むdiv*/
 div.shdiv {
@@ -56,29 +58,51 @@ div.shdiv {
 /*トーク履歴の表示*/
 ul.talk {
 	clear:both;
-	width:730px;
+	width:720px;
 	height:400px;
 	list-style-type:none;
 	display:inline-block;
-	margin:5px 15px 0 10px;
+	margin:5px 0 0 10px;
 	padding:0;
 }
+/*チャット履歴の文章*/
 li.mintalk {
 	margin:20px 0 0 10px;
 }
+/*if文を使って自分の打ったチャットだけ色を変える*/
+/*li.mintalk{
+	color:#8bd3dd;
+}*/
 /*参加者一覧を表示する枠組み*/
 div.content {
 	float:right;
 	height:400px;
-	width:180px;
+	width:170px;
 	margin:5px 5px;
 }
+/*スクロールバーの装飾*/
+div.mainchat::-webkit-scrollbar,div.kingpink::-webkit-scrollbar {
+  width: 12px;
+}
+div.mainchat::-webkit-scrollbar-track,div.kingpink::-webkit-scrollbar-track {
+  background: #f3d2c1;
+  border-radius: 10px;
+}
+div.mainchat::-webkit-scrollbar-thumb,div.kingpink::-webkit-scrollbar-thumb {
+  background: #001858;
+  border-radius: 10px;
+}
+
+/*ここからは違うページの装飾*/
+
 div.kingpink {
 	clear:both;
 	background-color:#f3d2c1;
 	height:440px;
+	width:1290px;
 	overflow: auto;
 }
+
 /*ページタイトル*/
 h2.mypage,h2.r_name {
 	background-color:#f3d2c1;
@@ -88,6 +112,7 @@ h2.mypage,h2.r_name {
 h2.ps {
 	clear:both;
 	float:left;
+	margin:0 0 5px 5px;
 }
 
 input[type="search"]{

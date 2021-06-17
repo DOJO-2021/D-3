@@ -28,6 +28,7 @@
   </table>
 </form>
 <div class="kingpink">
+
 	<div class="pink">
 	<form class="test" method="POST" action="/SymPany/UpdateDeleteServlet">
 	<table>
