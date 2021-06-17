@@ -32,7 +32,7 @@ public class LeftmenuServlet extends HttpServlet{
 		MemberDAO mDao= new MemberDAO();
 		List<Member> member = mDao.selectR(new Member(user_id,0));
 
-		// 部屋の名前の検索処理処理を行う
+		// 部屋の名前の検索処理を行う
 		List<Room> list = new ArrayList<Room>();
 		List<List<Room>> roomList = new ArrayList<List<Room>>();
 
@@ -47,7 +47,6 @@ public class LeftmenuServlet extends HttpServlet{
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("list", list);
 		request.setAttribute("roomList", roomList);
-
 		// ホーム画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/leftmenu.jsp");
 		dispatcher.forward(request, response);

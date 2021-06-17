@@ -17,7 +17,13 @@
 <div class="bigth">
 <!-- ここにRoomのr_nameを入れる -->
 	<h2 class="r_name">${room[0].r_name}</h2>
-	<div class="shdiv"> <a href="/SymPany/RoomEditServlet"><img src="/SymPany/images/supana.png" class="supana"></a>
+	<div class="shdiv">
+	<c:if test="${room[0].user_id==user_id}">
+	 <a href="/SymPany/RoomEditServlet"><img src="/SymPany/images/supana.png" class="supana"></a>
+	</c:if>
+
+
+
 	<img src="/SymPany/images/ham.png" class="ham"></div>
 	<!-- 設定のimg 表示 一番良い方法はsubmitボタンの表示を変更するのが良い-->
 
@@ -44,9 +50,13 @@
 	<!-- 参加者をループで一覧で表示する -->
 	<!-- list を for で取得することがよい -->
 	<c:forEach var="e" items="${chat}" >
+	 <c:forEach var="f" items="${list}">
+	 		<c:if test="${e.user_id ==f.user_id}">
 			<form method="POST" action="/SymPany/UpdateDeleteServlet">
-				<li class="mintalk">${e.user_id}${e.message}</li>
+				<li class = "mintalk">${f.nickname} :${e.message}</li>
 			</form>
+			</c:if>
+			</c:forEach>
    	 </c:forEach>
 	</ul>
 	</div>
