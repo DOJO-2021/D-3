@@ -65,10 +65,10 @@ public class MypageServlet extends HttpServlet {
 				user.setIntro(intro);
 				UserDAO uDao = new UserDAO();
 				if(uDao.update(user)) {
-					System.out.println("成功");
+					request.setAttribute("update", true);
 				}
 				else {
-					System.out.println("失敗");
+					request.setAttribute("update", false);
 				}
 				user = new User();
 				user.setUser_id(user_id);

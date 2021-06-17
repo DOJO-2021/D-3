@@ -202,7 +202,6 @@ public class UserDAO {
 				pStmt.setString(9, "null");
 			}
 			// SQL文を実行する
-
 		if (pStmt.executeUpdate() == 1) {
 				result = true;
 			}
