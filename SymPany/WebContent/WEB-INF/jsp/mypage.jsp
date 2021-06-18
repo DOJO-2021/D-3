@@ -10,71 +10,77 @@
 		<link rel="stylesheet" href="/SymPany/CSS/Second.css">
 	</head>
 	<body>
+
+	<c:if test="${update}">
+	<script type="text/javascript">
+		alert("プロフィールを更新しました。");
+	</script>
+</c:if>
 		<!-- ヘッダー -->
 			<jsp:include page="header.jsp"></jsp:include>
+			<jsp:include page ="follow.jsp"></jsp:include>
 		<!-- ヘッダー ここまで -->
-
-		<!-- フォローリスト -->
-		<jsp:include page="follow.jsp"></jsp:include>
 	<div class="bigrm">
-
-	<iframe  src="/SymPany/FollowServlet" name="follow" width="200" height="500" align="left" >
-	</iframe>
 	<h2>プロフィールの編集</h2>
-	<form class="rm" method="POST" action="">
 	<c:forEach var="e" items="${profile}" >
 		<form method="POST" action="/SymPany/MypageServlet">
-			<table class="mypage1">
+			<table>
 				<tr>
 					<td>
-						<label>
+						<label class="mypage1">
 							<input type ="hidden" name="user_id" value="${e.user_id}">
-								名前<input type="text" name="name" value="${e.name}" required><br>
+								名前<br>
+								<input type="text" name="name" value="${e.name}" required><br>
 						</label>
 					</td>
 					<td>
-						<label>
-							ニックネーム<input type="text" name="nickname" value="${e.nickname}" required><br>
-						</label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>
-							出身地<input type="text" name="birthplace" value="${e.birthplace}" ><br>
-						</label>
-					</td>
-					<td>
-						<label>
-							所属企業<input type="text" name="company" value="${e.company}" ><br>
+						<label class="mypage1">
+							ニックネーム<br>
+							<input type="text" name="nickname" value="${e.nickname}" required><br>
 						</label>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<label>
-							誕生日<input type="text" name="birth" value="${e.birth}" ><br>
+						<label class="mypage1">
+							出身地<br>
+							<input type="text" name="birthplace" value="${e.birthplace}" ><br>
 						</label>
 					</td>
 					<td>
-						<label>
-							出身大学<input type="text" name="school" value="${e.school}" ><br>
+						<label class="mypage1">
+							所属企業<br>
+							<input type="text" name="company" value="${e.company}" ><br>
 						</label>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<label>
-							趣味
-							<textarea rows="3"cols="50"wrap="soft" type="text" name="hobby" >
+						<label class="mypage1">
+							誕生日<br>
+							<input type="text" name="birth" value="${e.birth}" ><br>
+						</label>
+					</td>
+					<td>
+						<label class="mypage1">
+							出身大学<br>
+							<input type="text" name="school" value="${e.school}" ><br>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="mypage1">
+							趣味<br>
+							<textarea rows="3″cols=”50″wrap="soft" type="text" name="hobby" >
 								${e.hobby}
 							</textarea><br>
 						</label>
 					</td>
 					<td>
-						<label>
-							自己紹介文
-								<textarea rows="3"cols="50"wrap="soft" type="text" name="intro">
+						<label class="mypage1">
+							自己紹介文<br>
+								<textarea rows="3″cols=”50″wrap="soft" type="text" name="intro">
 									${e.intro}
 								</textarea><br>
 						</label>
@@ -89,7 +95,6 @@
 				</table>
 			</form>
 		</c:forEach>
-		</form>
-	</div>
+		 </div>
 	</body>
 </html>
