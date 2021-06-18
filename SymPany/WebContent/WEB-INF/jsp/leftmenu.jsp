@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
 
 <div class="left">
+
 			<h4>■既存ルーム検索</h4>
 			<form class="search" method="POST" action="/SymPany/RoomSearchServlet">
 			<input class="leftmenu" type="text" name="RoomEdit"  class="value" placeholder="（例）猫"  >

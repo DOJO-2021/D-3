@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="follow_list">
 	<h2 class="f_list">フォローリスト</h2>
-	<!-- ドロワーの入力、名前で展開 -->
 		<div class="f_list">
 		<c:forEach var="e" items="${list}" >
 			<c:forEach var = "f" items="${e}">

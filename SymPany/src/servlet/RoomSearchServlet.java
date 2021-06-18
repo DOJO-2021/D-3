@@ -47,6 +47,7 @@ public class RoomSearchServlet extends HttpServlet {
 		String r_comment = "";
 		int release = 0;
 		String user_id = "";
+
 		//合計
 		List<Room> sum = new ArrayList<Room>();
 		RoomDAO bDao = new RoomDAO();

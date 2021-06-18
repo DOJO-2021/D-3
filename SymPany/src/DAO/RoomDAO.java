@@ -20,7 +20,6 @@ public class RoomDAO {
 			try {
 				// JDRoomドライバを読み込む
 				Class.forName("org.h2.Driver");
-
 				// データベースに接続する
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-3/D-3", "sa", "path");
 
