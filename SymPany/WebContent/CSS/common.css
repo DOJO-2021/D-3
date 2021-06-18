@@ -18,7 +18,9 @@ body {
 	margin:0 auto 0 auto;
 	max-width:1300px;
 }
-
+body.homebody {
+	background: linear-gradient( #fef6e4 ,#001858 ,rgba(255,221,40,0.8))fixed,url(.png);
+}
 /*マウスが乗った時の色*/
 a:hover{
 	color: #8bd3dd;
@@ -213,7 +215,6 @@ div.f_list{
 	width:300px;
 	height:430px;
 	overflow:auto;
-	margin-left:3px;
 }
 
 /*スクロールバーの装飾*/
@@ -231,8 +232,9 @@ div.f_list::-webkit-scrollbar-thumb {
 /*「フォローリスト」っていう文字*/
 h2.f_list{
 	position:relative;
-	left:-10px;
+	left:-30px;
 }
+
 
 /*home.jsp*/
 
