@@ -42,13 +42,21 @@ public class ChatServlet extends HttpServlet {
 		}
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
+
 		String user_id = (String) session.getAttribute("user_id");
+
 		int r_id = 0;
-		if(session.getAttribute("r_id")!=null){
+
+		if(request.getParameter("r_id")!=null) {
+			r_id = Integer.parseInt((String)request.getParameter("r_id"));
+			session.setAttribute("r_id", request.getParameter("r_id"));
+		}
+		else if(session.getAttribute("r_id")!=null){
 			r_id = Integer.parseInt((String)session.getAttribute("r_id"));
 		}
-		session.setAttribute("r_id", request.getParameter("r_id"));
-
+		else {
+			r_id =0;
+		}
 		User user = new User();
 		user.setUser_id(user_id);
 		UserDAO uDao = new UserDAO();
@@ -70,9 +78,9 @@ public class ChatServlet extends HttpServlet {
 		ReactionDAO reDao = new ReactionDAO();
 
 		List<Room> rList = rDao.selectID(room);
-		List<Chat> cList = cDao.select(chat);
+		List<Chat> cList = cDao.selectR(chat);
 		List<Member> mList = mDao.select(member);
-		List<Reaction> reList = reDao.select(reaction);
+		List<Reaction> reList = reDao.selectR(reaction);
 
 		List<User> uList = new ArrayList<User>();
 		List<User> sum = new ArrayList<User>();
@@ -96,7 +104,6 @@ public class ChatServlet extends HttpServlet {
 				}
 			}
 		}
-		//所属している部屋の検索処理を行う
 
 		List<Member> rmember = mDao.selectR(new Member(user_id,0));
 
@@ -113,12 +120,13 @@ public class ChatServlet extends HttpServlet {
 
 		// 検索結果をリクエストスコープに格納する
 
+		request.setAttribute("roomList",roomList);
 		request.setAttribute("room",rList);
 		request.setAttribute("chat", cList);
 		request.setAttribute("member", mList);
 		request.setAttribute("reaction",reList);
 		request.setAttribute("list", sum);
-		request.setAttribute("roomList", roomList);
+
 
 		// ホーム画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/chat.jsp");
@@ -229,6 +237,21 @@ public class ChatServlet extends HttpServlet {
 			}
 		}
 
+		List<Member> rmember = mDao.selectR(new Member(user_id,0));
+
+		// 部屋の名前の検索処理を行う
+		List<List<Room>> roomList = new ArrayList<List<Room>>();
+
+		//参加しているルームの検索
+		for(int i=0;rmember.size()>i;i++) {
+			room =new Room();
+			room.setR_id(rmember.get(i).getR_id());
+			RoomDAO Dao = new RoomDAO();
+			roomList.add(Dao.selectID(room));
+		}
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("roomList",roomList);
 		request.setAttribute("room",rList);
 		request.setAttribute("chat", cList);
 		request.setAttribute("member", mList);
