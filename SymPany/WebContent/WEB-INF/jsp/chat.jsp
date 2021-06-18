@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +12,29 @@
 </head>
 
 <body>
+
+<c:if test="${message}">
+	<script type="text/javascript">
+		alert("メッセージを送信しました。");
+	</script>
+</c:if>
+<c:if test="${delete}">
+	<script type="text/javascript">
+		alert("リアクションを取り消しました。");
+	</script>
+</c:if>
+<c:if test="${reins}">
+	<script type="text/javascript">
+		alert("リアクションしました。");
+	</script>
+</c:if>
+
+
+
 <jsp:include page="header.jsp"></jsp:include>
-<iframe src="LeftmenuServlet" name="sample" width="200" height="500" align="left">
-		</iframe>
+<jsp:include page="leftmenu.jsp"></jsp:include>
+<!-- <iframe src="LeftmenuServlet" name="sample" width="200" height="500" align="left">
+		</iframe> -->
 <div class="bigth">
 <!-- ここにRoomのr_nameを入れる -->
 	<h2 class="r_name">${room[0].r_name}</h2>
@@ -52,8 +73,25 @@
 	<c:forEach var="e" items="${chat}" >
 	 <c:forEach var="f" items="${list}">
 	 		<c:if test="${e.user_id ==f.user_id}">
-			<form method="POST" action="/SymPany/UpdateDeleteServlet">
-				<li class = "mintalk">${f.nickname} :${e.message}</li>
+			<form method="POST" action="/SymPany/ChatServlet">
+			<input type="hidden" name="message_id" value="${e.message_id }">
+							<li class = "mintalk">${f.nickname} :${e.message}
+				<%int counter = 0; %>
+					<c:forEach var="g" items="${reaction}">
+					<c:if test="${g.message_id == e.message_id}">
+						<c:if test="${g.user_id == user_id}">
+						<% counter ++;%>
+						</c:if>
+						</c:if>
+					</c:forEach>
+					<%if(counter==0){ %>
+						<input type ="submit" name ="submit" value="リアクション">
+					<%}
+					else{
+					%>
+						<input type ="submit" name ="submit" value="解除">
+					<%} %>
+				</li>
 			</form>
 			</c:if>
 			</c:forEach>
