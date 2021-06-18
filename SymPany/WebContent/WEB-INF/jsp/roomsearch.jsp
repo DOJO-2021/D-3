@@ -25,7 +25,7 @@
 					<c:if test="${e.release==1}">
 					<%sum++ ;%>
 						<li class="rmli">
-							<form action="MemberServlet" >
+							<form action="MemberServlet"  method="post">
 									<input type="hidden" name="r_id" value="${e.r_id}">
 									<label class="label1"><strong>${e.r_name}</strong></label><br>
 									<label class="label2">${e.r_comment}</label>
