@@ -40,7 +40,6 @@ public class FollowServlet extends HttpServlet{
 
 		//検索処理を行う（フォロープロフィール検索）
 		List<Follow> followList =new ArrayList<Follow>();
-		List<User> user = new ArrayList<User>();
 		List<List<User>> userList = new ArrayList<List<User>>();
 		followList = fDao.select(follow);
 

@@ -17,15 +17,10 @@
 		<!-- ここに検索に使用した文字を入れる -->
 		<h2>検索結果 ${search}</h2>
 			<c:forEach var="e" items="${list}">
-				<ul>
+				<ul class="rmul">
 					<c:if test="${e.release==1}">
-						<li>
+						<li class="rmli">
 							<form action="MemberServlet" >
-								<ul class="rmul">
-								<!-- 検索結果をループで一覧で表示する
-									それと同時にsubmitボタンを参加としてループに加える-->
-								<!-- list を for で取得することがよい -->
-									<li class="rmli">
 										<input type="hidden" name="r_id" value="${e.r_id}">
 										<label class="label1"><strong>${e.r_name}</strong></label><br>
 										<label class="label2">${e.r_comment}</label>
@@ -35,15 +30,15 @@
 													<% counter ++;%>
 												</c:if>
 											</c:forEach>
+											<div class="submit2">
 											<%if(counter==0){ %>
 												<input type ="submit" name ="submit" value="参加">
-												<%}
-												else{
-												%>
+											<%}
+											else{
+											%>
 												<input type ="submit" name ="submit" value="脱退">
-												<%} %>
-									</li>
-								</ul>
+											<%} %>
+											</div>
 							</form>
 						</li>
 					</c:if>
