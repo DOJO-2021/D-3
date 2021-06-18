@@ -15,29 +15,27 @@
 		<div class="bigrm">
 
 			<h2>ルームの編集</h2>
-	<c:forEach var="e" items="${list}">
+	<c:forEach var="e" items="${room}">
 		<ul>
 			<c:if test="${e.release==1}">
 				<li><form>
 						<input type="hidden" name="r_id" value="${e.r_id}">
 						${e.r_name} ${e.r_comment}
-
 					</form></li>
 			</c:if>
 		</ul>
-	</c:forEach>
 
 				<!-- ルーム情報を送る -->
 			<form class="rm" method="post" action="/SymPany/RoomEditServlet">
 				<table class="room_ps">
 					<tr>
 						<td><label class="label0">ルーム名</label><br>
-							<input type="text" name="room_name">${e.r_name}<br>
+							<input type="text" name="room_name" value="${e.r_name}"><br>
 						</td>
 					</tr>
 					<tr>
 						<td><label class="label0">一言で説明</label><br>
-							<input class="ex" type="text" name="room_comment"> ${e.r_comment}<br><br>
+							<input class="ex" type="text" name="room_comment" value="${e.r_comment}"> <br><br>
 						</td>
 					</tr>
 					<tr>
@@ -56,6 +54,7 @@
 					</tr>
 				</table>
 			</form>
+				</c:forEach>
 		</div>
 	</body>
 </html>
