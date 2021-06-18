@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
 
 </head>
-<body>
+<body class="homebody">
 <!-- ヘッダー -->
 <jsp:include page="header.jsp"></jsp:include>
 <!-- ヘッダー ここまで -->
