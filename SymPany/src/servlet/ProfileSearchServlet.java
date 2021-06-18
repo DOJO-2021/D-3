@@ -177,6 +177,7 @@ public class ProfileSearchServlet extends HttpServlet {
 					}
 				 FollowDAO fDao = new FollowDAO();
 				 List<Follow> follow= fDao.select(new Follow((String)session.getAttribute("user_id"),""));
+				 
 				// 検索結果をリクエストスコープに格納する
 				request.setAttribute("list", sum);
 				request.setAttribute("search", search);

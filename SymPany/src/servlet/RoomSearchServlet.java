@@ -41,7 +41,6 @@ public class RoomSearchServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String search =request.getParameter("RoomEdit");
 		HttpSession session = request.getSession();
-		System.out.println(search);
 		int r_id = 0;
 		String r_name = "";
 		String r_comment = "";
@@ -85,13 +84,30 @@ public class RoomSearchServlet extends HttpServlet {
 				sum.add(a);
 			}
 		}
+		user_id = (String)session.getAttribute("user_id");
 		//参加しているルームの検索
 		Member member= new Member();
-		member.setUser_id((String)session.getAttribute("user_id"));
+		member.setUser_id(user_id);
 		MemberDAO mDao = new MemberDAO();
 
 		List<Member> memList = mDao.selectR(member);
 
+		mDao =new MemberDAO();
+		List<Member> rmember = mDao .selectR(new Member(user_id,0));
+
+		// 部屋の名前の検索処理を行う
+		List<List<Room>> roomList = new ArrayList<List<Room>>();
+
+		//参加しているルームの検索
+		for(int i=0;rmember.size()>i;i++) {
+			Room room =new Room();
+			room.setR_id(rmember.get(i).getR_id());
+			RoomDAO Dao = new RoomDAO();
+			roomList.add(Dao.selectID(room));
+		}
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("roomList",roomList);
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("list", sum);

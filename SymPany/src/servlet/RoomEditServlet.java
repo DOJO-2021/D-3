@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import DAO.MemberDAO;
 import DAO.RoomDAO;
+import model.Member;
 import model.Room;
 
 /**
@@ -36,7 +40,23 @@ public class RoomEditServlet extends HttpServlet {
 		RoomDAO rDao = new RoomDAO();
 		request.setAttribute("room",rDao.selectID(new Room(r_id,"","",0,"")));
 
+		String user_id =(String)session.getAttribute("user_id");
+		MemberDAO mDao =new MemberDAO();
+		List<Member> rmember = mDao .selectR(new Member(user_id,0));
 
+		// 部屋の名前の検索処理を行う
+		List<List<Room>> roomList = new ArrayList<List<Room>>();
+
+		//参加しているルームの検索
+		for(int i=0;rmember.size()>i;i++) {
+			Room room =new Room();
+			room.setR_id(rmember.get(i).getR_id());
+			RoomDAO Dao = new RoomDAO();
+			roomList.add(Dao.selectID(room));
+		}
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("roomList",roomList);
 		// ルーム編集画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/roomedit.jsp");
 		dispatcher.forward(request, response);
@@ -57,7 +77,22 @@ public class RoomEditServlet extends HttpServlet {
 		RoomDAO bDao = new RoomDAO();
 		Room user =  new Room(r_id,r_name,r_comment,release,user_id);
 		if (bDao.update(user)) { // 登録成功
+			MemberDAO mDao =new MemberDAO();
+			List<Member> rmember = mDao .selectR(new Member(user_id,0));
 
+			// 部屋の名前の検索処理を行う
+			List<List<Room>> roomList = new ArrayList<List<Room>>();
+
+			//参加しているルームの検索
+			for(int i=0;rmember.size()>i;i++) {
+				Room room =new Room();
+				room.setR_id(rmember.get(i).getR_id());
+				RoomDAO Dao = new RoomDAO();
+				roomList.add(Dao.selectID(room));
+			}
+
+			// 検索結果をリクエストスコープに格納する
+			request.setAttribute("roomList",roomList);
 			// チャットサーブレットにリダイレクトする
 			response.sendRedirect("/SymPany/RoomServlet");
 		} else {
