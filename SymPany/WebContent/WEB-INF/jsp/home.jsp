@@ -14,13 +14,41 @@
 		<!-- ヘッダー ここまで -->
 		<!-- 画像を後で付ける -->
 		<h2>機能紹介</h2>
+		<div class="HOME">
+		<div class="setumei">
+			<h2>SymPanyってな～に？</h2>
+			<p>
+			<span>研修生用コミュニケーションツールSymPany</span>へようこそ！<br>
+			「Sympany」は２つのことばを合わせて作り出した造語です。<br>
+			<span>思いやり</span>、<span>共感</span>という意味を持つ<span>「Sympacy」</span>と、<br>
+			いろいろな<span>異なった要素</span>がまじり合って、ある効果を生み出しているという意味をもつ<span>「Sympyony」</span><br>
+			<br>
+			会社もバックグラウンドも違うひととも<span>交流</span>ができる。<br>
+			仕事のことだけでなく、<span>趣味や好きなもの</span>、お互いが共感できるプライベートな話ができる。<br>
+			<br>
+			SymPanyはそんな<span>コミュにケーションのきっかけ</span>になることを願って生まれました。<br>
+			<br>
+			</p>
+		</div>
+		<div class="man">
+			<img src="/SymPany/images/man.png" class="man">
+		</div>
+		<div class="link">
+			<h3>下のリンクから各機能の説明に飛べるよ</h3>
+			<a href="#mypage">マイページ</a><br>
+			<a href="#profile">プロフィール検索</a><br>
+			<a  href="#chat">チャット</a><br>
+			<a href="#logout">ログアウト</a><br>
+		</div>
+		</div>
 		<div class="menu-block">
+			<h2>機能説明</h2>
 			<div class="menu-item">
 				<div class="menu-photo">
-					<img src="/SymPany/images/logout.png">
+					<img src="/SymPany/images/friends.png" class="home">
 				</div>
 				<div class="menu-text">
-					<h4>マイページ</h4>
+					<a id="mypage"><h4>マイページ</h4></a>
 						<p>
 							マイプロフィールは必須項目は全部埋めてね！<br>
 							自己紹介文も長いと自分がどういう性格か分かりやすいからgood!<br>
@@ -32,10 +60,10 @@
 			</div>
 			<div class="menu-item">
 				<div class="menu-photo">
-					<img src="/SymPany/images/logout.png">
+					<img src="/SymPany/images/hatena.png" class="home">
 				</div>
 				<div class="menu-text">
-					<h4>プロフィール検索</h4>
+					<a id="profile"><h4>プロフィール検索</h4></a>
 					<p>
 						キーワードで検索すると、同じ趣味の人や好きなものが同じ人が表示されるよ！<br>
 						気になる人をフォローしてみよう‼<br>
@@ -47,10 +75,10 @@
 			</div>
 			<div class="menu-item">
 				<div class="menu-photo">
-					<img src="/SymPany/images/logout.png">
+					<img src="/SymPany/images/sns.png" class="home">
 				</div>
 				<div class="menu-text">
-					<h4>チャット</h4>
+					<a ID="chat"><h4>チャット</h4></a>
 					<p>
 						グループを作成して、趣味や好きな物同士で集まろう！<br>
 						<br>
@@ -68,10 +96,10 @@
 			</div>
 			<div class="menu-item">
 				<div class="menu-photo">
-					<img src="/SymPany/images/logout.png">
+					<img src="/SymPany/images/bed.png" class="home">
 				</div>
 				<div class="menu-text">
-					<h4>ログアウト</h4>
+					<a id="logout"><h4>ログアウト</h4></a>
 						<p>
 							このボタンを押すと現実に連れ戻されるよ！<br>
 							<br>
@@ -80,5 +108,6 @@
 				</div>
 			</div>
 		</div>
+		<a href="#" id="page-top">TOP</a>
 	</body>
 </html>

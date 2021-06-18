@@ -12,36 +12,43 @@
 	</head>
 	<body>
 		<jsp:include page="header.jsp"></jsp:include>
-		<iframe src="LeftmenuServlet" name="sample" width="200" height="500"
-			align="left">  </iframe>
+		<jsp:include page="leftmenu.jsp"></jsp:include>
+		<div class="bigrm">
 		<!-- ここに検索に使用した文字を入れる -->
 		<h2>検索結果 ${search}</h2>
-		<c:forEach var="e" items="${list}">
-			<ul>
-				<c:if test="${e.release==1}">
-					<li><form action="MemberServlet" >
-							<input type="hidden" name="r_id" value="${e.r_id}">
-							${e.r_name} ${e.r_comment}
-							<script>
-							 if(})
-							</script>
-							<%int counter = 0; %>
-							<c:forEach var="f" items="${member}">
-								<c:if test="${e.r_id == f.r_id}">
-									<% counter ++;%>
-								</c:if>
-
-							</c:forEach>
-								<%if(counter==0){ %>
-									<input type ="submit" name ="submit" value="参加">
-								<%}
-								else{
-								%>
-								<input type ="submit" name ="submit" value="脱退">
-								<%} %>
-						</form></li>
-				</c:if>
-			</ul>
-		</c:forEach>
+			<c:forEach var="e" items="${list}">
+				<ul>
+					<c:if test="${e.release==1}">
+						<li>
+							<form action="MemberServlet" >
+								<ul class="rmul">
+								<!-- 検索結果をループで一覧で表示する
+									それと同時にsubmitボタンを参加としてループに加える-->
+								<!-- list を for で取得することがよい -->
+									<li class="rmli">
+										<input type="hidden" name="r_id" value="${e.r_id}">
+										<label class="label1"><strong>${e.r_name}</strong></label><br>
+										<label class="label2">${e.r_comment}</label>
+											<%int counter = 0; %>
+											<c:forEach var="f" items="${member}">
+												<c:if test="${e.r_id == f.r_id}">
+													<% counter ++;%>
+												</c:if>
+											</c:forEach>
+											<%if(counter==0){ %>
+												<input type ="submit" name ="submit" value="参加">
+												<%}
+												else{
+												%>
+												<input type ="submit" name ="submit" value="脱退">
+												<%} %>
+									</li>
+								</ul>
+							</form>
+						</li>
+					</c:if>
+				</ul>
+			</c:forEach>
+		</div>
 	</body>
 </html>
