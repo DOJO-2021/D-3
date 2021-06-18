@@ -16,7 +16,21 @@
 <!-- 画像を後で付ける -->
 <div class="HOME">
 <div class="setumei">
-<h2>SymPanyってな～に？</h2>
+<h2 class="ugokuh2">
+	<span>S</span>
+	<span>y</span>
+	<span>m</span>
+	<span>P</span>
+	<span>a</span>
+	<span>n</span>
+	<span>y</span>
+	<span>っ</span>
+	<span>て</span>
+	<span>な</span>
+	<span>～</span>
+	<span>に</span>
+	<span>？</span>
+	</h2>
 <p>
 <span>研修生用コミュニケーションツールSymPany</span>へようこそ！<br>
 「Sympany」は２つのことばを合わせて作り出した造語です。<br>
@@ -45,7 +59,7 @@ SymPanyはそんな<span>コミュにケーションのきっかけ</span>にな
 <div class="menu-block">
 <h2>機能説明</h2>
 	<div class="menu-item">
-		<div class="menu-photo">
+		<div class="menu-photo1">
 			<img src="/SymPany/images/friends.png" class="home">
 		</div>
 		<div class="menu-text">
@@ -62,23 +76,23 @@ SymPanyはそんな<span>コミュにケーションのきっかけ</span>にな
 	</div>
 
 	<div class="menu-item">
-	  	<div class="menu-photo">
-			<img src="/SymPany/images/hatena.png" class="home">
-		</div>
 		<div class="menu-text">
 			<a id="profile"><h4>プロフィール検索</h4></a>
 			<p>
-			キーワードで検索すると、同じ趣味の人や好きなものが同じ人が表示されるよ！<br>
+			キーワードで検索すると、同じ趣味の人や好きなものが同じ人が<br>表示されるよ！<br>
 			気になる人をフォローしてみよう‼<br>
 			個人的にチャットをしてみたり、ルームに招待してみよう！<br>
 			<br>
 			▶<a href="/SymPany/profilesearch.jsp">『プロフィール検索』</a>はこちらから
 			</p>
 		</div>
+		<div class="menu-photo2">
+			<img src="/SymPany/images/hatena.png" class="home">
+		</div>
 	</div>
 
 	<div class="menu-item">
-	  	<div class="menu-photo">
+	  	<div class="menu-photo1">
 			<img src="/SymPany/images/sns.png" class="home">
 		</div>
 		<div class="menu-text">
@@ -99,9 +113,6 @@ SymPanyはそんな<span>コミュにケーションのきっかけ</span>にな
 		</div>
 	</div>
 	<div class="menu-item">
-	 	<div class="menu-photo">
-			<img src="/SymPany/images/bed.png" class="home">
-		</div>
 		<div class="menu-text">
 			<a id="logout"><h4>ログアウト</h4></a>
 			<p>
@@ -110,8 +121,26 @@ SymPanyはそんな<span>コミュにケーションのきっかけ</span>にな
 			▶<a href="/SymPany/login.jsp">『ログアウト』</a>はこちらから
 			</p>
 		</div>
+		<div class="menu-photo2">
+			<img src="/SymPany/images/bed.png" class="home">
+		</div>
 	</div>
 </div>
 <a href="#" id="page-top">TOP</a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<script type="text/javascript">
+const CLASSNAME = "-visible";
+const TIMEOUT = 1500;
+const TIME=1500000;
+const $target = $(".ugokuh2");
+
+setInterval(() => {
+  $target.addClass(CLASSNAME);
+  setTimeout(() => {
+    $target.removeClass(CLASSNAME);
+  }, TIME);
+}, TIMEOUT );
+</script>
 </body>
 </html>
