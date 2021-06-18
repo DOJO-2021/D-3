@@ -18,7 +18,7 @@
 		<form action="cgi-bin/example.cgi" method="post">
 			<table class="Third">
 				<tr>
-					<td><input class="kensaku" type="search" name="seach"
+					<td><input class="kensaku" type="search" name="search"
 						placeholder="出身地や趣味などを入力してみよう"></td>
 					<td><input class="kensaku" type="submit" name="submit"
 						value="検索"></td>
@@ -27,10 +27,10 @@
 		</form>
 
 		<div class="kingpink">
-
-			<div class="pink">
+			<c:forEach var="e" items="${list}">
+				<div class="pink">
 				<form method="POST" action="/SymPany/UpdateDeleteServlet">
-					<c:forEach var="e" items="${list}">
+
 						<input type="hidden" name="user_id" value="${e.user_id}">
 						<table class="formtable">
 							<tr>
@@ -72,12 +72,12 @@
 						<tr>
 						  <td>
 						    <label>趣味<br>
-							  <textarea rows="3″cols=”50″wrap="soft" type="text" name="hobby" value="${e.hobby}"></textarea>
+							  <textarea rows="3″cols=”50″wrap="soft" type="text" name="hobby" >${e.hobby}</textarea>
 							</label>
 						  </td>
 						  <td>
 						    <label>自己紹介文<br>
-							  <textarea rows="3″cols=”50″wrap="soft" name="intro" value="${e.intro}"></textarea>
+							  <textarea rows="3″cols=”50″wrap="soft" name="intro" >${e.intro}</textarea>
 							</label>
 						  </td>
 						</tr>
@@ -92,6 +92,7 @@
 						</form>
 					  </div>
 				</c:forEach>
-	       </div>
+			</div>
+	      </div>
     </body>
 </html>
