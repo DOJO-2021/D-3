@@ -44,7 +44,6 @@ SymPanyはそんな<span>コミュにケーションのきっかけ</span>にな
 <br>
 </p>
 </div>
-
 <div class="man">
 <img src="/SymPany/images/man.png" class="man">
 </div>
@@ -56,6 +55,7 @@ SymPanyはそんな<span>コミュにケーションのきっかけ</span>にな
 <a href="#logout">ログアウト</a><br>
 </div>
 </div>
+
 <div class="menu-block">
 <h2>機能説明</h2>
 	<div class="menu-item">

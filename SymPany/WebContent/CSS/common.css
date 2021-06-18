@@ -137,7 +137,11 @@ input[type="submit"]{
   padding       	: 12px 18px;   /* 余白       */
   line-height   	: 1em;         /* 1行の高さ  */
 }
-
+input[type="submit"]:hover{
+  background-color:#fef6e4;
+  border-color: #001858;
+  color: #001858;
+}
 
 /*ここからleftmenu.jsp,follow.jsp*/
 
@@ -343,7 +347,6 @@ div.link a:after {
 div.link a:hover:after {
   transform: translate(0, 0);
 }
-
 
 /*各機能の説明*/
 .menu-item {
