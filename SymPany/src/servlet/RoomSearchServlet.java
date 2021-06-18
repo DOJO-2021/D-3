@@ -41,7 +41,7 @@ public class RoomSearchServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String search =request.getParameter("RoomEdit");
 		HttpSession session = request.getSession();
-
+		System.out.println(search);
 		int r_id = 0;
 		String r_name = "";
 		String r_comment = "";

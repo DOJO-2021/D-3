@@ -30,7 +30,12 @@ public class RoomEditServlet extends HttpServlet {
 		}
 
 		// ルームのログイン状態を保持する
-					request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
+
+		int r_id = Integer.parseInt((String)session.getAttribute("r_id"));
+		RoomDAO rDao = new RoomDAO();
+		request.setAttribute("room",rDao.selectID(new Room(r_id,"","",0,"")));
+
 
 		// ルーム編集画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/roomedit.jsp");
