@@ -13,9 +13,9 @@
 	<!-- ヘッダー -->
 	<jsp:include page="header.jsp"></jsp:include>
 	<!-- ヘッダー ここまで -->
-	<div class="wrapp1">
+	<div class="bigps">
 		<h2 class="ps">プロフィール検索</h2>
-		<form action="ProfileSearchServlet" method="post">
+		<form action="cgi-bin/example.cgi" method="post">
 			<table class="Third">
 				<tr>
 					<td><input class="kensaku" type="search" name="seach"
@@ -25,58 +25,73 @@
 				</tr>
 			</table>
 		</form>
+
 		<div class="kingpink">
 
 			<div class="pink">
-				<form method="POST" action="/SymPany/FollowServlet">
+				<form method="POST" action="/SymPany/UpdateDeleteServlet">
 					<c:forEach var="e" items="${list}">
 						<input type="hidden" name="user_id" value="${e.user_id}">
-						<table>
+						<table class="formtable">
 							<tr>
-								<td><label>名前<br> <input type="text"
-										name="name" value="${e.name}">
-								</label></td>
-								<td><label>ニックネーム<br> <input type="text"
-										name="nickname" value="${e.nickname}">
-								</label></td>
-							</tr>
-							<tr>
-								<td><label>出身地<br> <input type="text"
-										name="birthplace" value="${e.birthplace}">
-								</label></td>
-								<td><label>所属企業<br> <input type="text"
-										name="company" value="${e.company}">
-								</label></td>
-							</tr>
-							<tr>
-								<td><label>誕生日<br> <input type="text"
-										name="birth" value="${e.birth}">
-								</label></td>
-								<td><label>出身大学<br> <input type="text"
-										name="school" value="${e.school}">
-								</label></td>
-							</tr>
-							<tr>
-								<td><label>趣味<br> <textarea
-											rows="3″cols=”50″wrap=" soft" type="text" name="hobby"
-											value="${e.hobby}"></textarea>
-								</label></td>
-								<td><label>自己紹介文<br> <textarea
-											rows="3″cols=”50″wrap=" soft" name="intro" value="${e.intro}"></textarea>
-								</label></td>
-							</tr>
+						  <td>
+						    <label>名前<br>
+							 <input type="text" name="name" value="${e.name}">
+							</label>
+						  </td>
+						  <td>
+						    <label>ニックネーム<br>
+							<input type="text" name="nickname" value="${e.nikname}">
+							</label>
+						  </td>
+						 </tr>
+						 <tr>
+						  <td>
+						    <label>出身地<br>
+							<input type="text" name="birthplace" value="${e.birthplace}">
+							</label>
+						   </td>
+						   <td>
+							<label>所属企業<br>
+							<input type="text" name="company" value="${e.company}">
+							</label>
+						  </td>
+						</tr>
+						<tr>
+						  <td>
+						    <label>誕生日<br>
+								<input type="text" name="birth" value="${e.birth}">
+							</label>
+						   </td>
+						   <td>
+							<label>出身大学<br>
+								<input type="text" name="school" value="${e.school}">
+							</label>
+						  </td>
+						</tr>
+						<tr>
+						  <td>
+						    <label>趣味<br>
+							  <textarea rows="3″cols=”50″wrap="soft" type="text" name="hobby" value="${e.hobby}"></textarea>
+							</label>
+						  </td>
+						  <td>
+						    <label>自己紹介文<br>
+							  <textarea rows="3″cols=”50″wrap="soft" name="intro" value="${e.intro}"></textarea>
+							</label>
+						  </td>
+						</tr>
 						</table>
 						<table id="submit">
-							<tr>
-								<td><input type="submit" name="submit" value="フォローする">
-								</td>
-							</tr>
+						 <tr>
+						  <td>
+						   <input type="submit" name="submit" value="フォローする">
+						  </td>
+						 </tr>
 						</table>
-					</c:forEach>
-				</form>
-			</div>
-
-		</div>
-	</div>
-</body>
+						</form>
+					  </div>
+				</c:forEach>
+	       </div>
+    </body>
 </html>

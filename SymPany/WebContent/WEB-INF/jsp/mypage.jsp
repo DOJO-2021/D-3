@@ -13,12 +13,18 @@
 		<!-- ヘッダー -->
 			<jsp:include page="header.jsp"></jsp:include>
 		<!-- ヘッダー ここまで -->
+
+		<!-- フォローリスト -->
+		<jsp:include page="follow.jsp"></jsp:include>
+	<div class="bigrm">
+
 	<iframe  src="/SymPany/FollowServlet" name="follow" width="200" height="500" align="left" >
 	</iframe>
 	<h2>プロフィールの編集</h2>
+	<form class="rm" method="POST" action="">
 	<c:forEach var="e" items="${profile}" >
 		<form method="POST" action="/SymPany/MypageServlet">
-			<table>
+			<table class="mypage1">
 				<tr>
 					<td>
 						<label>
@@ -83,5 +89,7 @@
 				</table>
 			</form>
 		</c:forEach>
+		</form>
+	</div>
 	</body>
 </html>

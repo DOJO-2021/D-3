@@ -8,11 +8,11 @@
 
 	<nav>
 		<ul class="header">
-			<li class="header"><a href="/SymPany/HomeServlet">ホーム</a></li>
-			<li class="header"><a href="/SymPany/MypageServlet">マイページ</a></li>
-			<li class="header"><a href="/SymPany/ProfileSearchServlet">プロフィール検索</a></li>
-			<li class="header"><a href="/SymPany/ChatServlet">チャット</a></li>
-			<li class="header"><a href="/SymPany/LogoutServlet">ログアウト</a></li>
+			<li class="header"><a href="/SymPany/home.jsp">ホーム</a></li>
+			<li class="header"><a href="/SymPany/mypage.jsp">マイページ</a></li>
+			<li class="header"><a href="/SymPany/profilesearch.jsp">プロフィール検索</a></li>
+			<li class="header"><a href="/SymPany/chat.jsp">チャット</a></li>
+			<li class="header"><a href="/SymPany/login.jsp">ログアウト</a></li>
 		</ul>
 	</nav>
 </header>
