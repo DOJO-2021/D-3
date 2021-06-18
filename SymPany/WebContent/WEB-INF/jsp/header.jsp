@@ -10,7 +10,7 @@
 		<ul class="header">
 			<li class="header"><a href="/SymPany/HomeServlet">ホーム</a></li>
 			<li class="header"><a href="/SymPany/MypageServlet">マイページ</a></li>
-			<li class="header"><a href="/SymPany/ProflieSearchServlet">プロフィール検索</a></li>
+			<li class="header"><a href="/SymPany/ProfileSearchServlet">プロフィール検索</a></li>
 			<li class="header"><a href="/SymPany/ChatServlet">チャット</a></li>
 			<li class="header"><a href="/SymPany/LogoutServlet">ログアウト</a></li>
 		</ul>
