@@ -27,7 +27,9 @@
 		</form>
 
 		<div class="kingpink">
+		<%int sum = 0; %>
 			<c:forEach var="e" items="${list}">
+			<%sum++ ;%>
 				<div class="pink">
 					<form method="POST" action="/SymPany/FollowerServlet">
 						<input type="hidden" name="user_id" value="${e.user_id}" disabled>
@@ -109,6 +111,9 @@
 						</form>
 					</div>
 				</c:forEach>
+				<%if (sum ==0){ %>
+			<div class="icon2"><img src="/SymPany/images/kensaku.png" class="icon"></div>
+			<% }%>
 			</div>
 		</div>
 	</body>
