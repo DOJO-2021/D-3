@@ -39,7 +39,7 @@ public class RoomSearchServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String search =request.getParameter("search");
+		String search =request.getParameter("RoomEdit");
 		HttpSession session = request.getSession();
 
 		int r_id = 0;

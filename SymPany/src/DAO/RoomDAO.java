@@ -135,7 +135,6 @@ public class RoomDAO {
 				}
 				// SQL文を実行し、結果表を取得する
 				ResultSet rs = pStmt.executeQuery();
-				System.out.println(pStmt);
 				// 結果表をコレクションにコピーする
 				while (rs.next()) {
 					Room Room = new Room(
