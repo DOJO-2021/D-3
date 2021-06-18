@@ -38,7 +38,7 @@ public class MemberServlet extends HttpServlet {
 		String req = request.getParameter("submit");
 		String user_id = (String)session.getAttribute("user_id");
 		int r_id = Integer.parseInt(request.getParameter("r_id"));
-		System.out.println(user_id);
+
 		// ルームに参加メンバーを追加する
 		MemberDAO mDao = new MemberDAO();
 		if (req.equals("参加")) {

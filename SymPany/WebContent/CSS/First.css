@@ -9,6 +9,10 @@
 	/*outline:1px solid #ff0000;*/
 }
 
+/*マウスが乗った時の色*/
+a:hover{
+	color: #8bd3dd;
+}
 
 /*位置調整*/
 h1{
@@ -109,6 +113,10 @@ input[type="submit"]{
   text-align    : center;      /* 文字位置   */
   padding       : 12px 18px;   /* 余白       */
   line-height   : 1em;         /* 1行の高さ  */
+}
+
+input[type="submit"]:hover{
+  background-color: #8bd3dd;
 }
 
 

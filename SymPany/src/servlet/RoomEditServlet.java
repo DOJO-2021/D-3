@@ -31,8 +31,6 @@ public class RoomEditServlet extends HttpServlet {
 
 		// ルームのログイン状態を保持する
 					request.setCharacterEncoding("UTF-8");
-					int r_id = (int)session.getAttribute("r_id");
-
 
 		// ルーム編集画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/roomedit.jsp");

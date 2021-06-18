@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import DAO.FollowDAO;
 import DAO.UserDAO;
+import model.Follow;
 import model.User;
 
 @WebServlet("/MypageServlet")
@@ -31,8 +35,27 @@ public class MypageServlet extends HttpServlet {
 		user.setUser_id(user_id);
 		UserDAO uDao = new UserDAO();
 
+		//検索処理を行う（フォロー検索）
+		Follow follow = new Follow();
+		follow.setUser_id(user_id);
+		FollowDAO fDao = new FollowDAO();
+
+		//検索処理を行う（フォロープロフィール検索）
+		List<Follow> followList =new ArrayList<Follow>();
+		List<List<User>> userList = new ArrayList<List<User>>();
+		followList = fDao.select(follow);
+
+		//フォローしている人のプロフィールの検索
+		for(int i=0;followList.size()>i;i++) {
+			User fUser =new User();
+			fUser.setUser_id(followList.get(i).getF_user_id());
+			UserDAO Dao = new UserDAO();
+			userList.add(Dao.select(fUser));
+		}
 		// セッションスコープにIDを格納する
 
+		request.setAttribute("follow",fDao.select(follow));
+		request.setAttribute("list", userList);
 		request.setAttribute("profile", uDao.select(user));
 
 		// メニューページにフォワードする
@@ -45,7 +68,8 @@ public class MypageServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
-				String user_id = request.getParameter("user_id");
+				HttpSession session = request.getSession();
+				String user_id = (String)session.getAttribute("user_id");
 				String name = request.getParameter("name");
 				String nickname = request.getParameter("nickname");
 				String birthplace = request.getParameter("birthplace");
@@ -74,8 +98,28 @@ public class MypageServlet extends HttpServlet {
 				user.setUser_id(user_id);
 				uDao = new UserDAO();
 
-				// セッションスコープにIDを格納する
+				//検索処理を行う（フォロー検索）
+				Follow follow = new Follow();
+				follow.setUser_id(user_id);
+				FollowDAO fDao = new FollowDAO();
 
+				//検索処理を行う（フォロープロフィール検索）
+				List<Follow> followList =new ArrayList<Follow>();
+				List<List<User>> userList = new ArrayList<List<User>>();
+				followList = fDao.select(follow);
+
+				//フォローしている人のプロフィールの検索
+				for(int i=0;followList.size()>i;i++) {
+					User fUser =new User();
+					fUser.setUser_id(followList.get(i).getF_user_id());
+					UserDAO Dao = new UserDAO();
+					userList.add(Dao.select(fUser));
+				}
+
+				System.out.println(userList.size());
+				// セッションスコープにIDを格納する
+				request.setAttribute("follow",fDao.select(follow));
+				request.setAttribute("list", userList);
 				request.setAttribute("profile", uDao.select(user));
 				// 結果ページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
