@@ -32,15 +32,15 @@
 	<span>？</span>
 	</h2>
 <p>
-<span>研修生用コミュニケーションツールSymPany</span>へようこそ！<br>
+<span class="s">研修生用コミュニケーションツールSymPany</span>へようこそ！<br>
 「Sympany」は２つのことばを合わせて作り出した造語です。<br>
-<span>思いやり</span>、<span>共感</span>という意味を持つ<span>「Sympacy」</span>と、<br>
-いろいろな<span>異なった要素</span>がまじり合って、ある効果を生み出しているという意味をもつ<span>「Sympyony」</span><br>
+<span class="s">思いやり</span>、<span class="s">共感</span>という意味を持つ<span class="s">「Sympacy」</span>と、<br>
+いろいろな<span class="s">異なった要素</span>がまじり合って、ある効果を生み出しているという意味をもつ<span class="s">「Sympyony」</span><br>
 <br>
-会社もバックグラウンドも違うひととも<span>交流</span>ができる。<br>
-仕事のことだけでなく、<span>趣味や好きなもの</span>、お互いが共感できるプライベートな話ができる。<br>
+会社もバックグラウンドも違うひととも<span class="s">交流</span>ができる。<br>
+仕事のことだけでなく、<span class="s">趣味や好きなもの</span>、お互いが共感できるプライベートな話ができる。<br>
 <br>
-SymPanyはそんな<span>コミュにケーションのきっかけ</span>になることを願って生まれました。<br>
+SymPanyはそんな<span class="s">コミュにケーションのきっかけ</span>になることを願って生まれました。<br>
 <br>
 </p>
 </div>

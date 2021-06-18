@@ -19,8 +19,13 @@ body {
 	max-width:1300px;
 }
 body.homebody {
-	background: linear-gradient( #fef6e4 ,#001858 ,rgba(255,221,40,0.8))fixed,url(.png);
+	background: linear-gradient(130deg,rgba(254,246,228,0.6),rgba(243,210,193,0.5)),
+url("/SymPany/images/hokkyoku.jpg");
+ 	background-size: 1000px 400px;
+ 	background-repeat: no-repeat;
+ 	 background-position:150px 0;
 }
+
 /*マウスが乗った時の色*/
 a:hover{
 	color: #8bd3dd;
@@ -244,6 +249,7 @@ div.HOME{
 	height:650px;
 	margin:0 auto 0 auto;
 	border-bottom: 5px double #272343;
+	background-color: transparent;
 
 }
 
@@ -254,9 +260,14 @@ h2.home{
 
 div.setumei p,h2{
 	text-align:center;
-
+	background-color: transparent;
 }
-
+div.setumei {
+	background-color: transparent;
+}
+span.s{
+	background-color:#f3d2c1;
+}
 img.man{
 	display:inline-block;
 	width:25%;
