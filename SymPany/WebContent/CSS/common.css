@@ -304,6 +304,7 @@ div.link{
   border: solid 3px #001858;
   box-sizing: border-box;
 }
+
 div.link:before {
   content: "";
   position: absolute;
