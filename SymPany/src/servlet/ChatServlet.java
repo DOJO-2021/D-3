@@ -119,7 +119,6 @@ public class ChatServlet extends HttpServlet {
 		}
 
 		// 検索結果をリクエストスコープに格納する
-
 		request.setAttribute("roomList",roomList);
 		request.setAttribute("room",rList);
 		request.setAttribute("chat", cList);
