@@ -209,7 +209,7 @@ img.man{
 	height:auto;
 	position: relative;
 	top: 0;
-	left:250px;
+	left:240px;
 }
 
 /* 「」こういう枠*/
@@ -241,7 +241,7 @@ div.setumei p:after{
 div.link{
 	position: relative;
 	top: -210px;
-	left:500px;
+	left:490px;
 	width:400px;
 }
 
