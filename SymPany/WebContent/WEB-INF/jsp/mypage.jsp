@@ -66,7 +66,7 @@
 					<td>
 						<label>
 							趣味
-							<textarea rows="3″cols=”50″wrap="soft" type="text" name="hobby" >
+							<textarea rows="3"cols="50"wrap="soft" type="text" name="hobby" >
 								${e.hobby}
 							</textarea><br>
 						</label>
@@ -74,7 +74,7 @@
 					<td>
 						<label>
 							自己紹介文
-								<textarea rows="3″cols=”50″wrap="soft" type="text" name="intro">
+								<textarea rows="3"cols="50"wrap="soft" type="text" name="intro">
 									${e.intro}
 								</textarea><br>
 						</label>

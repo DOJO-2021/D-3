@@ -38,7 +38,6 @@
 			</table>
 		</form>
 			<h4>アカウントをお持ちでないですか？
-
 			▶<a href="/SymPany/AccountNewServlet">新規登録</a></h4>
 			</div>
 		</div>
