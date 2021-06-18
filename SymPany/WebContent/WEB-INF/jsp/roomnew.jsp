@@ -13,12 +13,10 @@
 		<jsp:include page="header.jsp"></jsp:include>
 		<jsp:include page="leftmenu.jsp"></jsp:include>
 		<div class="bigrm">
-			<iframe src="LeftmenuServlet" name="sample" width="200" height="500"
-				align="left">
-			 </iframe>
+
 		<h2>ルームの新規作成</h2>
 			<!-- ルーム情報を送る -->
-		<form class="rm"  method="" action="">
+		<form class="rm"  method="post" action="/SymPany/RoomNewServlet">
 			<table class="room_ps">
 				<tr>
 					<td>
@@ -35,8 +33,8 @@
 				<tr>
 					<td>
 						<label class="label0">ルームの公開・非公開設定：</label>
-						<input type="radio" name="open" value="public">公開
-						<input type="radio" name="open" value="private">非公開<br>
+						<input type="radio" name="open" value=1>公開
+						<input type="radio" name="open" value=0>非公開<br>
 					</td>
 				</tr>
 				<tr>

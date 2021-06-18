@@ -12,10 +12,8 @@
 	<body>
 		<jsp:include page="header.jsp"></jsp:include>
 		<jsp:include page="leftmenu.jsp"></jsp:include>
-		<iframe class="iframe" src="leftmenu.jsp" name="sample">
-			この部分はインラインフレームを使用しています。
-		</iframe>
 		<div class="bigrm">
+
 			<h2>ルームの編集</h2>
 	<c:forEach var="e" items="${list}">
 		<ul>
@@ -30,22 +28,22 @@
 	</c:forEach>
 
 				<!-- ルーム情報を送る -->
-			<form class="rm" method="" action="">
+			<form class="rm" method="post" action="/SymPany/RoomEditServlet">
 				<table class="room_ps">
 					<tr>
 						<td><label class="label0">ルーム名</label><br>
-							<input type="text" name="room_name" placeholder="(例)猫好きの会"><br>
+							<input type="text" name="room_name">${e.r_name}<br>
 						</td>
 					</tr>
 					<tr>
 						<td><label class="label0">一言で説明</label><br>
-							<input class="ex" type="text" name="room_comment" placeholder="(例)猫好きなら誰でもOK"><br><br>
+							<input class="ex" type="text" name="room_comment"> ${e.r_comment}<br><br>
 						</td>
 					</tr>
 					<tr>
 						<td><label class="label0">ルームの公開・非公開設定：</label>
-							<input type="radio" name="open" value="public">公開
-							<input type="radio" name="open" value="private">非公開<br>
+							<input type="radio" name="open" value=1>公開
+							<input type="radio" name="open" value=0>非公開<br>
 						</td>
 					</tr>
 					<tr>
