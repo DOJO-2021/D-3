@@ -56,10 +56,10 @@
 		 -->
 		<section>
 			<div class="content">
-			参加者一覧
+			参加者一覧<br>
 			<!-- 参加者をループで一覧で表示する -->
 			<c:forEach var="e" items="${list}">
-				${e.nickname}
+				・${e.nickname}<br>
 			</c:forEach>
 			</div>
 		</section>

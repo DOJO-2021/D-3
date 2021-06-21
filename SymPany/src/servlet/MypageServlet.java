@@ -73,6 +73,7 @@ public class MypageServlet extends HttpServlet {
 				String name = request.getParameter("name");
 				String nickname = request.getParameter("nickname");
 				String birthplace = request.getParameter("birthplace");
+				String company = request.getParameter("company");
 				String birth = request.getParameter("birth");
 				String school= request.getParameter("school");
 				String hobby = request.getParameter("hobby");
@@ -83,6 +84,7 @@ public class MypageServlet extends HttpServlet {
 				user.setName(name);
 				user.setNickname(nickname);
 				user.setBirthplace(birthplace);
+				user.setCompany(company);
 				user.setBirth(birth);
 				user.setSchool(school);
 				user.setHobby(hobby);
@@ -115,7 +117,6 @@ public class MypageServlet extends HttpServlet {
 					userList.add(Dao.select(fUser));
 				}
 
-				System.out.println(userList.size());
 				// セッションスコープにIDを格納する
 				request.setAttribute("follow",fDao.select(follow));
 				request.setAttribute("list", userList);
