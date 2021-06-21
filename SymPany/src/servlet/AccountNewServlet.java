@@ -51,8 +51,8 @@ public class AccountNewServlet extends HttpServlet {
 		} else {
 			// 登録失敗
 			// 結果ページにフォワードする
-			request.setAttribute("error",true)
-;			request.setAttribute("login", false);
+			request.setAttribute("error",true);
+			request.setAttribute("login", false);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/account.jsp");
 			dispatcher.forward(request, response);
 		}

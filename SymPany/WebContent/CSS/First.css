@@ -40,14 +40,18 @@ div.first{
 
 /*タイトル文字など*/
 h1{
-	margin-top:40px;
+	margin-top:20px;
 	font-weight: normal;
 }
 
 h4{
 	text-align:center;
 }
-
+h3.error {
+	text-align:center;
+	color:#ff0000;
+	background-color:#f3d2c1;
+}
 p{
 	text-align:center;
 }
@@ -82,7 +86,7 @@ table.first td{
 /*ピンクの枠*/
 div.pink{
 	border: 30px solid #f3d2c1;
-	height: 300px;     /* 高さを制限(※) */
+	height: 350px;     /* 高さを制限(※) */
    	overflow: auto;  /* スクロールバーを表示(※) */
 }
 

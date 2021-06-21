@@ -9,20 +9,10 @@
 		<link rel="stylesheet" href="/SymPany/CSS/First.css">
 	</head>
 	<body>
-	<!-- 何かしらの原因で登録に失敗した場合ここが表示される -->
-
-			<c:if test="${error}">
-			<c:if test="${!login}">
-		<h1>そのＩＤは使用できません。</h1>
-		<script type="text/javascript">
-		alert("そのIDは使用できません。");
-
-		</script>
-		</c:if>
-	</c:if>
 
 		<div class="logo_bear"><img src="/SymPany/images/logo30.png"></div>
 		<div class="first">
+
 		<h1>新規登録</h1>
 		<div class="pink">
 		<form class="la" method="POST"
@@ -53,6 +43,12 @@
 		</form>
 		<h4>アカウントをお持ちですか？▶<a
 			href="/SymPany/LoginServlet">ログイン</a></h4>
+			<!-- 何かしらの原因で登録に失敗した場合ここが表示される -->
+			<c:if test="${error}">
+			<c:if test="${!login}">
+			<h3 class="error">※そのＩＤは既に使用されています※</h3>
+			</c:if>
+			</c:if>
 		</div>
 		</div>
 	</body>

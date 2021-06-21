@@ -39,6 +39,11 @@
 		</form>
 			<h4>アカウントをお持ちでないですか？
 			▶<a href="/SymPany/AccountNewServlet">新規登録</a></h4>
+			<c:if test="${error}">
+			<c:if test="${!login}">
+			<h3 class="error">※ＩＤまたはパスワードが正しくありません※</h3>
+			</c:if>
+			</c:if>
 			</div>
 		</div>
 	</body>
