@@ -40,15 +40,15 @@
 					</tr>
 					<tr>
 						<td><label class="label0">ルームの公開・非公開設定：</label>
-							<input type="radio" name="open" value=1>公開
+							<input type="radio" name="open" value=1 checked>公開
 							<input type="radio" name="open" value=0>非公開<br>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<div class="submit">
-								<input type="submit" name="make" value="ルームを更新する">
-								<input type="submit" name="delete" value="ルームを削除する">
+								<input type="submit" name="submit" value="ルームを更新する" >
+								<input type="submit" name="submit" value="ルームを削除する">
 							</div>
 						</td>
 					</tr>

@@ -51,7 +51,8 @@ public class ChatServlet extends HttpServlet {
 			session.setAttribute("r_id", request.getParameter("r_id"));
 		}
 		else if(session.getAttribute("r_id")!=null){
-			r_id = Integer.parseInt((String)session.getAttribute("r_id"));
+			String h = session.getAttribute("r_id").toString();
+			r_id = Integer.parseInt(h);
 		}
 		else {
 			r_id =0;
@@ -148,9 +149,12 @@ public class ChatServlet extends HttpServlet {
 		if(request.getParameter("r_id")!=null) {
 			r_id = Integer.parseInt((String)request.getParameter("r_id"));
 			session.setAttribute("r_id", request.getParameter("r_id"));
+
+			System.out.println("リクエスト"+r_id);
 		}
 		else {
 			r_id = Integer.parseInt((String)session.getAttribute("r_id"));
+			System.out.println("セッション"+r_id);
 		}
 
 		String submit = " ";

@@ -46,8 +46,11 @@ public class AccountNewServlet extends HttpServlet {
 			session.setAttribute("user_id", user_id);
 			request.setAttribute("login", true);
 
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profilenew.jsp");
+			dispatcher.forward(request, response);
+
 			// メニューサーブレットにリダイレクトする
-			response.sendRedirect("ProfileNewServlet");
+			//response.sendRedirect("ProfileNewServlet");
 		} else {
 			// 登録失敗
 			// 結果ページにフォワードする

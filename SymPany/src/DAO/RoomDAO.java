@@ -356,7 +356,6 @@ public class RoomDAO {
 					pStmt.setString(4, "null");
 				}pStmt.setInt(5,  Room.getR_id() );
 
-
 				// SQL文を実行する
 				if (pStmt.executeUpdate() == 1) {
 					result = true;

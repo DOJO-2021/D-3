@@ -55,7 +55,7 @@
 					</c:forEach>
 				</ul>
 			<%if (sum ==0){ %>
-			<div class="icon1"><img src="/SymPany/images/talk.png" class="icon"></div>
+
 			<% }%>
 		</div>
 	</body>
