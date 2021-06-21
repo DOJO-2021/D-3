@@ -34,7 +34,7 @@
 			<%sum++ ;%>
 				<div class="pink">
 					<form method="POST" action="/SymPany/FollowerServlet">
-						<input type="hidden" name="fuser_id" value="${e.user_id}" disabled>
+					<input type="hidden" name="user_id" value="${e.user_id}" >
 							<table class="formtable">
 								<tr>
 									<td>
@@ -75,7 +75,7 @@
 								<tr>
 									<td>
 										<label>趣味<br>
-											<textarea rows="3"cols="50"wrap="soft" type="text" name="hobby" disabled>${e.hobby}</textarea>
+											<textarea rows="3"cols="50"wrap="soft" name="hobby" disabled>${e.hobby}</textarea>
 										</label>
 									</td>
 									<td>
