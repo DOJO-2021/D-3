@@ -85,7 +85,6 @@ public class ChatServlet extends HttpServlet {
 		List<User> uList = new ArrayList<User>();
 		List<User> sum = new ArrayList<User>();
 
-
 		if(mList!=null) {
 			for(Member m : mList) {
 				user = new User();
@@ -115,13 +114,14 @@ public class ChatServlet extends HttpServlet {
 		List<List<Room>> roomList = new ArrayList<List<Room>>();
 
 		//参加しているルームの検索
-		for(int i=0;rmember.size()>i;i++) {
-			room =new Room();
-			room.setR_id(rmember.get(i).getR_id());
-			RoomDAO Dao = new RoomDAO();
-			roomList.add(Dao.selectID(room));
+		if(rmember!=null) {
+			for(int i=0;rmember.size()>i;i++) {
+				room =new Room();
+				room.setR_id(rmember.get(i).getR_id());
+				RoomDAO Dao = new RoomDAO();
+				roomList.add(Dao.selectID(room));
+			}
 		}
-
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("roomList",roomList);
 		request.setAttribute("room",rList);
@@ -185,6 +185,7 @@ public class ChatServlet extends HttpServlet {
 		else if(submit.equals("解除")){
 			if(reDao.delete(new Reaction(user_id,Integer.parseInt(request.getParameter("message_id"))))) {
 				request.setAttribute("delete", true);
+
 			}
 			else {
 				request.setAttribute("delete",false);
