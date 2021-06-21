@@ -38,6 +38,7 @@ public class FollowerServlet extends HttpServlet {
 		String user_id = (String) session.getAttribute("user_id");
 		String fuser_id = request.getParameter("user_id");
 		FollowDAO fDao = new FollowDAO();
+
 		if (req.equals("フォローする")) {
 			Follow follow = new Follow(user_id, fuser_id);
 			if (fDao.insert(follow)) {
