@@ -53,6 +53,8 @@ public class LoginServlet extends HttpServlet {
 			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
 
 			// 結果ページにフォワードする
+			request.setAttribute("error",true);
+			request.setAttribute("login", false);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
 		}
