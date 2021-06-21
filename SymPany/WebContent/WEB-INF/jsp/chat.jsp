@@ -9,6 +9,8 @@
 <title>SymPany | チャット</title>
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
 <link rel="stylesheet" href="/SymPany/CSS/Third.css">
+<link rel="stylesheet" href = "SymPany/css/Hamburger.css">
+
 </head>
 
 <body>
@@ -36,6 +38,11 @@
 <!-- <iframe src="LeftmenuServlet" name="sample" width="200" height="500" align="left">
 		</iframe> -->
 <div class="bigth">
+<c:if test="${room[0]==null}">
+<div class="icon1"><img src="/SymPany/images/talk.png" class="icon"></div>
+</c:if>
+<c:if test="${room[0] != null}">
+
 <!-- ここにRoomのr_nameを入れる -->
 	<h2 class="r_name">${room[0].r_name}</h2>
 	<div class="shdiv">
@@ -44,12 +51,12 @@
 	</c:if>
 
 
-
 	<img src="/SymPany/images/ham.png" class="ham"></div>
 	<!-- 設定のimg 表示 一番良い方法はsubmitボタンの表示を変更するのが良い-->
 
 	<!-- ドロワーの入力 -->
 	<div class="container">
+
 		<div class="hamburger" id="open_nav">
 		<!--
 		<img src="" alt"">
@@ -102,6 +109,7 @@
 		<input class="ctext" type ="text" name="s_message" placeholder="コメントを入力してください。">
 		<input type="submit" name="submit" value="送信">
 	</form>
+	</c:if>
 </div>
 </body>
 </html>
