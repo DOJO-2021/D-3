@@ -25,7 +25,7 @@ public class MemberServlet extends HttpServlet {
 		}
 
 		// ルーム編集画面にフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/roomedit.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/SymPany/RoomSearchServlet");
 		dispatcher.forward(request, response);
 	}
 
@@ -60,7 +60,7 @@ public class MemberServlet extends HttpServlet {
 				request.setAttribute("delete",false);
 			}
 		}
-
+		session.setAttribute("r_id",r_id);
 
 		// ルームページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ChatServlet");
