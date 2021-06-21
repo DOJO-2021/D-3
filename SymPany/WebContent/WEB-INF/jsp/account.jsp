@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,6 +9,18 @@
 		<link rel="stylesheet" href="/SymPany/CSS/First.css">
 	</head>
 	<body>
+	<!-- 何かしらの原因で登録に失敗した場合ここが表示される -->
+
+			<c:if test="${error}">
+			<c:if test="${!login}">
+		<h1>そのＩＤは使用できません。</h1>
+		<script type="text/javascript">
+		alert("そのIDは使用できません。");
+
+		</script>
+		</c:if>
+	</c:if>
+
 		<div class="logo_bear"><img src="/SymPany/images/logo30.png"></div>
 		<div class="first">
 		<h1>新規登録</h1>

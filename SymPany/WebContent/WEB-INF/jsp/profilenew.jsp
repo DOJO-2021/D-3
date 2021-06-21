@@ -9,6 +9,11 @@
 	<link rel="stylesheet" href="/SymPany/CSS/First.css">
 	</head>
 	<body>
+	<c:if test="${login}">
+		<script type="text/javascript">
+			alert("アカウントを新規作成しました。");
+		</script>
+	</c:if>
 		<div class="logo_bear"><img src="/SymPany/images/logo30.png"></div>
 		<div class="first">
 		<h1>プロフィール新規登録</h1>

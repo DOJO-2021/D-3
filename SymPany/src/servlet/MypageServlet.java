@@ -88,12 +88,11 @@ public class MypageServlet extends HttpServlet {
 				user.setHobby(hobby);
 				user.setIntro(intro);
 				UserDAO uDao = new UserDAO();
+				request.setAttribute("update", false);
 				if(uDao.update(user)) {
 					request.setAttribute("update", true);
 				}
-				else {
-					request.setAttribute("update", false);
-				}
+
 				user = new User();
 				user.setUser_id(user_id);
 				uDao = new UserDAO();
