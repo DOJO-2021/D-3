@@ -11,7 +11,7 @@
 	<body>
 	<c:if test="${login}">
 		<script type="text/javascript">
-			alert("アカウントを新規作成しました。");
+			window.alert("アカウントを新規作成しました。");
 		</script>
 	</c:if>
 		<div class="logo_bear"><img src="/SymPany/images/logo30.png"></div>

@@ -45,6 +45,7 @@ public class MemberServlet extends HttpServlet {
 			Member member = new Member(user_id, r_id);
 			if (mDao.insert(member)) {
 				request.setAttribute("insert",true);
+				session.setAttribute("r_id", r_id);
 			}
 			else {
 				request.setAttribute("insert",false);
@@ -54,14 +55,13 @@ public class MemberServlet extends HttpServlet {
 		else if (req.equals("脱退")) {
 			if (mDao.delete (r_id)) {
 				request.setAttribute("delete",true);
-				session.setAttribute("r_id", 0);
+				session.setAttribute("r_id", null);
 			}
 			else {
 				request.setAttribute("delete",false);
 			}
 		}
-		session.setAttribute("r_id",r_id);
-
+		System.out.println(session.getAttribute("r_id"));
 		// ルームページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ChatServlet");
 		dispatcher.forward(request, response);
