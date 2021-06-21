@@ -53,6 +53,7 @@ public class RoomSearchServlet extends HttpServlet {
 
 		// 検索処理を行う(ルーム名)
 		List<Room> list = bDao.selectR(new Room(r_id,search, r_comment, release, user_id));
+		if(list!=null) {
 		for(Room a:list) {
 			int j = 0;
 			//重複がないかのチェック
@@ -67,23 +68,27 @@ public class RoomSearchServlet extends HttpServlet {
 				sum.add(a);
 			}
 		}
+		}
+
 
 		//検索処理を行う（一言コメント）
 		list = bDao.selectR(new Room(r_id,r_name, search, release, user_id));
-		for(Room a:list) {
-			int j = 0;
-			//重複がないかのチェック
-			for(int i = 0;i<sum.size();i++) {
-				if(sum.get(i).getR_id()==a.getR_id()) {
-					j=i;
-					break;
+		if(list!=null) {
+			for(Room a:list) {
+				int j = 0;
+				//重複がないかのチェック
+				for(int i = 0;i<sum.size();i++) {
+					if(sum.get(i).getR_id()==a.getR_id()) {
+						j=i;
+						break;
+					}
+					j=i+1;
 				}
-				j=i+1;
+				if(j==sum.size()) {//重複がない場合は追加する。
+					sum.add(a);
+				}
 			}
-			if(j==sum.size()) {//重複がない場合は追加する。
-				sum.add(a);
 			}
-		}
 		user_id = (String)session.getAttribute("user_id");
 		//参加しているルームの検索
 		Member member= new Member();
@@ -97,7 +102,7 @@ public class RoomSearchServlet extends HttpServlet {
 
 		// 部屋の名前の検索処理を行う
 		List<List<Room>> roomList = new ArrayList<List<Room>>();
-
+		if(rmember!=null) {
 		//参加しているルームの検索
 		for(int i=0;rmember.size()>i;i++) {
 			Room room =new Room();
@@ -105,7 +110,7 @@ public class RoomSearchServlet extends HttpServlet {
 			RoomDAO Dao = new RoomDAO();
 			roomList.add(Dao.selectID(room));
 		}
-
+		}
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("roomList",roomList);
 
