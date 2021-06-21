@@ -31,7 +31,7 @@ public class UserDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
 			if (param.getUser_id() != null &&param.getUser_id() != "") {
-				pStmt.setString(1, "%" + param.getUser_id() + "%");
+				pStmt.setString(1, param.getUser_id());
 			}
 			else {
 				pStmt.setString(1, "%");
