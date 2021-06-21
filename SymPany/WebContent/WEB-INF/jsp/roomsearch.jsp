@@ -17,15 +17,16 @@
 		<!-- ここに検索に使用した文字が入ります -->
 		<h2>検索結果 ${search}</h2>
 		<%int sum = 0; %>
+		<ul class="rmul">
 			<c:forEach var="e" items="${list}">
-				<ul class="rmul">
+
 				<!-- ここでは表示・非表示の比較をしています
 					 1（表示）だった場合は表示する
 					 それ以外は表示しません-->
 					<c:if test="${e.release==1}">
 					<%sum++ ;%>
 						<li class="rmli">
-							<form action="MemberServlet"  method="post">
+							<form class="rm2" action="MemberServlet"  method="post">
 									<input type="hidden" name="r_id" value="${e.r_id}">
 									<label class="label1"><strong>${e.r_name}</strong></label><br>
 									<label class="label2">${e.r_comment}</label>
@@ -41,18 +42,18 @@
 									<!-- カウンターが0の場合、参加していないとみなす
 										 カウンターが0以外の場合、参加しているとみなす -->
 										<%if(counter==0){ %>
-											<input type ="submit" name ="submit" value="参加">
+											<div class="submit2"><input  type ="submit" name ="submit" value="参加"></div>
 										<%}
 										else{
 										%>
-											<input type ="submit" name ="submit" value="脱退">
+											<div class="submit2"><input  type ="submit" name ="submit" value="脱退"></div>
 										<%} %>
 									</div>
 							</form>
 						</li>
 					</c:if>
+					</c:forEach>
 				</ul>
-			</c:forEach>
 			<%if (sum ==0){ %>
 			<div class="icon1"><img src="/SymPany/images/talk.png" class="icon"></div>
 			<% }%>
