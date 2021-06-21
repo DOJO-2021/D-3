@@ -86,7 +86,7 @@ public class ChatServlet extends HttpServlet {
 		List<User> sum = new ArrayList<User>();
 
 
-		if(mList.size()>0) {
+		if(mList!=null) {
 			for(Member m : mList) {
 				user = new User();
 				user.setUser_id(m.getUser_id());
