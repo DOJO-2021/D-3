@@ -18,12 +18,11 @@
 			<h4>■参加中のルーム</h4>
 			<c:forEach var="e" items="${roomList}">
 				<c:forEach var ="f" items="${e}">
-				<form method="POST" action="/SymPany/ChatServlet" >
+				<form class="roomin" method="POST" action="/SymPany/ChatServlet" >
 					<input type ="hidden" name ="r_id" value="${f.r_id}">
  					${f.r_name}
- 					<input type="submit" name="submit" value="参加する">
+ 					<div class="minsubmit"><input class="minsubmit" type="submit" name="submit" value="参加する"></div>
 				</form>
-				<hr>
 				</c:forEach>
 			</c:forEach>
 </div>

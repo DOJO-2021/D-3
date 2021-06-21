@@ -58,8 +58,8 @@ div.shdiv {
 /*トーク履歴の表示*/
 ul.talk {
 	clear:both;
-	width:720px;
-	height:400px;
+	width:980px;
+	height:600px;
 	list-style-type:none;
 	display:inline-block;
 	margin:5px 0 0 10px;

@@ -199,6 +199,18 @@ input[name="RoomEdit"]{
 	margin			:0 10px;
 }
 
+/*参加ルーム一覧*/
+div.minsubmit{
+	float:right;
+	margin:5px 5px 0 0;
+}
+
+form.roomin{
+	height:40px;
+	border:none;
+
+}
+
 /*followのプロフィール表示部分*/
 input.f_listname{
 	width:200px;
