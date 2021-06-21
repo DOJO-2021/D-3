@@ -9,7 +9,7 @@
 <title>SymPany | チャット</title>
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
 <link rel="stylesheet" href="/SymPany/CSS/Third.css">
-<link rel="stylesheet" href = "SymPany/css/Hamburger.css">
+<link rel="stylesheet" href = "/SymPany/css/Hamburger.css">
 
 </head>
 
@@ -30,8 +30,6 @@
 		alert("リアクションしました。");
 	</script>
 </c:if>
-
-
 
 <jsp:include page="header.jsp"></jsp:include>
 <jsp:include page="leftmenu.jsp"></jsp:include>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -34,7 +34,7 @@
 				<tr>
 					<td>
 						<label class="label0">ルームの公開・非公開設定：</label>
-						<input type="radio" name="open" value=1>公開
+						<input type="radio" name="open" value=1 checked>公開
 						<input type="radio" name="open" value=0>非公開<br>
 					</td>
 				</tr>
@@ -43,7 +43,7 @@
 						<div class="submit">
 							<input type="submit" name="make" value="ルームを作成する">
 						</div>
-						<!-- 何かしらの原因で登録に失敗した場合ここが表示される -->
+							<!-- 何かしらの原因で登録に失敗した場合ここが表示される -->
 			<c:if test="${error}">
 			<c:if test="${!login}">
 			<h3 class="error">※そのルーム名は既に使用されています※</h3>

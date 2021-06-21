@@ -58,13 +58,12 @@ public class RoomNewServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-
 		HttpSession session = request.getSession();
 		String user_id = (String)session.getAttribute("user_id");
-		//String user_id = request.getParameter("user_id");
 		String room_name = request.getParameter("room_name");
 		String room_comment = request.getParameter("room_comment");
 		int pub = Integer.parseInt(request.getParameter("open"));
+
 		MemberDAO mDao =new MemberDAO();
 		List<Member> rmember = mDao .selectR(new Member(user_id,0));
 
@@ -85,10 +84,17 @@ public class RoomNewServlet extends HttpServlet {
 		RoomDAO bDao = new RoomDAO();
 		Room user = new Room(room_name,room_comment,pub,user_id);
 		if (bDao.insert(user)) { // 登録成功
+			user = new Room(room_name,"",0,"");
+			List<Room> r = bDao.selectR(user);
+			int r_id =r.get(0).getR_id();
+			Member member = new Member(user_id,r_id);
+			if (mDao.insert(member)) {
+				session.setAttribute("r_id", r_id);
+			}
 
 			// チャットサーブレットにリダイレクトする
-			response.sendRedirect("/SymPany/ChatServlet");
 			request.setAttribute("login", true);
+			response.sendRedirect("/SymPany/ChatServlet");
 		} else {
 			// 登録失敗
 			// チャットページにフォワードする

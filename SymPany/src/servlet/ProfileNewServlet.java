@@ -27,7 +27,10 @@ public class ProfileNewServlet extends HttpServlet {
 			response.sendRedirect("/SymPany/LoginServlet");
 			return;
 		}
-
+		System.out.println(request.getAttribute("login"));
+		if(request.getAttribute("login")!=null) {
+			request.setAttribute("login", true);
+		}
 		// ホーム画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profilenew.jsp");
 		dispatcher.forward(request, response);
@@ -49,7 +52,6 @@ public class ProfileNewServlet extends HttpServlet {
 		String intro = request.getParameter("intro");
 
 
-
 		// 登録処理を行う
 		UserDAO bDao = new UserDAO();
 		User user = new User(user_id,name,nickname,birthplace,company,birth,school,hobby,intro);
@@ -57,10 +59,10 @@ public class ProfileNewServlet extends HttpServlet {
 			request.setAttribute("login", true);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
 			dispatcher.forward(request, response);
-
 			// メニューサーブレットにリダイレクトする
 			//response.sendRedirect("/SymPany/HomeServlet");
 		} else {
+
 			// 登録失敗
 			// プロフィール登録ページにフォワードする
 			request.setAttribute("login", false);
@@ -68,6 +70,5 @@ public class ProfileNewServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 	}
-
 }
 
