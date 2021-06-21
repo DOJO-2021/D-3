@@ -58,12 +58,19 @@
 	<div class="container">
 
 		<div class="hamburger" id="open_nav">
-		<!--
-		<img src="" alt"">
-		 -->
+		<img src="ham.png" alt="">
+		<script src="../../_common/scripts/jquery-3.4.1.min.js"></script>
+		<script>
+		'use strict';
+		$(document).ready(function(){
+		  $('#open_nav').on('click', function(){
+		    $('#wrapper, #nav').toggleClass('show');
+		  });
+		});
+		</script>
 		<section>
 			<div class="content">
-			参加者一覧<br>
+			<p>参加者一覧<br></p>
 			<!-- 参加者をループで一覧で表示する -->
 			<c:forEach var="e" items="${list}">
 				・${e.nickname}<br>
