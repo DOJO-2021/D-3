@@ -45,12 +45,14 @@ public class MypageServlet extends HttpServlet {
 		List<List<User>> userList = new ArrayList<List<User>>();
 		followList = fDao.select(follow);
 
-		//フォローしている人のプロフィールの検索
-		for(int i=0;followList.size()>i;i++) {
-			User fUser =new User();
-			fUser.setUser_id(followList.get(i).getF_user_id());
-			UserDAO Dao = new UserDAO();
-			userList.add(Dao.select(fUser));
+		if(followList.size()>=0) {
+			//フォローしている人のプロフィールの検索
+			for(int i=0;followList.size()>i;i++) {
+				User fUser =new User();
+				fUser.setUser_id(followList.get(i).getF_user_id());
+				UserDAO Dao = new UserDAO();
+				userList.add(Dao.select(fUser));
+			}
 		}
 		// セッションスコープにIDを格納する
 
