@@ -85,25 +85,28 @@ public class ChatServlet extends HttpServlet {
 		List<User> uList = new ArrayList<User>();
 		List<User> sum = new ArrayList<User>();
 
-		for(Member m : mList) {
-			user = new User();
-			user.setUser_id(m.getUser_id());
-			uDao = new UserDAO();
-			uList = uDao.select(user);
-			int j = 0;
-			for(User u:uList) {
-				for(int i = 0; i<sum.size();i++) {
-					if(u.getUser_id()==sum.get(i).getUser_id()) {
-						j=i;
-						break;
+		if(mList.size()>0) {
+			for(Member m : mList) {
+				user = new User();
+				user.setUser_id(m.getUser_id());
+				uDao = new UserDAO();
+				uList = uDao.select(user);
+				int j = 0;
+				for(User u:uList) {
+					for(int i = 0; i<sum.size();i++) {
+						if(u.getUser_id()==sum.get(i).getUser_id()) {
+							j=i;
+							break;
+						}
+						j=i+1;
 					}
-					j=i+1;
-				}
-				if(j==sum.size()) {
-					sum.add(u);
+					if(j==sum.size()) {
+						sum.add(u);
+					}
 				}
 			}
 		}
+
 
 		List<Member> rmember = mDao.selectR(new Member(user_id,0));
 
