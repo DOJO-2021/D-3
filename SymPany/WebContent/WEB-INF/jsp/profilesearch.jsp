@@ -19,7 +19,7 @@
 			<table class="Third">
 				<tr>
 					<td><input class="kensaku" type="search" name="search"
-						placeholder="出身地や趣味などを入力してみよう" value="${search}"></td>
+						placeholder="出身地や趣味などを入力してみよう" value="${search}" autofocus></td>
 					<td><input class="kensaku" type="submit" name="submit"
 						value="検索"></td>
 				</tr>
@@ -28,11 +28,13 @@
 
 		<div class="kingpink">
 		<%int sum = 0; %>
+		<%String user =(String)session.getAttribute("user_id"); %>
 			<c:forEach var="e" items="${list}">
+			<c:if test="${e.user_id != user_id}">
 			<%sum++ ;%>
 				<div class="pink">
 					<form method="POST" action="/SymPany/FollowerServlet">
-						<input type="hidden" name="user_id" value="${e.user_id}" disabled>
+						<input type="hidden" name="fuser_id" value="${e.user_id}" disabled>
 							<table class="formtable">
 								<tr>
 									<td>
@@ -110,6 +112,7 @@
 							</table>
 						</form>
 					</div>
+					</c:if>
 				</c:forEach>
 				<%if (sum ==0){ %>
 			<div class="icon2"><img src="/SymPany/images/kensaku.png" class="icon"></div>
