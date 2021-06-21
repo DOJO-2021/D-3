@@ -1,7 +1,7 @@
 @charset "UTF-8";
 html * {
 	box-sizing:border-box;
-	/*outline:1px solid #ff0000;*/
+	outline:1px solid #ff0000;
 }
 h2{
 	background-color:#f3d2c1;
@@ -109,7 +109,7 @@ ul.rmul {
 	width:860px;
 	height: 400px;     /* 高さを制限(※) */
    	overflow: auto;  /* スクロールバーを表示(※) */
-	background-color:#f3d2c1;
+
 }
 /*スクロールバーの装飾*/
 ul.rmul::-webkit-scrollbar {
@@ -124,10 +124,10 @@ ul.rmul::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
-
 li.rmli{
 	background-color:#f3d2c1;
 	list-style-type:none;
+
 }
 /*submitボタン*/
 div.submit {
@@ -140,7 +140,7 @@ div.submit {
 /*検索結果画面のsubmitボタン*/
 div.submit2 {
 	float:right;
-	margin:0 40px 20px 0;
+	margin:0 15px 0 0;
 }
 /*一言で説明の記入欄*/
 input.ex {
