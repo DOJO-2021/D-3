@@ -59,7 +59,9 @@ public class RoomNewServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 
-		String user_id = request.getParameter("user_id");
+		HttpSession session = request.getSession();
+		String user_id = (String)session.getAttribute("user_id");
+		//String user_id = request.getParameter("user_id");
 		String room_name = request.getParameter("room_name");
 		String room_comment = request.getParameter("room_comment");
 		int pub = Integer.parseInt(request.getParameter("open"));
@@ -86,9 +88,12 @@ public class RoomNewServlet extends HttpServlet {
 
 			// チャットサーブレットにリダイレクトする
 			response.sendRedirect("/SymPany/ChatServlet");
+			request.setAttribute("login", true);
 		} else {
 			// 登録失敗
 			// チャットページにフォワードする
+			request.setAttribute("error",true);
+			request.setAttribute("login", false);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/chat.jsp");
 			dispatcher.forward(request, response);
 		}

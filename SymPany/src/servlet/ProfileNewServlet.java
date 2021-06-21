@@ -54,12 +54,16 @@ public class ProfileNewServlet extends HttpServlet {
 		UserDAO bDao = new UserDAO();
 		User user = new User(user_id,name,nickname,birthplace,company,birth,school,hobby,intro);
 		if (bDao.insert(user)) { // 登録成功
+			request.setAttribute("login", true);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
+			dispatcher.forward(request, response);
 
 			// メニューサーブレットにリダイレクトする
-			response.sendRedirect("/SymPany/HomeServlet");
+			//response.sendRedirect("/SymPany/HomeServlet");
 		} else {
 			// 登録失敗
 			// プロフィール登録ページにフォワードする
+			request.setAttribute("login", false);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
 			dispatcher.forward(request, response);
 		}

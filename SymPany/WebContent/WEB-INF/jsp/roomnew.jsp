@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -42,6 +43,12 @@
 						<div class="submit">
 							<input type="submit" name="make" value="ルームを作成する">
 						</div>
+						<!-- 何かしらの原因で登録に失敗した場合ここが表示される -->
+			<c:if test="${error}">
+			<c:if test="${!login}">
+			<h3 class="error">※そのルーム名は既に使用されています※</h3>
+			</c:if>
+			</c:if>
 					</td>
 				</tr>
 			</table>
