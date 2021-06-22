@@ -21,7 +21,7 @@
 				<form class="roomin" method="POST" action="/SymPany/ChatServlet" >
 					<input type ="hidden" name ="r_id" value="${f.r_id}">
  					${f.r_name}
- 					<div class="minsubmit"><input class="minsubmit" type="submit" name="submit" value="参加する"></div>
+ 					<div class="minsubmit"><input class="minsubmit" type="submit" name="submit" value="入室する"></div>
 				</form>
 				</c:forEach>
 			</c:forEach>

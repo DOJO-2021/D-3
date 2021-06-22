@@ -84,7 +84,7 @@ color:red;
 						</c:if>
 					</c:forEach>
 					<%if(counter==0){ %>
-						<input type ="submit" name ="submit" value="リアクション">
+						<input class="reaction" type ="submit" name ="submit" value="good&#x1f44d;">
 					<%}
 					else{
 					%>

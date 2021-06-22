@@ -23,6 +23,11 @@ input.ctext{
 	width:860px;
 	margin:5px;
 }
+
+/*リアクションボタン*/
+input.reaction{
+	margin-left:50px;
+}
 /*テキスト入力と送信ボタン*/
 form.chat {
 	background-color:#f3d2c1;
@@ -79,7 +84,6 @@ div.content {
 	height:520px;
 	width:170px;
 	margin:5px 5px;
-	po
 }
 
 /*スクロールバーの装飾*/
