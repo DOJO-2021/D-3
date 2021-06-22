@@ -143,11 +143,11 @@ public class ChatServlet extends HttpServlet {
 		int r_id = 0;
 
 		if(request.getParameter("r_id")!=null) {
-			r_id = Integer.parseInt((String)request.getParameter("r_id"));
+			r_id = Integer.parseInt(request.getParameter("r_id").toString());
 			session.setAttribute("r_id", request.getParameter("r_id"));
 		}
 		else {
-			r_id = Integer.parseInt((String)session.getAttribute("r_id"));
+			r_id = Integer.parseInt(session.getAttribute("r_id").toString());
 		}
 
 		String submit = " ";
