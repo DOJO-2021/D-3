@@ -53,7 +53,7 @@ public class ProfileSearchServlet extends HttpServlet {
 					int j = 0;
 					//重複がないかのチェック
 					for(int i = 0;i<sum.size();i++) {
-						if(sum.get(i).getUser_id()==a.getUser_id()) {
+						if(sum.get(i).getUser_id()==a.getUser_id()||a.getUser_id().equals(sum.get(i).getUser_id())) {
 							j=i;
 							break;
 						}
@@ -69,7 +69,7 @@ public class ProfileSearchServlet extends HttpServlet {
 				 for(User a:list) {
 						int j = 0;
 						for(int i = 0;i<sum.size();i++) {
-							if(sum.get(i).getUser_id()==a.getUser_id()) {
+							if(sum.get(i).getUser_id()==a.getUser_id()||a.getUser_id().equals(sum.get(i).getUser_id())) {
 								j=i;
 								break;
 							}
@@ -85,7 +85,7 @@ public class ProfileSearchServlet extends HttpServlet {
 				 for(User a:list) {
 						int j = 0;
 						for(int i = 0;i<sum.size();i++) {
-							if(sum.get(i).getUser_id()==a.getUser_id()) {
+							if(sum.get(i).getUser_id()==a.getUser_id()||a.getUser_id().equals(sum.get(i).getUser_id())) {
 								j=i;
 								break;
 							}
@@ -101,7 +101,7 @@ public class ProfileSearchServlet extends HttpServlet {
 				 for(User a:list) {
 						int j = 0;
 						for(int i = 0;i<sum.size();i++) {
-							if(sum.get(i).getUser_id()==a.getUser_id()) {
+							if(sum.get(i).getUser_id()==a.getUser_id()||a.getUser_id().equals(sum.get(i).getUser_id())) {
 								j=i;
 								break;
 							}
@@ -117,7 +117,7 @@ public class ProfileSearchServlet extends HttpServlet {
 				 for(User a:list) {
 						int j = 0;
 						for(int i = 0;i<sum.size();i++) {
-							if(sum.get(i).getUser_id()==a.getUser_id()) {
+							if(sum.get(i).getUser_id()==a.getUser_id()||a.getUser_id().equals(sum.get(i).getUser_id())) {
 								j=i;
 								break;
 							}
@@ -133,7 +133,7 @@ public class ProfileSearchServlet extends HttpServlet {
 				 for(User a:list) {
 						int j = 0;
 						for(int i = 0;i<sum.size();i++) {
-							if(sum.get(i).getUser_id()==a.getUser_id()) {
+							if(sum.get(i).getUser_id()==a.getUser_id()||a.getUser_id().equals(sum.get(i).getUser_id())) {
 								j=i;
 								break;
 							}
@@ -149,7 +149,7 @@ public class ProfileSearchServlet extends HttpServlet {
 				 for(User a:list) {
 						int j = 0;
 						for(int i = 0;i<sum.size();i++) {
-							if(sum.get(i).getUser_id()==a.getUser_id()) {
+							if(sum.get(i).getUser_id()==a.getUser_id()||a.getUser_id().equals(sum.get(i).getUser_id())) {
 								j=i;
 								break;
 							}
@@ -165,7 +165,7 @@ public class ProfileSearchServlet extends HttpServlet {
 				 for(User a:list) {
 						int j = 0;
 						for(int i = 0;i<sum.size();i++) {
-							if(sum.get(i).getUser_id()==a.getUser_id()) {
+							if(sum.get(i).getUser_id()==a.getUser_id()||a.getUser_id().equals(sum.get(i).getUser_id())) {
 								j=i;
 								break;
 							}
@@ -177,7 +177,7 @@ public class ProfileSearchServlet extends HttpServlet {
 					}
 				 FollowDAO fDao = new FollowDAO();
 				 List<Follow> follow= fDao.select(new Follow((String)session.getAttribute("user_id"),""));
-				 
+
 				// 検索結果をリクエストスコープに格納する
 				request.setAttribute("list", sum);
 				request.setAttribute("search", search);
