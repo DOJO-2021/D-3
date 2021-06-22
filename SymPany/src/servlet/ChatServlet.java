@@ -154,7 +154,6 @@ public class ChatServlet extends HttpServlet {
 		if(request.getParameter("submit")!=null) {
 			submit = request.getParameter("submit");
 		}
-
 		ChatDAO cDao = new ChatDAO();
 		ReactionDAO reDao = new ReactionDAO();
 		if(submit.equals("送信")) {
@@ -168,7 +167,7 @@ public class ChatServlet extends HttpServlet {
 				request.setAttribute("message",false);
 			}
 		}
-		else if(submit.equals("リアクション")){
+		else if(submit.equals("good👍")){
 
 			if(reDao.insert(new Reaction(user_id,Integer.parseInt(request.getParameter("message_id"))))) {
 				request.setAttribute("reins", true);

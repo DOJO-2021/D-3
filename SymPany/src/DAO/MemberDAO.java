@@ -156,8 +156,6 @@ public class MemberDAO {
 
 						pStmt.setInt(2, Member.getR_id());
 
-						System.out.println(pStmt);
-
 					// SQL文を実行する
 					if (pStmt.executeUpdate() == 1) {
 						result = true;
