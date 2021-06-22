@@ -51,33 +51,6 @@
 
 	<img src="/SymPany/images/ham.png" class="ham"></div>
 	<!-- 設定のimg 表示 一番良い方法はsubmitボタンの表示を変更するのが良い-->
-
-	<!-- ドロワーの入力 -->
-	<div class="container">
-
-		<div class="hamburger" id="open_nav">
-		<img src="ham.png" alt="">
-		<script src="../../_common/scripts/jquery-3.4.1.min.js"></script>
-		<script>
-		'use strict';
-		$(document).ready(function(){
-		  $('#open_nav').on('click', function(){
-		    $('#wrapper, #nav').toggleClass('show');
-		  });
-		});
-		</script>
-		<section>
-			<div class="content">
-			<p>参加者一覧<br></p>
-			<!-- 参加者をループで一覧で表示する -->
-			<c:forEach var="e" items="${list}">
-				・${e.nickname}<br>
-			</c:forEach>
-			</div>
-		</section>
-
-		</div>
-	</div>
 	<div class="mainchat">
 	<ul class="talk">
 	<!-- 参加者をループで一覧で表示する -->
@@ -115,6 +88,16 @@
 		<input type="submit" name="submit" value="送信">
 	</form>
 	</c:if>
+</div>
+<div class="content">
+	<!-- 参加者をループで一覧で表示する -->
+	<nav id="nav">
+	 <ul>
+	  <c:forEach var="e" items="${list}">
+	   <li>${e.nickname}<br>
+	  </c:forEach>
+	 </ul>
+	</nav>
 </div>
 </body>
 </html>

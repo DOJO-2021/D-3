@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* このCSSの上書き */
-.content {
+.bigth {
 	max-width: 100%;
 }
 img {
@@ -9,20 +9,10 @@ img {
 }
 
 /* ドロワーのナビゲーション */
-#nav {
-	position: fixed;
-	right: -270px;
-	top: 0;
-	width: 270px;
-	height: 100%
-}
+/*参加者一覧を表示する枠組み*/
 
-/* ドロワーが開かれた時のスタイル */
-.show {
-	transform: translate3d(-270px, 0, 0);
-}
 
 /* 閉じる開くアクション */
-#wrapper, #nav {
+#nav {
 	transition: transform 0 0.3s;
 }
