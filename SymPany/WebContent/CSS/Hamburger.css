@@ -1,6 +1,12 @@
 @charset "UTF-8";
 
-
+/* このCSSの上書き */
+.content {
+	max-width: 100%;
+}
+img {
+	max-width: 100%;
+}
 
 /* ドロワーのナビゲーション */
 #nav {
