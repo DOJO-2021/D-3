@@ -86,6 +86,7 @@ public class RoomNewServlet extends HttpServlet {
 		if (bDao.insert(user)) { // 登録成功
 			user = new Room(room_name,"",0,"");
 			List<Room> r = bDao.selectR(user);
+			System.out.println(r.size());
 			int r_id =r.get(0).getR_id();
 			Member member = new Member(user_id,r_id);
 			if (mDao.insert(member)) {
@@ -100,7 +101,7 @@ public class RoomNewServlet extends HttpServlet {
 			// チャットページにフォワードする
 			request.setAttribute("error",true);
 			request.setAttribute("login", false);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/chat.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/roomnew.jsp");
 			dispatcher.forward(request, response);
 		}
 	}

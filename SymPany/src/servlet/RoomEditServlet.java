@@ -37,7 +37,7 @@ public class RoomEditServlet extends HttpServlet {
 		// ルームのログイン状態を保持する
 		request.setCharacterEncoding("UTF-8");
 
-		int r_id = Integer.parseInt((String) session.getAttribute("r_id"));
+		int r_id = Integer.parseInt(session.getAttribute("r_id").toString());
 		RoomDAO rDao = new RoomDAO();
 		request.setAttribute("room", rDao.selectID(new Room(r_id, "", "", 0, "")));
 

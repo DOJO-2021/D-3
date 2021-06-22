@@ -31,6 +31,7 @@ public class MypageServlet extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		String user_id = (String)session.getAttribute("user_id");
+
 		//検索処理を行う(ユーザー検索)
 		User user = new User();
 		user.setUser_id(user_id);
@@ -56,7 +57,7 @@ public class MypageServlet extends HttpServlet {
 			}
 		}
 		// セッションスコープにIDを格納する
-		System.out.println(uDao.select(user).size());
+
 		request.setAttribute("follow",fDao.select(follow));
 		request.setAttribute("list", userList);
 		request.setAttribute("profile", uDao.select(user));

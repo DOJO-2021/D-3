@@ -10,6 +10,12 @@
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
 <link rel="stylesheet" href="/SymPany/CSS/Third.css">
 <link rel="stylesheet" href = "/SymPany/css/Hamburger.css">
+<style>
+span.mine{
+color:red;
+}
+
+</style>
 
 </head>
 
@@ -51,6 +57,7 @@
 
 	<img src="/SymPany/images/ham.png" class="ham"></div>
 	<!-- 設定のimg 表示 一番良い方法はsubmitボタンの表示を変更するのが良い-->
+
 	<div class="mainchat">
 	<ul class="talk">
 	<!-- 参加者をループで一覧で表示する -->
@@ -60,7 +67,14 @@
 	 		<c:if test="${e.user_id ==f.user_id}">
 			<form method="POST" action="/SymPany/ChatServlet">
 			<input type="hidden" name="message_id" value="${e.message_id }">
-							<li class = "mintalk">${f.nickname} :${e.message}
+							<li class = "mintalk">
+
+							<c:if test="${f.user_id == user_id}">
+							${f.nickname}:<span class ="mine">${e.message}</span>
+							</c:if>
+							<c:if test="${f.user_id != user_id}">
+							${f.nickname}:${e.message}
+							</c:if>
 				<%int counter = 0; %>
 					<c:forEach var="g" items="${reaction}">
 					<c:if test="${g.message_id == e.message_id}">

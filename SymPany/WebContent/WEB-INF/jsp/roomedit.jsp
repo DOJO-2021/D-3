@@ -16,17 +16,9 @@
 
 			<h2>ルームの編集</h2>
 	<c:forEach var="e" items="${room}">
-		<ul>
-			<c:if test="${e.release==1}">
-				<li><form>
-						<input type="hidden" name="r_id" value="${e.r_id}">
-						${e.r_name} ${e.r_comment}
-					</form></li>
-			</c:if>
-		</ul>
-
 				<!-- ルーム情報を送る -->
 			<form class="rm" method="post" action="/SymPany/RoomEditServlet">
+			<input type="hidden" name="r_id" value="${e.r_id}">
 				<table class="room_ps">
 					<tr>
 						<td><label class="label0">ルーム名</label><br>

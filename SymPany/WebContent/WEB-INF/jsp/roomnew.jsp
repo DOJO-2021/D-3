@@ -22,7 +22,7 @@
 				<tr>
 					<td>
 						<label class="label0">ルーム名</label><br>
-						<input type="text" name="room_name" placeholder="(例)猫好きの会"><br>
+						<input type="text" name="room_name" placeholder="(例)猫好きの会" ><br>
 					</td>
 				</tr>
 				<tr>
@@ -45,9 +45,7 @@
 						</div>
 							<!-- 何かしらの原因で登録に失敗した場合ここが表示される -->
 			<c:if test="${error}">
-			<c:if test="${!login}">
 			<h3 class="error">※そのルーム名は既に使用されています※</h3>
-			</c:if>
 			</c:if>
 					</td>
 				</tr>

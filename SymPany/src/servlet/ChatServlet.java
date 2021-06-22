@@ -84,14 +84,13 @@ public class ChatServlet extends HttpServlet {
 
 		List<User> uList = new ArrayList<User>();
 		List<User> sum = new ArrayList<User>();
-
-		if(mList!=null) {
 			for(Member m : mList) {
 				user = new User();
 				user.setUser_id(m.getUser_id());
 				uDao = new UserDAO();
 				uList = uDao.select(user);
 				int j = 0;
+
 				for(User u:uList) {
 					for(int i = 0; i<sum.size();i++) {
 						if(u.getUser_id()==sum.get(i).getUser_id()) {
@@ -105,8 +104,6 @@ public class ChatServlet extends HttpServlet {
 					}
 				}
 			}
-		}
-
 
 		List<Member> rmember = mDao.selectR(new Member(user_id,0));
 
@@ -114,14 +111,13 @@ public class ChatServlet extends HttpServlet {
 		List<List<Room>> roomList = new ArrayList<List<Room>>();
 
 		//参加しているルームの検索
-		if(rmember!=null) {
 			for(int i=0;rmember.size()>i;i++) {
 				room =new Room();
 				room.setR_id(rmember.get(i).getR_id());
 				RoomDAO Dao = new RoomDAO();
 				roomList.add(Dao.selectID(room));
 			}
-		}
+
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("roomList",roomList);
 		request.setAttribute("room",rList);
@@ -149,12 +145,9 @@ public class ChatServlet extends HttpServlet {
 		if(request.getParameter("r_id")!=null) {
 			r_id = Integer.parseInt((String)request.getParameter("r_id"));
 			session.setAttribute("r_id", request.getParameter("r_id"));
-
-			System.out.println("リクエスト"+r_id);
 		}
 		else {
 			r_id = Integer.parseInt((String)session.getAttribute("r_id"));
-			System.out.println("セッション"+r_id);
 		}
 
 		String submit = " ";
