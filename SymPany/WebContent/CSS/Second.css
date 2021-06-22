@@ -3,6 +3,7 @@ html * {
 	box-sizing:border-box;
 	/*outline:1px solid #ff0000;*/
 }
+
 h2{
 	background-color:#f3d2c1;
 	margin:20px  40px;
@@ -17,6 +18,7 @@ div.bigrm{
 	width:950px;
 	margin:25px 0 0 25px;
 }
+
 form{
 	border:1.5px solid #001858;
 }
@@ -47,6 +49,7 @@ input[name="room_name"],input[name="room_comment"]{
 
 /* mypageのプロフィール編集*/
 /*記入欄の装飾*/
+
 input.mypage1{
 	width:300px;
 	color: #001858;
@@ -67,6 +70,7 @@ textarea.mypage1{
 	font-size:16px;
 	resize:none;
 }
+
 /*記入欄全体の位置調整*/
 table.mypage1{
 	position:relative;
@@ -154,3 +158,4 @@ table.room_ps{
 	top: 50px;
 	left:50px;
 }
+
