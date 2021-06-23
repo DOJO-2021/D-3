@@ -65,13 +65,13 @@
 		 <tr>
 		  <td>
 		   <label class="mypage1">趣味<br>
-				<textarea rows="3″cols=”50″wrap="soft" type="text" name="hobby" class="mypage1">${e.hobby}</textarea>
+				<textarea rows="3"cols="50"wrap="soft" name="hobby" class="mypage1">${e.hobby}</textarea>
 			   </label>
 
 		  </td>
 		  <td>
 		    <label class="mypage1">自己紹介文<br>
-			<textarea rows="3″cols=”50″wrap="soft" type="text" name="intro" class="mypage1">${e.intro}</textarea>
+			<textarea rows="3"cols="50" wrap="soft" name="intro" class="mypage1">${e.intro}</textarea>
 			  </label>
 		  </td>
 		</table>

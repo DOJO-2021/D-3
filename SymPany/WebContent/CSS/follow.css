@@ -44,6 +44,12 @@ textarea.textarea {
 	margin: 0 0 10px;
 }
 
+.f_list textarea{
+vertical-align:top;
+
+}
+
+
 
 label.cp_menu_bar2 {
 	content:"▲";

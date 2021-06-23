@@ -64,14 +64,14 @@
 						</li>
 						<li>
 							<label class="f_list">趣味　　　　 :
-							<input type="text" name="hobby" class ="f_list" value="${f.hobby}" disabled>
-
+								<textarea rows="3"cols="28"wrap="soft"
+								name="hobby" class="f_list,textarea" disabled>${f.hobby}</textarea>
 							</label>
 						</li>
 						<li>
 							<label class="f_list">自己紹介文　 :
-							<input type="text" name="intro" class ="f_list" value="${f.intro}" disabled>
-
+								<textarea rows="3"cols="28" wrap="soft"
+								name="intro" class="f_list,textarea" disabled>${f.intro}</textarea>
 							</label>
 						</li>
 						</ul>
