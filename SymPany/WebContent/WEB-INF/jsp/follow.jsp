@@ -1,22 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 	<link rel="stylesheet" href="/SymPany/CSS/follow.css">
 <div class="follow_list">
 	<h2 class="f_list">フォローリスト</h2>
 		<div class="f_list">
-​
-​
+​<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+​<%int menu=1; %>
 				<c:forEach var="e" items="${list}" >
 					<c:forEach var = "f" items="${e}">
-​
+
+					<script>
+
+					$('label.cp_menu_bar<%=menu%>').css({
+									'display':'block',
+									'margin':'0 0 2px 0',
+									'line-height':'1',
+									'coursor':'pointer'});
+
+					$('label.menu_bar<%=menu%>:after').css({
+									'content':'▼',
+									'font-size':'20px',
+									'margin':'0'});
+
+					$('#menu_bar<%=menu%>:checked ~ #link1 li').css({
+									'height':'50px',
+									'opacity':'1';})
+
+					</script>
 ​					<div class="cp_menu">
 							<input type ="hidden" name="user_id" value="${f.user_id}">
 ​
-						<label class="cp_menu_bar1" for="menu_bar01" >
+						<label class="cp_menu_bar<%=menu%>" for="menu_bar<%=menu%>" >
 							<input type="text" name="name" class="f_listname" value="${f.name}" disabled>
 							</label>
-							<input type="checkbox" id="menu_bar01">
+							<input type="checkbox" id="menu_bar<%=menu%>"><%menu++;%>
 								<ul id="link1">
 						<li>
 							<label class="f_list">ニックネーム :
@@ -45,16 +64,19 @@
 						</li>
 						<li>
 							<label class="f_list">趣味　　　　 :
-								<textarea rows="3"cols="50"wrap="soft"  name="hobby" class="f_list,textarea" disabled>${f.hobby}</textarea>
+							<input type="text" name="hobby" class ="f_list" value="${f.hobby}" disabled>
+
 							</label>
 						</li>
 						<li>
 							<label class="f_list">自己紹介文　 :
-								<textarea rows="3"cols="0" wrap="soft" name="intro" class="f_list,textarea" disabled>${efintro}</textarea>
+							<input type="text" name="intro" class ="f_list" value="${f.intro}" disabled>
+
 							</label>
 						</li>
 						</ul>
 ​				</div>
+
 					</c:forEach>
 				</c:forEach>
 ​
