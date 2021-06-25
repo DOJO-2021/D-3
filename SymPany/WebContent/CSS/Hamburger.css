@@ -1,4 +1,15 @@
 @charset "UTF-8";
+
+li{
+	list-style:none;
+
+}
+
+
+
+
+
+
 #drawer-content {
   overflow: auto;
   position: fixed;
@@ -12,7 +23,7 @@
   transform: translateX(1000%);
 }
 #drawer-checkbox:checked ~ #drawer-content {
-  transform: translateX(760%);
+  transform: translateX(450%);
   box-shadow: 6px 0 24px rgba(0, 0, 0, 0.16);
 }
 
