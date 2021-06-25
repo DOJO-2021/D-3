@@ -26,7 +26,7 @@ input.ctext{
 
 /*リアクションボタン*/
 input.reaction{
-	margin-left:50px;
+	margin-left:10px;
 }
 /*テキスト入力と送信ボタン*/
 form.chat {
@@ -37,7 +37,7 @@ form.chat {
 div.mainchat {
 	background-color:#f3d2c1;
 	height:400px;
-	width:920px;
+	width:930px;
 	margin:0 0 20px 0; /*チャット画面とテキスト入力の間を開ける*/
 	overflow: auto;  /* スクロールバーを表示(※) */
 }
@@ -63,7 +63,7 @@ div.shdiv {
 /*トーク履歴の表示*/
 ul.talk {
 	clear:both;
-	width:980px;
+	width:910px;
 	height:600px;
 	list-style-type:none;
 	display:inline-block;
