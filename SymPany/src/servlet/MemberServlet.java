@@ -55,7 +55,7 @@ public class MemberServlet extends HttpServlet {
 		//ルームからメンバーを削除する
 		else if (req.equals("脱退")) {
 			if (mDao.delete (r_id)) {
-				request.setAttribute("delete",true);
+				request.setAttribute("del",true);
 				session.setAttribute("r_id", null);
 			}
 			else {

@@ -9,7 +9,7 @@
 <title>SymPany | チャット</title>
 <link rel="stylesheet" href="/SymPany/CSS/common.css">
 <link rel="stylesheet" href="/SymPany/CSS/Third.css">
-<link rel="stylesheet" href = "/SymPany/css/Hamburger.css">
+<link rel="stylesheet" href = "/SymPany/CSS/Hamburger.css">
 <style>
 span.mine{
 color:red;
@@ -31,6 +31,11 @@ color:red;
 		alert("リアクションを取り消しました。");
 	</script>
 </c:if>
+<c:if test="${del}">
+	<script type="text/javascript">
+		alert("ルームから脱退しました。");
+	</script>
+</c:if>
 <c:if test="${reins}">
 	<script type="text/javascript">
 		alert("リアクションしました。");
@@ -39,8 +44,7 @@ color:red;
 
 <jsp:include page="header.jsp"></jsp:include>
 <jsp:include page="leftmenu.jsp"></jsp:include>
-<!-- <iframe src="LeftmenuServlet" name="sample" width="200" height="500" align="left">
-		</iframe> -->
+
 <div class="bigth">
 <c:if test="${room[0]==null}">
 <div class="icon1"><img src="/SymPany/images/talk.png" class="icon"></div>
@@ -54,8 +58,17 @@ color:red;
 	 <a href="/SymPany/RoomEditServlet"><img src="/SymPany/images/supana.png" class="supana"></a>
 	</c:if>
 
+<input id="drawer-checkbox" type="checkbox">
+<label id="drawer-icon" for="drawer-checkbox"><span></span></label>
+<label id="drawer-close" for="drawer-checkbox"></label>
+<div id="drawer-content"><ul>
+	  <c:forEach var="e" items="${list}">
+	   <li>${e.nickname}<br>
+	  </c:forEach>
+	 </ul></div>
 
-	<img src="/SymPany/images/ham.png" class="ham"></div>
+
+	<!--  <img src="/SymPany/images/ham.png" class="ham">--></div>
 	<!-- 設定のimg 表示 一番良い方法はsubmitボタンの表示を変更するのが良い-->
 
 	<div class="mainchat">
@@ -102,16 +115,6 @@ color:red;
 		<input type="submit" name="submit" value="送信">
 	</form>
 	</c:if>
-</div>
-<div class="content">
-	<!-- 参加者をループで一覧で表示する -->
-	<nav id="nav">
-	 <ul>
-	  <c:forEach var="e" items="${list}">
-	   <li>${e.nickname}<br>
-	  </c:forEach>
-	 </ul>
-	</nav>
 </div>
 </body>
 </html>
